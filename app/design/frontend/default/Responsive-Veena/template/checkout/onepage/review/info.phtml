@@ -1,0 +1,247 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+		 $collectproduct = array();
+         foreach($this->getItems() as $_item): 
+
+          	  $product = Mage::getModel('catalog/product')->load($_item->getProductId());
+
+	          $_product = Mage::getModel('catalog/product');
+	          $_productId = $_product->getIdBySku($_item->getSku());
+	          //$_product->load($_productId);
+
+                $p = Mage::getModel('catalog/product')->load($_productId);		
+		$cats = $p->getCategoryIds();	
+		foreach ($cats as $category_id){
+		    $category = Mage::getModel('catalog/category')->load($category_id) ;
+			if(!empty($category)){
+			    $curcatid= $category->getId();
+			    $it = 10;    
+			    if ( $category) {
+			        while( $category->getLevel() != 2 && $it > 0) {
+			             $category =  $category->getParentCategory();        
+			            if (! $category) {
+			                break;
+			            }
+			        }        
+			        if ( $category && strtolower($category->getName()) != "dailyupdate") {
+			            $toplevelcatid= $category->getId();
+			        }
+			        else {        	
+			            //echo 'Cannot find parent category';
+			        }
+			    }
+			}
+		}
+
+         /*
+	          $topCategory = Mage::getResourceModel('catalog/category_collection')
+	          ->addIdFilter($product->getCategoryIds())
+	          ->setOrder('level', 'ASC')
+	          ->setPage(1,1)
+	          ->getFirstItem();
+	          */
+	          $_cat = Mage::getModel('catalog/category')->load($toplevelcatid);	          //$topCategory->getId()
+	          //if(findKey($collectproduct, $topCategory->getId()))
+	          $catName = $_cat->getName(); 
+	          $item = clone $_item;
+	          //$collectproduct[] = $_item;
+	          //$collectproduct.push($_item);
+	          if(!isset($collectproduct[$catName]))
+	          	$collectproduct[$catName] = array();
+	          
+	          array_push($collectproduct[$catName], $_item->getId()."@#@#".$_productId);
+	          
+          endforeach;
+          //print_r($collectproduct);
+          
+?>
+<?php echo $this->getChildHtml('items_before'); ?>
+<div id="checkout-review-table-wrapper">
+    <table class="data-table" id="checkout-review-table">
+        <?php if ($this->helper('tax')->displayCartBothPrices()): $colspan = $rowspan = 2; else: $colspan = $rowspan = 1; endif; ?>
+        <col />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+        <col width="1" />
+        <col width="1" />
+        <?php endif; ?>
+        <thead>
+            <tr>
+                <th rowspan="<?php echo $rowspan ?>"><?php echo $this->__('Product Name') ?></th>
+				<th colspan="<?php echo $rowspan ?>" class="a-left">Brand</th>
+				<th colspan="<?php echo $rowspan ?>" class="a-center">Pack Size</th>
+                <th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
+                <th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
+                <th colspan="<?php echo $colspan ?>" class="a-right"><?php echo $this->__('Subtotal') ?></th>
+            </tr>
+            <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                <tr>
+                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                    <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                    <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                </tr>
+            <?php endif; ?>
+        </thead>
+        <?php echo $this->getChildHtml('totals'); ?>
+        <tbody>
+                  <?php
+          
+    	      if(!$quoteObj)
+	          	$quoteObj = new Mage_Sales_Model_Quote();          
+              $storeId = Mage::app()->getStore()->getStoreId();
+              
+	          foreach($collectproduct as $key => $value) {
+				echo "<tr><th colspan='6'>".$key."</th></tr>";
+	          	foreach($value as $key => $val) {
+
+					$valsplit = explode("@#@#", $val);
+	          		$_product = Mage::getModel('catalog/product')->load($valsplit[1]);	          		
+	          		$item = Mage::getModel('sales/quote_item')->setProduct($_product)->setQuote($quoteObj)->setStoreId($storeId)->load($valsplit[0]);
+	          		echo $this->getItemHtml($item);
+	          		
+	          	}
+	          }
+          
+	         /*  foreach($this->getItems() as $_item):
+	          	  
+	          	   echo $this->getItemHtml($item);
+	              
+	          endforeach;
+ 				*/
+		  ?>
+        </tbody>
+    </table>
+</div>
+<?php echo $this->getChildHtml('items_after'); ?>
+<script type="text/javascript">
+//<![CDATA[
+    decorateTable('checkout-review-table');
+    truncateOptions();
+//]]>
+</script>
+<?php
+    $foodtotal = 0;
+    $cart = Mage::getModel('checkout/cart')->getQuote();    
+    $skus = array();
+    $skusonly = array();
+    $i = 0;
+    foreach($cart->getAllItems() as $item){      
+      if (!in_array($item->getSku(),$skusonly)){ //If there is no sku in array
+        $skusonly[] = $item->getSku(); //Add the sku to the array
+        $skus[$i]['qty'] = $item->getQty();
+        $skus[$i]['sku'] = $item->getSku();
+
+        $product = Mage::getModel('catalog/product')->load($item->getProductId());
+	$catIds = $product->getCategoryIds();
+
+        $_product = Mage::getModel('catalog/product');
+        $_productId = $_product->getIdBySku($item->getSku());
+        $_product->load($_productId);
+
+         $configCatIds = Mage::getStoreConfig('foodcoupon/foodcoupon_config/select_category');
+        $configCatIds =explode(",", $configCatIds);
+        $parentIds = Mage::getResourceSingleton('catalog/product_type_configurable')->getParentIdsByChild($_productId);
+        if($parentIds[0]){
+            $parentProduct = Mage::getModel('catalog/product')->load($parentIds[0]);
+            $pcatIds = $parentProduct->getCategoryIds();
+            
+           if( array_intersect($configCatIds,$catIds) || array_intersect($configCatIds,$pcatIds)){
+            $foodtotal += $_product->getFinalPrice() * $item->getQty();
+             }
+         }
+         else {
+            if( array_intersect($configCatIds,$catIds)){
+            $foodtotal += $_product->getFinalPrice() * $item->getQty();
+             }
+         }
+         $alltotal += $_product->getFinalPrice() * $item->getQty();
+
+        $i++;
+      }
+    }
+    $offer = 0;
+    $totals = Mage::getSingleton('checkout/session')->getQuote()->getTotals();
+    if(isset($totals['discount']) && $totals['discount']->getValue()) {
+    	$discount = round($totals['discount']->getValue());
+    	$offer += abs($discount);
+    }
+    
+    if ($foodtotal == $alltotal) //bug 61: Only if foodcoupon cateogry products are purchased, reduce the coupon value by the offer amount else keep it as-is		
+    	$foodtotal -= $offer;
+
+?>
+<?php $opCheckoutMethod = Mage::getSingleton('checkout/session')->getQuote()->getCheckoutMethod(); ?>
+<?php  if(Mage::getSingleton('customer/session')->isLoggedIn() || $opCheckoutMethod == "register"): ?>	
+<?php $moduleName = 'Vs_Reward'; 
+if (Mage::helper('core')->isModuleEnabled($moduleName)) { ?>
+	<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('reward/reward.phtml')->toHtml(); ?>
+    <?php } ?>
+<?php endif; ?>
+<div id="checkout-review-submit">
+    <?php echo $this->getChildHtml('agreements') ?>    
+    <div class="buttons-set" id="review-buttons-container">
+    <?php  
+    
+	    if(Mage::getSingleton('customer/session')->isLoggedIn() || $opCheckoutMethod == "register"):   
+            $moduleName = 'Vs_Reward'; 
+            if (Mage::helper('core')->isModuleEnabled($moduleName)) { 
+    			$z=Mage::getStoreConfig('reward_section/reward_group/minimum_field');
+    			$subtotal = Mage::helper('checkout/cart')->getQuote()->getSubtotal();
+    			$pnt= ($subtotal/100)* $z;
+    			echo "<p>You have earned approximately {$pnt} points through this transaction.</p>";
+            }
+	?>
+				
+				
+				
+	<?php 
+						
+		endif;
+	?>  
+		
+	<p>Amount eligible to pay via food coupons: Rs. <?php echo number_format($foodtotal, 2); ?></p>
+     <script type="text/javascript">     
+               jQuery("<input type='hidden' value='<?php echo number_format($foodtotal, 2); ?>' name='food_coupen' >").appendTo("#co-payment-form");
+            </script>
+   <input type="hidden" name="food" value="<?php echo number_format($foodtotal, 2); ?>">
+   
+        <p class="f-left"><?php echo $this->__('Forgot an Item?') ?> <a href="<?php echo $this->getUrl('checkout/cart') ?>"><?php echo $this->__('Edit Your Cart') ?></a></p>
+        <?php echo $this->getChildHtml('button') ?>
+        <span class="please-wait" id="review-please-wait" style="display:none;">
+            <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
+        </span>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+        review = new Review('<?php echo $this->getUrl('checkout/onepage/saveOrder', array('form_key' => Mage::getSingleton('core/session')->getFormKey())) ?>', '<?php echo $this->getUrl('checkout/onepage/success') ?>', $('checkout-agreements'));
+    //]]>
+    </script>
+</div>

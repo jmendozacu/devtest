@@ -1,0 +1,60 @@
+<?php $_categories = $this->getStoreCategories() ?>
+<?php if(count($_categories)): ?>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+       
+		  
+		  
+        
+
+		
+		
+			
+			
+		
+		
+<script type="text/javascript">
+//<![CDATA[
+var CUSTOMMENU_POPUP_WIDTH = <?php echo Mage::getStoreConfig('advanced_menu/popup/width') + 0; ?>;
+var CUSTOMMENU_POPUP_TOP_OFFSET = <?php echo Mage::getStoreConfig('advanced_menu/popup/top_offset') + 0; ?>;
+var CUSTOMMENU_POPUP_RIGHT_OFFSET_MIN = <?php echo Mage::getStoreConfig('advanced_menu/popup/right_offset_min') + 0; ?>;
+var CUSTOMMENU_POPUP_DELAY_BEFORE_DISPLAYING = <?php echo Mage::getStoreConfig('advanced_menu/popup/delay_displaying') + 0; ?>;
+var CUSTOMMENU_POPUP_DELAY_BEFORE_HIDING = <?php echo Mage::getStoreConfig('advanced_menu/popup/delay_hiding') + 0; ?>;
+var megnorCustommenuTimerShow = {};
+var megnorCustommenuTimerHide = {};
+//]]>
+</script>
+<?php endif ?>
+
+ 

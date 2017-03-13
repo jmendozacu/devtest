@@ -1,0 +1,52 @@
+<?php 
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+
+  $_customer = Mage::getSingleton('customer/session')->getCustomer();?>
+<?php $groups = Mage::getModel('shoppinglist/group')->getGroupByCustomer($_customer->getId());?>
+<div class="box-account customer-group-view">
+  <div class="box-head title-buttons">
+    <h2><?php echo $this->__('All List')?></h2>
+    <button onclick="window.location='<?php echo $this->getCreateGroupUrl() ?>';" class="button" title="<?php echo $this->__('Create New List')?>" type="button"><span><span><?php echo $this->__('Create New List')?></span></span></button>
+  </div>
+  <?php if(count($groups) > 0):?>
+    <table class="data-table" id="customer-group-table">
+      <colgroup>
+        <col width="1"/>
+        <col />
+        <col width="1"/>
+        <col width="1"/>
+      </colgroup>
+      <thead>
+        <tr>
+          <th><span class="nobr"><?php echo $this->__('No.')?></span></th>
+          <th><span class="nobr"><?php echo $this->__('List Name')?></span></th>
+          <th><span class="nobr"><?php echo $this->__('Created on')?></span></th>
+          <th><span class="nobr"><?php echo $this->__('')?></span></th>
+        </tr>
+      </thead>	
+      <tbody>
+        <?php $i=1; foreach($groups as $_group):?>
+          <tr>
+            <td><span><?php echo $i++; //$_group->getListId();?></span></td>     
+            <td>
+              <a href="<?php echo $this->getListItemsUrl($_group->getListId())?>" title="<?php echo $this->__('View all items on %s', $_group->getListName()) ?>"><span><?php echo $_group->getListName();?></span><a/></td>
+            <td>
+              <span class="nobr"><?php echo Mage::helper('shoppinglist')->getFormatedDate($_group->getCreatedAt()) ?></span>
+            </td>
+            <td>
+              <span class="nobr">
+                <a href="<?php echo $this->getListItemsUrl($_group->getListId())?>" title="<?php echo $this->__('Edit') ?>"><span><?php echo $this->__('View')?></span></a>
+                <span class="separator">|</span><a onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this group?') ?>');" href="<?php echo $this->getDeleteUrl($_group->getListId())?>" title="<?php echo $this->__('Remove') ?>"><span><?php echo $this->__('Remove') ?></span></a>
+                <span class="separator">|</span><?php if(count($_group->getItems())>0):?><a href="<?php echo $this->getUrl('*/group/cart', array('items' => 'all', 'groupId' => $_group->getListId())) ?>" title="<?php echo $this->__('Add all To Cart') ?>"><span><?php echo $this->__('Add all To Cart') ?></span></a><?else :?><span><?php echo $this->__('No Items')?></span><?php endif?>
+              </span>
+            </td>
+          </tr>	
+          <?php endforeach;?>
+      </tbody>	
+    </table>
+    <?php else:?>
+    <p class="note-msg"><?php echo $this->__('You have not added any groups yet.') ?></p>
+    <?php endif; ?>
+</div>

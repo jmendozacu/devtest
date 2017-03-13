@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Emizen_Autodeleteoutofstock>
+      <version>0.1.0</version>
+    </Emizen_Autodeleteoutofstock>
+  </modules>
+  <global>
+    <helpers>
+      <autodeleteoutofstock>
+        <class>Emizen_Autodeleteoutofstock_Helper</class>
+      </autodeleteoutofstock>
+    </helpers>
+	<models>
+	  <autodeleteoutofstock>
+		<class>Emizen_Autodeleteoutofstock_Model</class>
+		<resourceModel>autodeleteoutofstock_mysql4</resourceModel>
+	  </autodeleteoutofstock>
+	</models>
+    <events>
+	  <controller_action_predispatch_checkout_cart_index> <!-- identifier of the event we want to catch -->
+        <observers>
+          <controller_action_predispatch_checkout_cart_index_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>autodeleteoutofstock/observer</class> <!-- observers class alias -->
+            <method>autodelete</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </controller_action_predispatch_checkout_cart_index_handler>
+        </observers>
+      </controller_action_predispatch_checkout_cart_index>
+    </events>
+  </global>
+</config> 

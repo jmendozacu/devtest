@@ -1,0 +1,101 @@
+<?php
+/**
+* @author Amasty Team
+* @copyright Amasty
+* @package Amasty_Conf
+*/
+?>
+<style>
+em{
+    color:red;
+}
+
+dt{
+    font-weight: 400;
+}
+.sbHolder{
+    display: none !important;
+}
+</style>
+<?php
+$_product    = $this->getProduct();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+<?php if ($_product->isSaleable() && count($_attributes)):?>
+    <dl>
+    <?php foreach($_attributes as $_attribute): ?>
+		<?php 
+			$attr = Mage::getModel('amconf/attribute')->load($_attribute->getAttributeId(), 'attribute_id');
+			if($attr->getUseImage()) {
+		?>
+        <dt id="label-<?php echo $_attribute->getAttributeId() ?>-<?php echo $_product->getEntityId() ?>"><label class="required"><em>*</em> <?php echo $_attribute->getLabel() ?></label></dt>
+        <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
+            <div class="input-box  cartqty_<?php echo $_product->getId() ?>" style="margin: 2px;">
+                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>-<?php echo $_product->getEntityId() ?>" class="required-entry super-attribute-select-<?php echo $_product->getEntityId() ?>">
+                    <option><?php echo $this->__('Choose an Option...') ?></option>
+                </select>
+              </div>
+              <div id="requared-attribute<?php echo $_attribute->getAttributeId() ?>-<?php echo $_product->getEntityId() ?>" style="color:red"></div>
+        </dd>
+		<?php } ?>
+    <?php endforeach; ?>
+    </dl>
+    <script type="text/javascript">
+        var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
+        optionsPrice['<?php echo $_product->getId();?>'] = new Product.OptionsPrice(<?php echo $this->getPriceJsonConfig();?>);
+    </script>
+<?php endif;?>
+
+<script type="text/javascript">
+//     var productAddToCartForm_<?php echo $_product->getId(); ?> = new VarienForm('product_addtocart_form_<?php echo $_product->getId(); ?>');
+//     productAddToCartForm_<?php echo $_product->getId(); ?>.submit = function(){
+//	 if (this.validator.validate()) {
+//             this.form.submit();
+//         }
+//     }.bind(productAddToCartForm_<?php echo $_product->getId(); ?>);
+     jQuery(document).ready(function(){	
+	//jQuery(".amconf-images-container").css("display","none");
+	//jQuery(".amconf-images-container").hide();
+	//jQuery(".btn-cart").hover(function(){
+	//    jQuery(this).parent().prev().find(".amconf-images-container").css("display","");	       
+	//    jQuery(".hover_block").css("height","100px");
+	//});
+	jQuery(".amconf-image").click(function(){
+	    if(jQuery(this).hasClass("amconf-sold-out")){
+		jQuery(".availability span").html("Out of Stock");
+	    }else{
+		jQuery(".availability span").html("In Stock");
+	    }
+	});
+     });     
+</script>
+
+<?php if(Mage::registry('current_category') || (Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms')): ?>
+<script type="text/javascript">    
+     var productAddToCartForm_<?php echo $_product->getId(); ?> = new VarienForm('product_addtocart_form_<?php echo $_product->getId(); ?>');
+     
+	productAddToCartForm_<?php echo $_product->getId(); ?>.submit = function(){	
+		   ajaxcart.ajaxCartSubmit(this);		
+		   return false;
+	}
+	productAddToCartForm_<?php echo $_product->getId(); ?>.form.onsubmit = function() {
+		   productAddToCartForm_<?php echo $_product->getId(); ?>.submit();		
+		   return false;
+	};
+     
+</script>
+<?php else: ?>
+<script type="text/javascript">    
+     var productAddToCartForm = new VarienForm('product_addtocart_form');
+     
+	productAddToCartForm.submit = function(){	
+		   ajaxcart.ajaxCartSubmit(this);		
+		   return false;
+	}
+	productAddToCartForm.form.onsubmit = function() {
+		   productAddToCartForm.submit();		
+		   return false;
+	};
+     
+</script>
+<?php endif; ?>

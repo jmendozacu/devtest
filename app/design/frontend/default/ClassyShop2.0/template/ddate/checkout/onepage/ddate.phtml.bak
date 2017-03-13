@@ -1,0 +1,225 @@
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getSkinUrl('ddate/css/jscal2.css') ?>" />
+<link type="text/css" rel="stylesheet" href="<?php echo $this->getSkinUrl('ddate/css/border-radius.css') ?>" />
+<script src="<?php echo $this->getSkinUrl('ddate/js/slideshow.js') ?>" type='text/javascript'></script>
+<form id="co-ddate-form" action="">
+    <fieldset class="group-select">       
+        <ul>
+            <li><div class="input-box">
+                    <input type="hidden" id="ddate:date" name="ddate[date]" value="" title="<?php echo $this->__('Delivery Date') ?>" class="input-text" />
+                                    <!--<input type="hidden" id="ddate:ampm" name="ddate[ampm]" value="" title="<?php echo $this->__('AM/PM') ?>" class="input-text" />-->
+                    <input type="hidden" id="ddate:dtime" name="ddate[dtime]" value="" title="<?php echo $this->__('Delivery Time') ?>" class="input-text" />
+                </div>
+            </li>
+        </ul>
+        <?php if (Mage::getStoreConfig("ddate/info/calender_display")) { ?>	
+            <div class="delivery">
+                <div class="deli_title">
+                    <h6><a id="slideshow-previous" href="#previous"><?php echo Mage::helper('ddate')->__('Previous 7 days') ?></a><a id="slideshow-next" href="#next"><?php echo Mage::helper('ddate')->__('Next 7 days') ?></a></h6>			        
+                </div>
+                <div class="deli_date_time">	
+                    <div class="deli_time">	
+                        <h6 style="height:29px;"><strong><?php echo Mage::getStoreConfig("ddate/info/first_column_header") ?></strong></h6>
+                        <?php
+                        $delay = Mage::getStoreConfig('ddate/info/delay');
+                        $slots = Mage::getResourceModel('ddate/ddate')->getDtime();
+                        foreach ($slots as $slot) {
+                            echo "<p>" . $slot->getDtime() . "</p>";
+                        }
+                        ?>
+                    </div> 			
+                    <div class="deli_date">				
+                        <div id="slideshow-area">
+                            <div id="slideshow-scroller">
+                                <div id="slideshow-holder">
+                                    <script>
+                                        function selectDdate(date, dtime){
+                                            document.getElementById('ddate:date').value = date;
+                                            document.getElementById('ddate:dtime').value = dtime;
+                                            //document.getElementById('ddate:ampm').value = "am";
+                                            jQuery('#slideshow-holder ul li a').removeClass('ddate_day_active');
+                                        }
+                                    </script>
+                                    <?php
+                                    $_SESSION['ddate'] = '';
+                                    // $_SESSION['ampm'] = '';
+                                    $_SESSION['dtime'] = '';
+                                    $currentTime = time();
+                                    $weeks = Mage::getStoreConfig("ddate/info/weeks") != '' ? Mage::getStoreConfig("ddate/info/weeks") : 4;
+                                    $maximum_bookings = Mage::getStoreConfig("ddate/info/maximum_bookings") != '' ? Mage::getStoreConfig("ddate/info/maximum_bookings") : 10000000000;
+                                    for ($w = 0; $w < $weeks; $w++):
+                                        ?>
+                                        <div class="slideshow-content">	
+
+                                            <div class="deli_date_top">
+                                                <ul>
+                                                    <?php
+                                                    for ($i = 7 * $w + 1; $i <= 7 * $w + 7; $i++) {
+                                                        ?>
+                                                        <li <?php if ($i % 2 != 0)
+                                                echo 'class="oddrow"' ?>><?php echo date('(D)', strtotime('+' . $i . ' day', $currentTime)) ?><span><?php echo date('m/j', strtotime('+' . $i . ' day', $currentTime)) ?></span></li>
+                                                            <?php
+                                                        }
+                                                        ?>	
+                                                    <div class="clear"><span></span></div> 
+                                                </ul>		
+                                            </div>
+                                            <div class="deli_date_top select_one">
+                                                <ul>
+                                                    <?php
+                                                    foreach ($slots as $slot) {
+                                                        $isLess = true;
+
+                                                        $interval = $slot->getInterval();
+                                                        if (empty($interval)) {
+                                                            $isLess = false;
+                                                        } else {
+                                                            preg_match("/-(\d+)h/", $interval, $hours, PREG_OFFSET_CAPTURE);
+                                                            preg_match("/h(\d+)$/", $interval, $minutes, PREG_OFFSET_CAPTURE);
+                                                        }
+
+
+                                                        //var_dump($slot->getData());
+                                                        $dtime = $slot->getDtimeId();
+                                                        for ($i = 7 * $w + 1; $i <= 7 * $w + 7; $i++) {
+                                                            $strDate = date('Y-m-d', strtotime('+' . $i . ' day', $currentTime));
+                                                            $ddates = Mage::getModel('ddate/ddate')->getCollection()
+                                                                    ->addFieldToFilter('ddate', array('like' => $strDate . '%'))
+                                                                    ->addFieldToFilter('dtime', $dtime);
+
+                                                            $enabled = true;
+
+                                                            if ($isLess) {
+
+                                                                $additionMin = "";
+
+                                                                if (isset($minutes[0])) {
+                                                                    $additionMin = " " . $minutes[0][1] . " minutes";
+                                                                }
+
+                                                                $ddateTime = strtotime($strDate);
+                                                                $hightBoundTime = strtotime('+ ' . $hours[0][1] . ' hours' . $additionMin, $ddateTime);
+                                                                $delayTime = strtotime('+' . $delay . ' hours', $currentTime);
+
+                                                                if ($hightBoundTime < $delayTime) {
+                                                                    $enabled = false;
+                                                                } else {
+                                                                    $isLess = false;
+                                                                }
+                                                            }
+                                                            foreach ($ddates as $ddate):
+                                                                if ($ddate->getHoliday() == 1 && Mage::helper('ddate')->getDayoff()) {
+                                                                    $enabled = false;
+                                                                    break;
+                                                                } else if (intval($ddate->getOrdered()) >= intval($slot->getMaximumBooking())) {
+
+                                                                    $enabled = false;
+                                                                    break;
+                                                                }
+                                                            endforeach;
+
+                                                            $data = $slot->getData();
+                                                            $days = array("mon", "tue", "wed", "thu", "fri", "sat", "sun");
+                                                            foreach ($days as $day) {
+                                                                if ($enabled && (strtolower(date('D', strtotime('+' . $i . ' day', $currentTime))) == $day) && ($data[$day] == "0")) {
+                                                                    $enabled = false;
+                                                                }
+                                                            }
+
+                                                            if ($enabled && date('D', strtotime('+' . $i . ' day', $currentTime)) == 'Sat' && Mage::helper('ddate')->getSaturday() == "0"):
+                                                                $enabled = false;
+                                                            endif;
+                                                            if ($enabled && date('D', strtotime('+' . $i . ' day', $currentTime)) == 'Sun' && Mage::helper('ddate')->getSunday() == "0"):
+                                                                $enabled = false;
+                                                            endif;
+
+                                                            $special_date = Mage::helper('ddate')->getSpecialDay();
+                                                            foreach ($special_date as $date) {
+                                                                if ((date('Y-m-d', strtotime('+' . $i . ' day', $currentTime)) == $date) && ($slot->getSpecialday() == "0")) {
+                                                                    $enabled = false;
+                                                                }
+                                                            }
+
+                                                            if ($enabled):
+                                                                ?>
+                                                                <li <?php if ($i % 2 != 0)
+                                                echo 'class="oddrow"' ?>><a href="#select" onclick="selectDdate('<?php echo date('Y-m-d', strtotime('+' . $i . ' day', $currentTime)) ?>','<?php echo $dtime; ?>');jQuery(this).addClass('ddate_day_active');"><?php echo Mage::helper('ddate')->__('Select') ?></a></li>
+                                                                <?php else: ?>
+                                                                <li class="disablerow">&nbsp;</li>
+                                                            <?php
+                                                            endif;
+                                                        }
+                                                        ?>
+
+                                                    <?php } ?>
+
+                                                    <div class="clear"><span></span></div> 
+                                                </ul>		
+                                            </div>  
+                                        </div>
+
+                                        <?php
+                                    endfor;
+                                    ?>
+
+
+                                </div>
+                            </div>			  
+                        </div>
+                    </div>			     
+                    <div class="clear"><span></span></div>   
+                </div>    
+            </div>
+
+            <div style="margin:10px;">
+                <img src="<?php echo $this->getSkinUrl('ddate/images/unavailable.jpg') ?>"> <?php echo Mage::helper('ddate')->__('Unavailable') ?>
+            </div>
+        <?php }else { ?>
+            <div style="margin:10px;">
+                <table>
+                    <tr>
+                        <td valign="top">
+                            <?php echo Mage::helper('ddate')->__('Choose your date'); ?>:
+                            <input class="input-text" id="delivery_date" type="text" name="delivery_date" size="12" readonly> 
+                            <img src="<?php echo $this->getSkinUrl('ddate/images/grid-cal.gif') ?>" id="ddate-trigger-picker"></img>
+                        </td>
+                        <td valign="top">
+                            <input type="hidden" id="min_date" value="<?php echo date('Ymd') ?>">
+                            <input type="hidden" id="datetime_picker" value="<?php echo date('Ymd') ?>">
+                            <input type="hidden" id="max_date" value="<?php echo $this->getDateMax(); ?>">
+                            <input type="hidden" id="d_saturday" value="<?php echo Mage::helper('ddate')->getSaturday(); ?>">
+                            <input type="hidden" id="d_sunday" value="<?php echo Mage::helper('ddate')->getSunday(); ?>">
+                            <input type="hidden" id="special_day" value="<?php echo Mage::helper('ddate')->getSpecialDayByList(); ?>">
+                            <div id="cont" style="display:none;position:absolute;z-index:1;"></div>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <?php } ?>
+
+        <div style="margin:10px; <?php if (!Mage::getStoreConfig("ddate/info/comment"))
+            echo 'display:none;' ?>">
+            <?php echo Mage::helper('ddate')->__('Your Comment') ?>: <br/>
+            <textarea name="ddate[ddate_comment]" id="ddate:ddate_comment" rows="3" cols="55" value=''></textarea>
+        </div>
+    </fieldset>
+</form>
+<div class="button-set">
+    <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+    <div id="ddate-buttons-container">
+        <a href="#" class="back left" onclick="checkout.back(); return false;"><span><?php echo $this->__('Back') ?></span></a>
+        <button class="form-button right" onclick="ddate.save()"><span><?php echo $this->__('Continue') ?></span></button>
+        <span id="ddate-please-wait" style="display:none;" class="opc-please-wait">
+            <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading next step...') ?> &nbsp;
+        </span>
+    </div>
+</div>
+<div class="clear"><span></span></div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var ddate = new Ddate('co-ddate-form', '<?php echo $this->getUrl('checkout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('checkout/onepage/saveDdate') ?>');
+    var ddateForm = new VarienForm('co-ddate-form');
+    //]]>
+</script>
+

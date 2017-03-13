@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Vs_Stockupdate>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Vs_Stockupdate>
+  </modules>
+</config>

@@ -1,0 +1,29 @@
+<?php
+
+class MW_Ddate_Model_Mysql4_Ddate_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract {
+
+    public function _construct() {
+        parent::_construct();
+        $this->_init('ddate/ddate');
+    }
+
+    public function getNumberOrderFromNow() {
+        if(!Mage::registry('mw_ddate_numberoderondate')) {
+            $timeFilter = strtotime('- 1 day');
+            $this->addFieldToFilter('UNIX_TIMESTAMP(ddate)', array('moreq' => $timeFilter));
+            foreach ($this as $ddate) {
+                $ddateArray[$ddate->getDtime()][$ddate->getDdate()] = $ddate;
+            }
+
+            if (!empty($ddateArray)) {
+                return $ddateArray;
+            }else{
+                $ddateArray = true;
+            }
+            Mage::register('mw_ddate_numberoderondate', $ddateArray);
+        }
+        
+        return Mage::registry('mw_ddate_numberoderondate');
+    }
+
+}

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <default>
+		<!--<reference name="top.links">
+			<action method="addLink" translate="label title" module="shoppinglist" ifconfig="shoppinglist/general/active">
+				<label>My Quick List</label>
+				<url>quicklist</url>
+				<title>My Quick List</title>
+				<prepare>true</prepare>
+				<urlParams/>
+				<position>0</position>
+			</action>
+		</reference>-->
+		<!--<reference name="head">
+			<action method="addJs"><script>varien/product.js</script></action>
+			<action method="addJs"><script>varien/configurable.js</script></action>
+			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>	
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>-->
+  </default>
+	<cms_index_index>
+		<reference name="head">
+			<action method="addJs"><script>varien/product.js</script></action>
+			<action method="addJs"><script>magebuzz/shoppinglist/configurable.js</script></action>
+			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>	
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>
+	</cms_index_index>
+  <shoppinglist_index_index>
+		<update handle="customer_account" />
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+		</reference>
+		<reference name="my.account.wrapper">
+      <block type="shoppinglist/customer_view" name="customer.shoppinglist" template="shoppinglist/customer/view.phtml">
+				<action method="setTitle" translate="title">
+					<title>My Quick List</title>
+				</action>
+				<block type="shoppinglist/customer_group" name="customer.list.groups" as="groupShoppingList" template="shoppinglist/customer/group/list.phtml"/>
+			</block>
+    </reference>
+  </shoppinglist_index_index>
+	<shoppinglist_group_edit>
+		<update handle="customer_account" />
+		<reference name="my.account.wrapper">
+			<block type="shoppinglist/customer_group_edit" name="customer.group.form" as="createNewGroup" template="shoppinglist/customer/group/form.phtml">
+				<action method="setTitle" translate="title">
+					<title>My Quick List</title>
+				</action>
+			</block>
+		</reference>
+	</shoppinglist_group_edit>
+	<shoppinglist_group_view>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+		</reference>
+		<update handle="customer_account" />
+		<reference name="my.account.wrapper">
+			<block type="shoppinglist/customer_group" name="customer.list.groups" template="shoppinglist/customer/group/view.phtml">
+				<block type="shoppinglist/customer_item" name="list.items" as="items" template="shoppinglist/customer/item/default.phtml"/>
+			</block>
+		</reference>
+	</shoppinglist_group_view>
+	<shoppinglist_email_list_item>
+		<block type="core/template" name="email.list.items" template="shoppinglist/customer/item/email.phtml"/>
+	</shoppinglist_email_list_item>
+	<shoppinglist_item_add>
+		<reference name="head">
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>
+		<reference name="content">
+				<block type="shoppinglist/item_add" template="shoppinglist/form.phtml"></block>
+		</reference>
+		<update handle="customer_account"/>
+  </shoppinglist_item_add>
+	<shoppinglist_index_add>		
+    <block type="shoppinglist/item_add" name="root" output="toHtml" template="shoppinglist/popup.phtml" />
+	</shoppinglist_index_add>
+  <shoppinglist_item_login>    
+    <block type="shoppinglist/item_add" name="root" output="toHtml" template="shoppinglist/customer/login.phtml" />
+  </shoppinglist_item_login>
+	<shoppinglist_index_detailform>		
+    <block type="shoppinglist/item_add" name="root" output="toHtml" template="shoppinglist/detail_popup.phtml" />
+	</shoppinglist_index_detailform>
+	<shoppinglist_index_add_option>		
+		<reference name="root">
+    		<action method="setTemplate"><template>shoppinglist/root.phtml</template></action>
+		</reference>	
+	</shoppinglist_index_add_option>
+	<shoppinglist_index_additem>
+        <block type="shoppinglist/add" name="root" output="toHtml" template="shoppinglist/message.phtml"></block>
+	</shoppinglist_index_additem>	
+	<customer_account>
+		<reference name="customer_account_navigation">
+			<action method="addLink" translate="label" module="customer" ifconfig="shoppinglist/general/active">
+				<name>shoppinglist</name>
+				<path>shoppinglist</path>
+				<label>My Quick List</label>
+			</action>
+		</reference>
+	</customer_account>
+	<catalog_category_default>
+		<reference name="head">
+			<action method="addJs"><script>varien/product.js</script></action>
+			<action method="addJs"><script>magebuzz/shoppinglist/configurable.js</script></action>
+			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>	
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>
+		<reference name="product_list">
+			<action method="setTemplate" ifconfig="shoppinglist/general/active"><template>shoppinglist/catalog/product/list.phtml</template></action>
+		</reference>
+	</catalog_category_default>
+	<catalog_category_layered>
+		<reference name="head">
+			<action method="addJs"><script>varien/product.js</script></action>
+			<action method="addJs"><script>magebuzz/shoppinglist/configurable.js</script></action>
+			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>	
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>
+		<reference name="product_list">
+			<action method="setTemplate" ifconfig="shoppinglist/general/active"><template>shoppinglist/catalog/product/list.phtml</template></action>
+		</reference>
+	</catalog_category_layered>
+	<catalog_product_view>
+		<reference name="head">
+			<action method="addJs"><script>magebuzz/shoppinglist/configurable.js</script></action>
+			<action method="addCss"><stylesheet>css/magebuzz/shoppinglist/style.css</stylesheet></action>
+			<block type="core/template" name="shoppinglist.head" template="shoppinglist/head.phtml"/>
+		</reference>
+		<!--<reference name="product.info.extrahint">
+			<block type="shoppinglist/add" as="shoppinglistLink" template="shoppinglist/link.phtml" />
+		</reference>-->
+			<reference name="product.info.addto">
+				<action method="setTemplate"><template>shoppinglist/catalog/product/view/addto.phtml</template></action>
+			</reference>
+    </catalog_product_view>
+	<checkout_cart_index translate="label">
+		<reference name="checkout.cart">
+			<action method="setTemplate" ifconfig="shoppinglist/general/active"><template>shoppinglist/checkout/cart.phtml</template></action>
+		</reference>
+	</checkout_cart_index>
+</layout> 

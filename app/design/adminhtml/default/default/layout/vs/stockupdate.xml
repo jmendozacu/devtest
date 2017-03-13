@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <stockupdate_adminhtml_catalog_product_grid>
+  	<block type="stockupdate/adminhtml_stockupdatebackend" name="stockupdatebackend" template="stockupdate/stockupdatebackend.phtml"/>
+	<!--<reference name="content">
+	  <block type="stockupdate/adminhtml_stockupdatebackend" name="stockupdatebackend" template="stockupdate/stockupdatebackend.phtml"/>
+	  <block type="core/text_list" name="root" output="toHtml">
+            <block type="adminhtml/catalog_product_grid" name="admin.product.grid"/>
+        </block>
+	</reference>
+<reference name="left">
+	<block type="adminhtml/store_switcher" name="store_switcher" template="store/switcher.phtml" />
+	</reference>
+  </stockupdate_adminhtml_catalog_product_grid>
+ -->
+   
+        <reference name="js">
+            <block type="core/template" template="stockupdate/inline-edit.phtml" />
+        </reference>
+    </stockupdate_adminhtml_catalog_product_grid>
+
+</layout>
+

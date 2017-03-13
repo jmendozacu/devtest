@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<magebuzz translate="label">
+			<label>My Quick List Setting</label>
+			<sort_order>400</sort_order>
+		</magebuzz>
+	</tabs>
+	<sections>
+		<shoppinglist translate="label" module="shoppinglist">
+			<label>My Quick List</label>
+			<tab>magebuzz</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>299</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label>Active</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>1</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+            <auto_close translate="label comment">
+              <label>Auto close popup</label>
+              <comment>Auto close popup when customer add product to Quick list success</comment>
+              <frontend_type>select</frontend_type>
+              <sort_order>3</sort_order>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+            </auto_close>
+             <time_auto_close translate="label comment">
+              <label>Set time auto close popup</label>
+              <comment>please input time (s) auto close popup</comment>
+              <frontend_type>text</frontend_type>                
+              <validate>validate-number</validate>
+              <sort_order>4</sort_order>           
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+            </time_auto_close>
+					</fields>
+				</general>
+				<display translate="label">
+					<label>Display Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<show_save_for_later translate="label comment">
+							<label>Display "Save for later" button</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>2</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+							<comment>Display "Save for later" button on shopping cart page</comment>
+						</show_save_for_later>
+						<save_later_prefix_name translate="label">
+						  <label>Prefix name "Save for later"</label>
+						  <frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</save_later_prefix_name>
+					</fields>
+				</display>
+				<email_setting translate="label">
+					<label>Email Setting</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>20</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<send_reminder translate="label comment">
+							<label>Send Reminder Email</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>1</sort_order>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</send_reminder>
+						<email_notification translate="label">
+							<label>Reminder Time</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>shoppinglist/system_config_source_reminder</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</email_notification>
+						<reminder_day translate="label">
+							<label>Send reminder on</label>
+							<frontend_type>select</frontend_type>
+							<source_model>shoppinglist/system_config_source_reminderday</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</reminder_day>
+						<mailing_address translate="label">
+							<label>Set email reply to</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</mailing_address>
+						<email_sender translate="label comment">
+							<label>Email Sender</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_email_identity</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</email_sender>
+						<email_template translate="label comment">
+							<label>Email Template</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_email_template</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>0</show_in_store>
+						</email_template>
+					</fields>
+				</email_setting>
+			</groups>
+		</shoppinglist>
+    </sections>
+</config>

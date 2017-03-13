@@ -1,0 +1,50 @@
+<?php
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+?>
+<div id="messages_shoppinglist"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<?php $_helper = Mage::helper('shoppinglist')?>
+<?php if ($_helper->isActive()) : ?>
+  <div class="page-title title-buttons">
+    <h1><?php echo $this->getTitle(); ?></h1>
+  </div>
+  <?php echo $this->getChildHtml('groupShoppingList') ?>
+  <?php if ($_helper->allowReminder()):?>
+    <div class="box-account">
+      <div class="box-head">
+        <h2><?php echo $this->__('Reminder Config') ?></h2>
+      </div>	
+      <form method="post" id="reminder_config_form" action="<?php echo $this->getConfigSaveUrl()?>">
+        <ul class="form-list">
+          <li class="control">
+            <input type="checkbox" name="receive_email_config" value="1" id="receive_email_config" class="checkbox" <?php if ($this->isConfigSelected()):?> checked <?php endif;?>/><label for="receive_email_config"><?php echo $this->__('Receive Shopping List Notification') ?></label>
+          </li>
+          <li class="fields" id="reminder-option" <?php if (!$this->isConfigSelected()):?>style="display:none" <?php endif;?>>
+            <?php $options = $this->getReminderOptions();?>
+            <?php if (count($options)):?>
+              <select name="reminder_option">
+                <?php foreach ($options as $option):?>
+                  <option value="<?php echo $option['value'] ?>" <?php if ($option['value']==$this->getSelectedOption()):?> selected<?php endif;?>><?php echo $option['label'] ?></option>
+                  <?php endforeach;?>
+              </select>
+              <?php endif;?>
+          </li>
+        </ul>
+        <button class="button" type="submit"><span><span><?php echo $this->__('Save');?></span></span></button>
+      </form>
+    </div>
+    <script>
+      var config = $('receive_email_config');
+      var form = new VarienForm('reminder_config_form', true);
+
+      Event.observe('receive_email_config', 'click', function() {
+        if (config.checked) {
+          $('reminder-option').show();
+        } else {
+          $('reminder-option').hide();
+        }
+      });
+    </script>
+    <?php endif;?>
+  <?php endif;?>

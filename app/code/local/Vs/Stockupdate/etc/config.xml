@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Vs_Stockupdate>
+      <version>0.1.0</version>
+    </Vs_Stockupdate>
+  </modules>
+  <global>
+    <helpers>
+      <stockupdate>
+        <class>Vs_Stockupdate_Helper</class>
+      </stockupdate>
+    </helpers>
+	<blocks>
+	  <stockupdate>
+		<class>Vs_Stockupdate_Block</class>
+	  </stockupdate>
+	</blocks>
+	<models>
+	  <stockupdate>
+		<class>Vs_Stockupdate_Model</class>
+		<resourceModel>stockupdate_mysql4</resourceModel>
+	  </stockupdate>
+	  <stockupdate_mysql4>
+		<class>Vs_Stockupdate_Model_Mysql4</class>
+		<entities>		  
+			  <stockupdate>
+ 				<table>outofstock_update</table>
+			  </stockupdate>
+		</entities>
+	  </stockupdate_mysql4>
+	</models>
+	<resources>
+	  <stockupdate_setup>
+		<setup>
+		  <module>Vs_Stockupdate</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </stockupdate_setup>
+	  <stockupdate_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </stockupdate_write>
+	  <stockupdate_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </stockupdate_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <stockupdate>
+	    <use>admin</use>
+		<args>
+		  <module>Vs_Stockupdate</module>
+		  <frontName>admin_stockupdate</frontName>
+		</args>
+	  </stockupdate>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <purchasedata module="stockupdate">
+
+		<children>
+		  <stockupdatebackend module="stockupdate">
+			<title>Quick Update</title>
+			<sort_order>0</sort_order>
+			<action>admin_stockupdate/catalog_product</action>
+		  </stockupdatebackend>
+		</children>
+	  </purchasedata>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<purchasedata translate="title" module="stockupdate">
+			   <children>
+		  <stockupdatebackend translate="title">
+			<title>Quick Update</title>
+		  </stockupdatebackend>
+			  </children>
+			</purchasedata>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<stockupdate>
+		  <file>vs/stockupdate.xml</file>
+		</stockupdate>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

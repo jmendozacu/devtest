@@ -1,0 +1,97 @@
+<?php
+/**
+ * export template
+ *
+ * @see XJ_Export_Block_Adminhtml_Export
+ */
+?>
+<script type="text/javascript" src="http://localhost/nitesh/socialmagento/js/jquery/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="http://localhost/nitesh/socialmagento/js/jquery/noconflict.js"></script>
+<div class="entry-edit" id="import_validation_container">
+    <!--<div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend" id="import_validation_container_header"><?php echo $this->__('Export Category'); ?></h4>
+    </div>-->
+<!--<a style="text-decoration:none;" href="<?php //echo $this->getExportUrl('category', 'categories'); ?>" target="_blank"><?php //echo $this->__('Export Categories'); ?></a>  -->
+
+<form id="exportbutton" name="exportbutton" method="post" enctype="multipart/form-data">
+<input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /> 
+<button type="submit" onClick="onExportbutton();return false;"><span>Export Categories</span></button> 
+</form>  
+<script type="text/javascript">
+function onExportbutton()
+{
+	document.forms["exportbutton"].action="<?php echo $this->getExportUrl('category', 'categories'); ?>";
+    	document.forms["exportbutton"].target="_blank";
+    	document.forms["exportbutton"].submit();
+	return true;
+}
+</script>
+<br><br>
+     <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend" id="import_validation_container_header"><?php echo $this->__('Import Category'); ?></h4>
+    </div>
+<div id="import_validation_messages" class="fieldset ">
+
+<form id="sendmailForm" name="sendmailForm"  method="post" enctype="multipart/form-data">
+<input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /> 
+<input type="file" name="filename" accept="text/csv" id="filename">
+<button type="submit" class="scalable save" onClick="onSubmit();return false;"><span>Import File</span></button> 
+</form>
+    
+    </div>   
+</div>
+<div class="entry-edit" id="import_validation_container">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend" id="import_validation_container_header">
+        <?php echo $this->__('Category Import Information'); ?>
+    </div>
+    <div id="import_validation_messages" class="fieldset ">
+    <div class="import">
+      <ol>
+		<li><?php echo $this->__('Please provide the correct name of the category list csv file to import in the filename above.'); ?></li>
+		<li><?php echo $this->__('Export the the categories from export profile to get the format of importing.'); ?></li>
+		<li><?php echo $this->__('Keep the first row and add the below contents only if they are to be modified or are new ones.'); ?></li>
+		<li><?php echo $this->__('Use text delimiter as double quotes (") and separator as comma (,).'); ?></li>
+		<li><?php echo $this->__('Try to import file batch by batch (e.g. 1000 records at a time) according to the server speed, else the import will stop in between.'); ?></li>
+		<li>
+			<?php echo $this->__('The category import attributes are:'); ?>
+			<ol>
+				<?php foreach(Mage::helper('importexportcategory')->getAttributes() as $attribute) { ?>
+				<li><?php echo $attribute['label'] . ' ('.$attribute['field'].') '; ?></li>
+				<?php } ?>
+			</ol>
+		</li>
+	</ol>      
+    
+    <!-- --></div>
+</div>
+</div>
+<script type="text/javascript">
+function onSubmit(){
+      var x=document.getElementById('filename').value;
+    if (x==null || x=="")
+    {
+        alert("Please Enter Filename");
+        return false;
+    } 
+    else 
+    {
+    var fup = document.getElementById('filename');
+    var fileName = fup.value;
+    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+	    if(ext =="csv" || ext=="CSV")
+	    {
+		document.forms["sendmailForm"].action="<?php echo $this->getImportUrl('categoryimport'); ?>";
+    		document.forms["sendmailForm"].target="_blank";
+    		document.forms["sendmailForm"].submit();
+		return true;
+	    }
+	    else
+	    {
+		alert("Upload Csv File only");
+		return false;
+	    }
+    }
+}
+</script>
+

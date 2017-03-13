@@ -1,0 +1,33 @@
+<?php if (Mage::helper('shoppinglist')->isActive()) : ?>
+	<?php $_product = $this->getProduct();?>
+	<?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
+		<?php $qty = 1;?>
+		<?php $addItemUrl = Mage::getUrl('shoppinglist/item/add', array('id'=> $_product->getId(), 'qty' => $qty)) ?>
+		<?php $url=$this->getUrl('shoppinglist/index/login') ?>
+		<?php $url=$url.'?path='.$addItemUrl?>
+		<a href="#" onclick="javascript:addItemUrl();" class="shoppinglist" title="<?php echo $this->__('Add to Shopping List') ?>"><?php echo $this->__('Add to Shopping List') ?></a>
+	<?php else: ?>	
+		<a href="<?php echo $this->getFormAddUrl(); ?>" id="openFormAdd" class="link-shoppinglist"><?php echo $this->__('Add to Shopping List') ?></a>
+	<?php endif; ?>
+<?php endif; ?>
+<script type="text/javascript">
+	function addItemUrl(){
+		var qty  = 0;
+		var input_qty = escape(jQ('input[name=qty]').val());
+		if(input_qty == 'undefined'){
+			qty = 1;
+		}
+		else{
+			if(jQ('input[name=qty]').val().length == 0){
+				qty = 1;
+			}
+			else{
+				qty  = escape(jQ('input[name=qty]').val());
+			}
+		}
+		var product_id = <?php echo $_product->getId();?>;
+		var backUrl = "<?php echo Mage::getUrl('shoppinglist/item/add'); ?>"+"id/"+product_id+"/qty/"+qty;
+		var url = "<?php echo $this->getUrl('shoppinglist/index/login');?><?php echo "?path="?>"+ backUrl;
+		return window.location.href = url;
+	}
+</script>

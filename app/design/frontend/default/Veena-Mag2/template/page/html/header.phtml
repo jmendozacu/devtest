@@ -1,0 +1,159 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?> 
+<header class="header-container">  
+<div class="header">
+<div class="header-left">
+
+		<?php if ($this->getIsHomePage()):?>
+				<div class="logo"><strong><?php //echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></div>
+				<?php else:?>
+				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php //echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+		<?php endif?>
+		
+</div> <!-- header-left-->
+	
+<div class="header-right">
+		<ul class="topdelivery"></ul>
+		<ul class="delivery-code">
+			<li>
+				<div class="del_code">
+					<?php 
+					if(Mage::getSingleton('customer/session')->isLoggedIn()):
+							$customerAddressId = Mage::getSingleton("customer/session")->getCustomer()->getDefaultShipping();
+							$postcode	=	"";
+							if ($customerAddressId){
+								$address = Mage::getModel("customer/address")->load($customerAddressId);
+								$postcode = $address->getData("postcode");
+							}
+						?>
+						<p>Your delivery area code is - <span><?php echo $postcode; ?></span></p>
+					<?php endif; ?>
+				</div>
+			</li>				
+				
+					<?php $blockLabel = Mage::getStoreConfig('checkdelivery/general/block_title'); ?>
+					<!--<div style="float: left;"><strong><?php echo $this->__($blockLabel) ?></strong></div>-->
+			<li class="area-code">
+						<input style="border-radius:0;" name="zipcodetop" size="17" type="text" id="zipcodetop" maxlength="10" class="input-text pincode" placeholder="<?php echo $this->__('Enter Pincode'); ?>"/>
+			</li>
+			<li class="deliver-slot">
+				<button type="button" name="zip-check-top" title="Check" class="button" id="zip-check-top" ><?php echo $this->__('Check Delivery Availability'); ?></button>																					
+			</li>
+			<span id="top-delivery-message" style="float: left;margin-right: 5px;"></span>	
+			
+			 <input type="hidden" name="checkdeliveryurl" id="checkdeliveryurl" value="<?php /*echo $this->getUrl('checkdelivery/index/index')*/ ?>" /> 
+			
+		</ul> <!-- delivery code -->
+		<ul class="contact">
+           <li>
+				<img width="28" height="20" class="mail" alt="Mail" src="<?php echo $this->getSkinUrl('images/mail.png'); ?>"> 
+				<a href="mailto:<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>">
+				<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?></a>
+			</li>
+           <li class="deliver-slot"><img width="23" height="23" alt="Phone" src="<?php echo $this->getSkinUrl('images/phone.png'); ?>"> 
+           <?php echo $storePhone = Mage::getStoreConfig('general/store_information/phone'); ?>
+           </li>
+		  
+         </ul> <!-- contact -->
+		 <div class="header_topmenu">
+			<div class="welcome-msg"><?php echo $this->getChildHtml('welcome') ?><?php echo $this->getAdditionalHtml() ?></div>
+			<div class="tm_headerlinkmenu">
+					<div class="tm_headerlinks_inner"><div class="headertoggle_img">&nbsp;</div></div>
+						<?php echo $this->getChildHtml('topLinks') ?>
+			</div>
+			
+			
+			
+		</div>
+		<!--div class="top-contact-links">
+				<?php /*echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_headertop_contactus')->toHtml() */?>
+		</div-->
+
+			
+		
+		<ul>		
+				<?php //echo $this->getChildHtml('currency_top') ?>
+				<?php // echo $this->getChildHtml('store_language') ?>
+				<?php //echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_headertop_banner')->toHtml() ?> 
+			<li>					
+					<?php echo $this->getChildHtml('topSearch') ?>
+			</li>
+			<li style="margin-top:3px;"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('promo')->toHtml() ?></li>	
+			<?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
+			<li class="quick-list"><a class="quick-list" href="<?php echo $this->getUrl("quicklist"); ?>">My quick lists</a></li>
+			<?php endif; ?>			
+			<li class="header-cart items-list">
+				<?php echo $this->getChildHtml('cart_header') ?>
+				</li>
+					
+				<?php //echo $this->getChildHtml('topContainer'); ?>
+		</ul> 
+</div> <!-- header right -->
+</div> <!-- header -->
+</header>
+
+<?php echo $this->getChildHtml('topMenu') ?>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		var earliesttimeslot = "2017-02-04 10:00 AM TO 12:00 PM";/*jQuery(".earlist-time-slot").html();		*/
+		jQuery(".topdelivery").html(earliesttimeslot);
+		jQuery("#panel").hide()	;
+	});
+</script>
+<script>
+	Event.observe('zip-check-top', 'click', function(event){
+		new Ajax.Request("<?php echo $this->getUrl('checkdelivery/index/index') ?>", {
+			method: "get",
+			parameters: {zipcode : $('zipcodetop').value },
+			onSuccess: function(transport) {								
+				 var json = transport.responseText.evalJSON();
+				 $('top-delivery-message').update(json.message);				 
+				 $('top-delivery-message').setStyle({ color: "#df1e1b"});
+				 //$('delivery-html').update(json.html);	
+			}
+		});
+	});
+</script>
+<script>
+function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = jQuery(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+
+   group.height(tallest+20);
+}
+jQuery(document).ready(function() {
+   equalHeight(jQuery(".item"));
+});
+</script>

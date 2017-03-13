@@ -1,0 +1,32 @@
+
+
+<?php $_product = $this->getProduct() ?>
+
+<?php if($_product->isSaleable()): ?>
+    <fieldset class="qtyswitcher-add-to-cart-box ">
+		<div class="qtyswitcher-qty">
+	        <?php if(!$_product->isGrouped()): ?>
+	        <span id="qtyswitcher-qty-box"><label for="qty"><?php //echo $this->__('Qty') ?></label></span>
+	     	<input type='button' id="qtyswitcher-oneless" class='qtyswitcher.btn' onclick="qtyswitcher.removeOne('qtyswitcher-qty','qtyswitcher-clone-qty')"/>
+		   
+		   <?php if(!is_numeric($this->getMinimalQty($_product))) : $qty= 1; ?>
+		   <?php else : $qty=$this->getMinimalQty($_product);?>
+		   <?php endif; ?>
+			
+			<input type="text" class="input-text clone-qty" id="qtyswitcher-clone-qty" maxlength="12" value="<?php echo $qty;?>" disabled='true' />
+			<input type="hidden"  name="qty" id="qtyswitcher-qty" value="<?php echo $qty;?>"/>
+			<input type='button' id="qtyswitcher-onemore" class='qtyswitcher.btn' onclick="qtyswitcher.addOne('qtyswitcher-qty','qtyswitcher-clone-qty');"/>
+		</div>
+		<?php else :?>
+
+			<script language="javascript">qtyswitcher.groupedInit("<?php //echo $this->__("Quantity"); ?>")</script>
+		<?php endif; ?>
+		
+		
+		
+		<div id="qtyswitcher-btn-picto">		<button onclick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button" id="addToCartButton"><span><span><?php echo $this->__('ADD')  ?></span></span></button>
+	
+		
+		</div>
+    </fieldset>
+<?php endif; ?>

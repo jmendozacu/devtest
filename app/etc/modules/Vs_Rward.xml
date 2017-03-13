@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vs_Reward>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Vs_Reward>
+    </modules>
+</config>

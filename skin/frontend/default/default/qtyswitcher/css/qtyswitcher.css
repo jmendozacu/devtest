@@ -1,0 +1,67 @@
+#qtyswitcher-oneless{
+    border:none;
+    background:url("../images/arrow-left.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    width:20px; 
+    height:20px;
+    cursor:pointer;
+}
+#qtyswitcher-onemore{
+    border:none;
+    background:url("../images/arrow-right.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    width:20px; 
+    height:20px;
+    cursor:pointer;
+}
+.qtyswitcher-qty .clone-qty{
+    background-color:#636363;
+    border:medium none;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+    text-align:center;
+    width:30px;margin:0 5px;
+}
+
+#qtyswitcher-btn-picto{
+    float:left;
+   ;
+}
+#qtyswitcher-form-btn-products{
+    cursor:pointer;
+    margin:10px 0 0;
+    border:none;
+    padding:0;
+}
+#qtyswitcher-qty-box LABEL{
+    color:#000000;
+    display:block;
+    float:left;
+    font-weight:bold;
+    margin-right:10px;
+    margin-top:3px;
+}
+.qtyswitcher-add-to-cart-box {
+    float:left;
+    margin:0;
+}
+
+.qtyswitcher-qty {
+    float:left;
+    margin:8px 7px 0 0;
+}
+.option-grouped{
+
+    background-color:#FFEAB0!important;
+}
+.option-grouped *{
+    display:inline;
+}
+.option-grouped dl{
+    display:block
+}
+.option-grouped dt{
+    float:left
+}
+.option-grouped dd{
+    float:right
+}

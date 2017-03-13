@@ -1,0 +1,1046 @@
+<ul id="nav-mobile" class="advanced_nav treeview" style="overflow: hidden; display: none;">
+				<li class="level0 nav-1 level-top first parent">
+<a href="http://localhost/devtest/index.php/cooking-needs.html" class="level-top">
+<span>Cooking Needs</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-1-1 first parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/grains-pulses-lentils.html" class="">
+<span>Grains, Pulses &amp; Lentils</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-1-1-1 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/grains-pulses-lentils/rice-related-items.html" class="">
+<span>Rice &amp; Related Items</span>
+</a>
+</li><li class="level2 nav-1-1-2">
+<a href="http://localhost/devtest/index.php/cooking-needs/grains-pulses-lentils/wheat-related-items.html" class="">
+<span>Wheat &amp; Related Items</span>
+</a>
+</li><li class="level2 nav-1-1-3">
+<a href="http://localhost/devtest/index.php/cooking-needs/grains-pulses-lentils/millets-other-grains.html" class="">
+<span>Millets &amp; Other Grains</span>
+</a>
+</li><li class="level2 nav-1-1-4 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/grains-pulses-lentils/pulses-lentils.html">
+<span>Pulses &amp; Lentils</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-1-2 parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati.html" class="">
+<span>Oil, Ghee &amp; Vanaspati</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-1-2-5 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/blended-vegetable-oil.html">
+<span>Blended Vegetable Oil</span>
+</a>
+</li><li class="level2 nav-1-2-6">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/coconut-oil.html">
+<span>Coconut Oil</span>
+</a>
+</li><li class="level2 nav-1-2-7">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/gingelly-oil.html">
+<span>Gingelly Oil</span>
+</a>
+</li><li class="level2 nav-1-2-8">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/groundnut-oil.html">
+<span>Groundnut Oil</span>
+</a>
+</li><li class="level2 nav-1-2-9">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/mustard-oil.html" class="">
+<span>Mustard Oil</span>
+</a>
+</li><li class="level2 nav-1-2-10">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/olive-oil.html">
+<span>Olive Oil</span>
+</a>
+</li><li class="level2 nav-1-2-11">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/palmolein-oil.html">
+<span>Palmolein &amp; Other Oil</span>
+</a>
+</li><li class="level2 nav-1-2-12">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/rice-bran-oil.html">
+<span>Rice Bran Oil</span>
+</a>
+</li><li class="level2 nav-1-2-13">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/soyabean-oil.html">
+<span>Soyabean Oil</span>
+</a>
+</li><li class="level2 nav-1-2-14">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/sunflower-oil.html">
+<span>Sunflower Oil</span>
+</a>
+</li><li class="level2 nav-1-2-15">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/ghee.html">
+<span>Ghee</span>
+</a>
+</li><li class="level2 nav-1-2-16 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/oil-ghee-vanaspati/vanaspati.html">
+<span>Vanaspati</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-1-3 parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala.html">
+<span>Spices &amp; Masala</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-1-3-17 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/whole-spices-seeds.html">
+<span>Whole Spices &amp; Seeds</span>
+</a>
+</li><li class="level2 nav-1-3-18 parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/ground-spices.html">
+<span>Ground Spices</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-1-3-18-1 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/ground-spices/pure-spices.html">
+<span>Pure Spices</span>
+</a>
+</li><li class="level3 nav-1-3-18-2 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/ground-spices/blended-spices.html">
+<span>Blended Spices</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-1-3-19">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/pastes.html">
+<span>Pastes</span>
+</a>
+</li><li class="level2 nav-1-3-20">
+<a href="http://localhost/devtest/index.php/cooking-needs/spices-masala/continental-spices.html">
+<span>Continental Spices</span>
+</a>
+</li><li class="level2 nav-1-3-21 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ready-to-cook-masala/id/424/">
+<span>Ready To Cook Masala</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-1-4">
+<a href="http://localhost/devtest/index.php/cooking-needs/baking-needs-food-additives.html">
+<span>Baking Needs &amp; Food Additives</span>
+</a>
+</li><li class="level1 nav-1-5 parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/salt-sugar-jaggery.html">
+<span>Salt, Sugar &amp; Jaggery</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-1-5-22 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/salt-sugar-jaggery/salt-salt-substitutes.html">
+<span>Salt &amp; Salt Substitutes</span>
+</a>
+</li><li class="level2 nav-1-5-23">
+<a href="http://localhost/devtest/index.php/cooking-needs/salt-sugar-jaggery/sugar-sugar-substitutes.html">
+<span>Sugar &amp; Sugar Substitutes</span>
+</a>
+</li><li class="level2 nav-1-5-24 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/salt-sugar-jaggery/jaggery.html">
+<span>Jaggery</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-1-6 parent">
+<a href="http://localhost/devtest/index.php/cooking-needs/flours-sooji.html">
+<span>Flours &amp; Sooji</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-1-6-25 first">
+<a href="http://localhost/devtest/index.php/cooking-needs/flours-sooji/rice-flour.html">
+<span>Rice Flour</span>
+</a>
+</li><li class="level2 nav-1-6-26">
+<a href="http://localhost/devtest/index.php/cooking-needs/flours-sooji/wheat-flour-atta-maida.html">
+<span>Wheat Flour, Atta &amp; Maida</span>
+</a>
+</li><li class="level2 nav-1-6-27">
+<a href="http://localhost/devtest/index.php/cooking-needs/flours-sooji/other-flours.html">
+<span>Other Flours</span>
+</a>
+</li><li class="level2 nav-1-6-28 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/flours-sooji/sooji.html">
+<span>Sooji</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-1-7 last">
+<a href="http://localhost/devtest/index.php/cooking-needs/nuts-dry-fruits.html">
+<span>Nuts &amp; Dry Fruits</span>
+</a>
+</li>
+</ul>
+</li><li class="level0 nav-2 level-top parent">
+<a href="http://localhost/devtest/index.php/food-drink.html" class="level-top">
+<span>Food &amp; Drink</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-2-1 first parent">
+<a href="http://localhost/devtest/index.php/food-drink/bread-dairy-eggs.html">
+<span>Bread, Dairy &amp; Eggs</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-1-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/breads/id/255/">
+<span>Breads</span>
+</a>
+</li><li class="level2 nav-2-1-2 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/dairy/id/256/">
+<span>Dairy</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-2-1-2-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/milk-condensed-milk/id/258/">
+<span>Milk &amp; Condensed Milk</span>
+</a>
+</li><li class="level3 nav-2-1-2-2">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/butter-milk-curd-yogurt/id/260/">
+<span>Butter Milk, Curd &amp; Yogurt</span>
+</a>
+</li><li class="level3 nav-2-1-2-3">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/butter/id/261/">
+<span>Butter</span>
+</a>
+</li><li class="level3 nav-2-1-2-4">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cream-cheese-paneer/id/262/">
+<span>Cream, Cheese &amp; Paneer</span>
+</a>
+</li><li class="level3 nav-2-1-2-5 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/milk-powders-dairy-whiteners/id/263/">
+<span>Milk Powders &amp; Dairy Whiteners</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-2-1-3 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/eggs/id/257/">
+<span>Eggs</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-2 parent">
+<a href="http://localhost/devtest/index.php/food-drink/breakfast-items.html">
+<span>Breakfast Items</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-2-4 first">
+<a href="http://localhost/devtest/index.php/food-drink/breakfast-items/breakfast-cereals.html">
+<span>Breakfast Cereals</span>
+</a>
+</li><li class="level2 nav-2-2-5">
+<a href="http://localhost/devtest/index.php/food-drink/breakfast-items/vermicelli.html">
+<span>Vermicelli</span>
+</a>
+</li><li class="level2 nav-2-2-6">
+<a href="http://localhost/devtest/index.php/food-drink/breakfast-items/breakfast-mixes.html">
+<span>Breakfast Mixes</span>
+</a>
+</li><li class="level2 nav-2-2-7 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/chapatis-parotas/id/428/">
+<span>Chapatis &amp; Parotas</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-3 parent">
+<a href="http://localhost/devtest/index.php/food-drink/sauces-spreads-syrups-jams-honey.html">
+<span>Sauces, Spreads, Syrups, Jams &amp; Honey</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-3-8 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/sauces-ketchups/id/264/">
+<span>Sauces &amp; Ketchups</span>
+</a>
+</li><li class="level2 nav-2-3-9">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/jams-honey/id/265/">
+<span>Jams &amp; Honey</span>
+</a>
+</li><li class="level2 nav-2-3-10 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/spreads-others/id/266/">
+<span>Spreads &amp; Others</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-4 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ready-meals-curries/id/339/">
+<span>Ready Meals &amp; Curries</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-4-11 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ready-to-cook/id/340/">
+<span>Ready To Cook</span>
+</a>
+</li><li class="level2 nav-2-4-12 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ready-to-eat/id/341/">
+<span>Ready To Eat</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-5 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/pickles-papads-fryums/id/241/">
+<span>Pickles, Papads &amp; Fryums</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-5-13 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/pickles/id/244/">
+<span>Pickles</span>
+</a>
+</li><li class="level2 nav-2-5-14 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/papads-fryums/id/245/">
+<span>Papads &amp; Fryums</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-6 parent">
+<a href="http://localhost/devtest/index.php/food-drink/pasta-noodles-soups.html">
+<span>Pasta, Noodles &amp; Soups</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-6-15 first">
+<a href="http://localhost/devtest/index.php/food-drink/pasta-noodles-soups/pasta.html">
+<span>Pasta</span>
+</a>
+</li><li class="level2 nav-2-6-16 last">
+<a href="http://localhost/devtest/index.php/food-drink/pasta-noodles-soups/noodles-soups.html">
+<span>Noodles &amp; Soups</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-7 parent">
+<a href="http://localhost/devtest/index.php/food-drink/sweets-snacks.html">
+<span>Sweets &amp; Snacks</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-7-17 first">
+<a href="http://localhost/devtest/index.php/food-drink/sweets-snacks/sweets.html">
+<span>Sweets</span>
+</a>
+</li><li class="level2 nav-2-7-18">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/chocolates-other-candies/id/320/">
+<span>Chocolates &amp; Other Candies</span>
+</a>
+</li><li class="level2 nav-2-7-19">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/energy-chocolate-bars/id/323/">
+<span>Energy &amp; Chocolate Bars</span>
+</a>
+</li><li class="level2 nav-2-7-20">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cream-biscuits/id/321/">
+<span>Cream Biscuits</span>
+</a>
+</li><li class="level2 nav-2-7-21">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/salt-biscuits/id/322/">
+<span>Salt Biscuits</span>
+</a>
+</li><li class="level2 nav-2-7-22">
+<a href="http://localhost/devtest/index.php/food-drink/sweets-snacks/other-biscuits-cookies.html">
+<span>Other Biscuits &amp; Cookies</span>
+</a>
+</li><li class="level2 nav-2-7-23">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cakes/id/324/">
+<span>Cakes</span>
+</a>
+</li><li class="level2 nav-2-7-24">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/diabetic-snacks/id/326/">
+<span>Diabetic Snacks</span>
+</a>
+</li><li class="level2 nav-2-7-25">
+<a href="http://localhost/devtest/index.php/food-drink/sweets-snacks/savories.html">
+<span>Savories</span>
+</a>
+</li><li class="level2 nav-2-7-26 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/chips-wafers-munchies/id/327/">
+<span>Chips, Wafers &amp; Munchies</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-8 parent">
+<a href="http://localhost/devtest/index.php/food-drink/beverages.html">
+<span>Beverages</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-2-8-27 first parent">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/coffee-tea.html">
+<span>Coffee &amp; Tea</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-2-8-27-6 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/instant-coffee/id/246/">
+<span>Instant Coffee</span>
+</a>
+</li><li class="level3 nav-2-8-27-7">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/filter-coffee/id/248/">
+<span>Filter Coffee</span>
+</a>
+</li><li class="level3 nav-2-8-27-8">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/filter-coffee/id/247/">
+<span>Cold Coffee &amp; Coffee Premixes</span>
+</a>
+</li><li class="level3 nav-2-8-27-9">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/tea-powders/id/249/">
+<span>Tea Powders</span>
+</a>
+</li><li class="level3 nav-2-8-27-10">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/tea-bags/id/250/">
+<span>Tea Bags</span>
+</a>
+</li><li class="level3 nav-2-8-27-11">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/green-tea-other-herbal-tea/id/251/">
+<span>Green Tea &amp; Other Herbal Tea</span>
+</a>
+</li><li class="level3 nav-2-8-27-12 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ice-tea-tea-premixes/id/252/">
+<span>Ice Tea &amp; Tea Premixes</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-2-8-28">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/instant-drink-mix.html">
+<span>Instant Drink Mix</span>
+</a>
+</li><li class="level2 nav-2-8-29">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/health-drinks.html">
+<span>Health Drinks</span>
+</a>
+</li><li class="level2 nav-2-8-30">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/mineral-water.html">
+<span>Mineral Water</span>
+</a>
+</li><li class="level2 nav-2-8-31">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/energy-drinks.html">
+<span>Energy Drinks</span>
+</a>
+</li><li class="level2 nav-2-8-32">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/fruit-juices.html">
+<span>Fruit Juices</span>
+</a>
+</li><li class="level2 nav-2-8-33 last">
+<a href="http://localhost/devtest/index.php/food-drink/beverages/aerated-drinks.html">
+<span>Aerated Drinks</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-2-9">
+<a href="http://localhost/devtest/index.php/food-drink/dessert-baking-mixes.html">
+<span>Dessert &amp; Baking Mixes</span>
+</a>
+</li><li class="level1 nav-2-10">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/canned-preserved-food/id/370/">
+<span>Canned &amp; Preserved Food</span>
+</a>
+</li><li class="level1 nav-2-11 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/gums-mints-mouth-fresheners/id/375/">
+<span>Gums, Mints &amp; Mouth Fresheners</span>
+</a>
+</li>
+</ul>
+</li><li class="level0 nav-3 level-top parent">
+<a href="http://localhost/devtest/index.php/refrigerated-frozen-products.html" class="level-top">
+<span>Refrigerated &amp; Frozen</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-3-1 first">
+<a href="http://localhost/devtest/index.php/refrigerated-frozen-products/frozen-vegetarian-food.html">
+<span>Frozen Vegetarian Food</span>
+</a>
+</li><li class="level1 nav-3-2">
+<a href="http://localhost/devtest/index.php/refrigerated-frozen-products/frozen-nonvegetarian-food.html">
+<span>Frozen Non-Vegetarian Food</span>
+</a>
+</li><li class="level1 nav-3-3 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/dairy/id/253/">
+<span>Dairy</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-3-3-1 first">
+<a href="http://localhost/devtest/index.php/refrigerated-frozen-products/dairy/milk.html">
+<span>Milk</span>
+</a>
+</li><li class="level2 nav-3-3-2">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/butter-milk-curd-yogurt/id/254/">
+<span>Butter Milk, Curd &amp; Yogurt</span>
+</a>
+</li><li class="level2 nav-3-3-3">
+<a href="http://localhost/devtest/index.php/refrigerated-frozen-products/dairy/cream-cheese-paneer.html">
+<span>Cream, Cheese &amp; Paneer</span>
+</a>
+</li><li class="level2 nav-3-3-4 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/butter/id/280/">
+<span>Butter</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-3-4">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/ice-creams/id/281/">
+<span>Ice Creams</span>
+</a>
+</li><li class="level1 nav-3-5 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/refrigerated-food/id/373/">
+<span>Refrigerated Food</span>
+</a>
+</li>
+</ul>
+</li><li class="level0 nav-4 level-top parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cleaning-essentials/id/347/" class="level-top">
+<span>Cleaning Essentials</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-4-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/bath-toilet-cleaners/id/351/">
+<span>Bath &amp; Toilet Cleaners</span>
+</a>
+</li><li class="level1 nav-4-2">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/floor-glass-other-cleaners/id/349/">
+<span>Floor, Glass &amp; Other Surface Cleaners</span>
+</a>
+</li><li class="level1 nav-4-3 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cloth-wash-care/id/352/">
+<span>Cloth Wash &amp; Care</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-4-3-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/detergent-powders/id/353/">
+<span>Detergent Powders</span>
+</a>
+</li><li class="level2 nav-4-3-2">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/detergent-bars/id/354/">
+<span>Detergent Bars</span>
+</a>
+</li><li class="level2 nav-4-3-3">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/liquid-detergents/id/369/">
+<span>Liquid Detergents</span>
+</a>
+</li><li class="level2 nav-4-3-4 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cloth-care/id/355/">
+<span>Cloth Care</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-4-4">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/kitchen-utensil-cleaners/id/348/">
+<span>Kitchen &amp; Utensil Cleaners</span>
+</a>
+</li><li class="level1 nav-4-5 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cleaning-accessories/id/356/">
+<span>Cleaning Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level0 nav-5 level-top parent">
+<a href="http://localhost/devtest/index.php/baby-care.html" class="level-top">
+<span>Baby Care</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-5-1 first">
+<a href="http://localhost/devtest/index.php/baby-care/wipes.html">
+<span>Wipes</span>
+</a>
+</li><li class="level1 nav-5-2">
+<a href="http://localhost/devtest/index.php/baby-care/diapers.html">
+<span>Diapers</span>
+</a>
+</li><li class="level1 nav-5-3">
+<a href="http://localhost/devtest/index.php/baby-care/skin-care.html">
+<span>Skin Care</span>
+</a>
+</li><li class="level1 nav-5-4">
+<a href="http://localhost/devtest/index.php/baby-care/baby-food.html">
+<span>Baby Food</span>
+</a>
+</li><li class="level1 nav-5-5 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/baby-care-accessories/id/374/">
+<span>Baby Care Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level0 nav-6 level-top parent">
+<a href="http://localhost/devtest/index.php/personal-care.html" class="level-top">
+<span>Personal Care</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-6-1 first parent">
+<a href="http://localhost/devtest/index.php/personal-care/hair-care.html">
+<span>Hair Care</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-1-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hair-oil/id/240/">
+<span>Hair Oil</span>
+</a>
+</li><li class="level2 nav-6-1-2 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/shampoos-conditioners/id/267/">
+<span>Shampoos &amp; Conditioners</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-1-2-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/shampoos/id/306/">
+<span>Shampoos</span>
+</a>
+</li><li class="level3 nav-6-1-2-2 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/conditioners/id/307/">
+<span>Conditioners</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-1-3">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hair-colors-hair-care-powders/id/242/">
+<span>Hair Colors &amp; Hair Care Powders</span>
+</a>
+</li><li class="level2 nav-6-1-4 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/serums-gels-others/id/268/">
+<span>Serums, Gels &amp; Others</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-6-2 parent">
+<a href="http://localhost/devtest/index.php/personal-care/oral-care.html">
+<span>Oral Care</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-2-5 first">
+<a href="http://localhost/devtest/index.php/personal-care/oral-care/toothpaste-powder.html">
+<span>Toothpaste &amp; Powder</span>
+</a>
+</li><li class="level2 nav-6-2-6">
+<a href="http://localhost/devtest/index.php/personal-care/oral-care/toothbrush-accessories.html">
+<span>Toothbrush &amp; Accessories</span>
+</a>
+</li><li class="level2 nav-6-2-7 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/mouthwash/id/344/">
+<span>Mouthwash &amp; Fresheners</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-6-3 parent">
+<a href="http://localhost/devtest/index.php/personal-care/skin-care.html">
+<span>Skin Care</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-3-8 first parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/lip-eye-care/id/399/">
+<span>Lip &amp; Eye Care</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-8-3 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/lip-care/id/273/">
+<span>Lip Care</span>
+</a>
+</li><li class="level3 nav-6-3-8-4 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/eye-care/id/274/">
+<span>Eye Care</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-9">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cosmetics/id/310/">
+<span>Cosmetics</span>
+</a>
+</li><li class="level2 nav-6-3-10 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/face-wash-gels-scrubs/id/337/">
+<span>Face Wash, Gels &amp; Scrubs</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-10-5 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/scrubs/id/329/">
+<span>Scrubs</span>
+</a>
+</li><li class="level3 nav-6-3-10-6 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/face-wash-gels/id/402/">
+<span>Face Wash &amp; Gels</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-11 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cleansers-toners-astringents/id/328/">
+<span>Cleansers, Toners &amp; Astringents</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-11-7 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cleansers/id/330/">
+<span>Cleansers</span>
+</a>
+</li><li class="level3 nav-6-3-11-8 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/toners-astringents/id/308/">
+<span>Toners &amp; Astringents</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-12 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/face-creams/id/342/">
+<span>Face Creams</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-12-9 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/moisturizers-cold-creams/id/406/">
+<span>Moisturizers &amp; Cold Creams</span>
+</a>
+</li><li class="level3 nav-6-3-12-10">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/fairness-other-day-creams/id/407/">
+<span>Fairness &amp; Other Day Creams</span>
+</a>
+</li><li class="level3 nav-6-3-12-11">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/anti-aging-firming-wrinkle-lift/id/410/">
+<span>Anti Aging, Firming &amp; Wrinkle Lift</span>
+</a>
+</li><li class="level3 nav-6-3-12-12 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/bb-creams-cc-creams-foundations/id/409/">
+<span>BB, CC &amp; Foundation Creams</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-13">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/face-packs-masks-bleaches/id/336/">
+<span>Face Packs, Masks &amp; Bleaches</span>
+</a>
+</li><li class="level2 nav-6-3-14">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/talcum-powders/id/285/">
+<span>Talcum Powders</span>
+</a>
+</li><li class="level2 nav-6-3-15">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/sun-screen-lotions-creams/id/289/">
+<span>Sun Screen Lotions</span>
+</a>
+</li><li class="level2 nav-6-3-16">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/moisturizers-body-lotions/id/343/">
+<span>Body Lotions &amp; Moisturizers</span>
+</a>
+</li><li class="level2 nav-6-3-17 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/soaps-body-wash-shower-gels/id/331/">
+<span>Soaps, Shower Gels &amp; Body Wash</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-17-13 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/soaps/id/332/">
+<span>Soaps</span>
+</a>
+</li><li class="level3 nav-6-3-17-14 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/shower-gels-body-wash/id/334/">
+<span>Shower Gels &amp; Body Wash</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-18">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/massage-oils-creams/id/309/">
+<span>Massage Oils &amp; Creams</span>
+</a>
+</li><li class="level2 nav-6-3-19 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/deos-sprays/id/271/">
+<span>Deos &amp; Sprays</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-3-19-15 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/men/id/313/">
+<span>Men</span>
+</a>
+</li><li class="level3 nav-6-3-19-16">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/women/id/314/">
+<span>Women</span>
+</a>
+</li><li class="level3 nav-6-3-19-17 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/kids-teens/id/315/">
+<span>Kids &amp; Teens</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-3-20 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/foot-care/id/288/">
+<span>Foot Care</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-6-4 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/wellness/id/276/">
+<span>Wellness</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-4-21 first parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/over-counter-medicine/id/387/">
+<span>Over the Counter Medicine</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-4-21-18 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/pain-cold-relief/id/393/">
+<span>Pain &amp; Cold Relief</span>
+</a>
+</li><li class="level3 nav-6-4-21-19">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/digestive-care/id/394/">
+<span>Digestive Care</span>
+</a>
+</li><li class="level3 nav-6-4-21-20">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/skin-hygiene/id/388/">
+<span>Skin Hygiene</span>
+</a>
+</li><li class="level3 nav-6-4-21-21">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/health-supplements/id/391/">
+<span>Health Supplements</span>
+</a>
+</li><li class="level3 nav-6-4-21-22">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/first-aid-dressing/id/392/">
+<span>First Aid Dressing</span>
+</a>
+</li><li class="level3 nav-6-4-21-23 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/others/id/396/">
+<span>Others</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-4-22">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/wellness-oils/id/389/">
+<span>Wellness Oils</span>
+</a>
+</li><li class="level2 nav-6-4-23 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/contraceptives/id/390/">
+<span>Contraceptives</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-6-5 parent">
+<a href="http://localhost/devtest/index.php/personal-care/hygiene-hygiene-accessories.html">
+<span>Hygiene &amp; Hygiene Accessories</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-5-24 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/facial-tissues/id/386/">
+<span>Facial Tissues</span>
+</a>
+</li><li class="level2 nav-6-5-25 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hand-wash-sanitizers/id/275/">
+<span>Hand Wash &amp; Sanitizers</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-5-25-24 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hand-wash/id/282/">
+<span>Hand Wash</span>
+</a>
+</li><li class="level3 nav-6-5-25-25 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/sanitizers/id/283/">
+<span>Sanitizers</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-5-26 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/feminine-care/id/345/">
+<span>Feminine Care</span>
+</a>
+<ul class="level2">
+<li class="level3 nav-6-5-26-26 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/sanitary-pads/id/346/">
+<span>Sanitary Pads</span>
+</a>
+</li><li class="level3 nav-6-5-26-27">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hair-removal/id/357/">
+<span>Hair Removal</span>
+</a>
+</li><li class="level3 nav-6-5-26-28 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/others/id/405/">
+<span>Others</span>
+</a>
+</li>
+</ul>
+</li><li class="level2 nav-6-5-27 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hygiene-accessories/id/395/">
+<span>Hygiene Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-6-6 last parent">
+<a href="http://localhost/devtest/index.php/personal-care/shaving-supplies.html">
+<span>Shaving Supplies</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-6-6-28 first">
+<a href="http://localhost/devtest/index.php/personal-care/shaving-supplies/aftershave.html">
+<span>Aftershave</span>
+</a>
+</li><li class="level2 nav-6-6-29">
+<a href="http://localhost/devtest/index.php/personal-care/shaving-supplies/creams-foams.html">
+<span>Creams &amp; Foams</span>
+</a>
+</li><li class="level2 nav-6-6-30 last">
+<a href="http://localhost/devtest/index.php/personal-care/shaving-supplies/accessories.html">
+<span>Accessories</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li><li class="level0 nav-7 level-top last parent">
+<a href="http://localhost/devtest/index.php/household-needs.html" class="level-top">
+<span>Household Needs</span>
+</a>
+<ul class="level0">
+<li class="level1 nav-7-1 first parent">
+<a href="http://localhost/devtest/index.php/household-needs/kitchenware.html">
+<span>Kitchenware</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-1-1 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cookware/id/425/">
+<span>Cookware</span>
+</a>
+</li><li class="level2 nav-7-1-2">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/thermoware/id/426/">
+<span>Thermoware</span>
+</a>
+</li><li class="level2 nav-7-1-3 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/other-accessories/id/427/">
+<span>Other Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-2 parent">
+<a href="http://localhost/devtest/index.php/household-needs/air-fresheners.html">
+<span>Air Fresheners</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-2-4 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/all-fresheners/id/360/">
+<span>Sprays &amp; Aerosols</span>
+</a>
+</li><li class="level2 nav-7-2-5">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/others/id/362/">
+<span>Gels, Blocks &amp; Others</span>
+</a>
+</li><li class="level2 nav-7-2-6 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/electric/id/361/">
+<span>Electric</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-3 parent">
+<a href="http://localhost/devtest/index.php/household-needs/repellents.html">
+<span>Repellents</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-3-7 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/mosquito-repellents/id/358/">
+<span>Mosquito Repellents</span>
+</a>
+</li><li class="level2 nav-7-3-8">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cockroach-repellents/id/429/">
+<span>Cockroach Repellents</span>
+</a>
+</li><li class="level2 nav-7-3-9 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/other-repellents/id/359/">
+<span>Other Repellents</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-4 parent">
+<a href="http://localhost/devtest/index.php/household-needs/car-bike-care.html">
+<span>Car &amp; Bike Care</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-4-10 first">
+<a href="http://localhost/devtest/index.php/household-needs/car-bike-care/car-care.html">
+<span>Shampoo, Polish &amp; Wax</span>
+</a>
+</li><li class="level2 nav-7-4-11">
+<a href="http://localhost/devtest/index.php/household-needs/car-bike-care/car-fresheners.html">
+<span>Car Fresheners</span>
+</a>
+</li><li class="level2 nav-7-4-12 last">
+<a href="http://localhost/devtest/index.php/household-needs/car-bike-care/accessories.html">
+<span>Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-5 parent">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/electrical-accessories/id/372/">
+<span>Electrical &amp; Electronic Accessories</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-5-13 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/battery/id/384/">
+<span>Battery</span>
+</a>
+</li><li class="level2 nav-7-5-14">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/lighting/id/383/">
+<span>Lighting</span>
+</a>
+</li><li class="level2 nav-7-5-15">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/computer-accessories/id/365/">
+<span>Computer Accessories</span>
+</a>
+</li><li class="level2 nav-7-5-16 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/mobile-accessories/id/366/">
+<span>Mobile Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-6 parent">
+<a href="http://localhost/devtest/index.php/household-needs/storage-needs.html">
+<span>Storage Needs &amp; Other Plasticware</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-6-17 first">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/lunch-boxes-water-bottles/id/422/">
+<span>Lunch Boxes &amp; Water Bottles</span>
+</a>
+</li><li class="level2 nav-7-6-18 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/cloth-care-accessories/id/423/">
+<span>Cloth Care Accessories</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-7 parent">
+<a href="http://localhost/devtest/index.php/household-needs/stationery.html">
+<span>Stationery</span>
+</a>
+<ul class="level1">
+<li class="level2 nav-7-7-19 first">
+<a href="http://localhost/devtest/index.php/household-needs/stationery/school-supplies.html">
+<span>School Supplies</span>
+</a>
+</li><li class="level2 nav-7-7-20">
+<a href="http://localhost/devtest/index.php/household-needs/stationery/office-supplies.html">
+<span>Office Supplies</span>
+</a>
+</li><li class="level2 nav-7-7-21">
+<a href="http://localhost/devtest/index.php/household-needs/stationery/art-craft.html">
+<span>Art &amp; Craft</span>
+</a>
+</li><li class="level2 nav-7-7-22">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/gums-tapes-adhesives/id/364/">
+<span>Gums, Tapes &amp; Adhesives</span>
+</a>
+</li><li class="level2 nav-7-7-23 last">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/pens-pencils/id/367/">
+<span>Pens &amp; Pencils</span>
+</a>
+</li>
+</ul>
+</li><li class="level1 nav-7-8">
+<a href="http://localhost/devtest/index.php/household-needs/paper-disposables.html">
+<span>Paper &amp; Disposables</span>
+</a>
+</li><li class="level1 nav-7-9">
+<a href="http://localhost/devtest/index.php/household-needs/pooja-needs.html">
+<span>Pooja Needs</span>
+</a>
+</li><li class="level1 nav-7-10">
+<a href="http://localhost/devtest/index.php/household-needs/pet-care.html">
+<span>Pet Care</span>
+</a>
+</li><li class="level1 nav-7-11">
+<a href="http://localhost/devtest/index.php/catalog/category/view/s/hardware/id/411/">
+<span>Hardware</span>
+</a>
+</li><li class="level1 nav-7-12">
+<a href="http://localhost/devtest/index.php/household-needs/shoe-care.html">
+<span>Shoe Care</span>
+</a>
+</li><li class="level1 nav-7-13">
+<a href="http://localhost/devtest/index.php/household-needs/appliances-tools.html">
+<span>Appliances &amp; Tools</span>
+</a>
+</li><li class="level1 nav-7-14">
+<a href="http://localhost/devtest/index.php/household-needs/toys-gifts.html">
+<span>Toys &amp; Gifts</span>
+</a>
+</li><li class="level1 nav-7-15 last">
+<a href="http://localhost/devtest/index.php/household-needs/books-magazines.html">
+<span>Books &amp; Magazines</span>
+</a>
+</li>
+</ul>
+</li>			</ul>

@@ -1,0 +1,92 @@
+    
+<div class="entry-edit">
+     <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend" id="import_validation_container_header"><?php echo $this->__('Upload Store Data File'); ?></h4>
+    </div>
+
+<div id="import_validation_messages" class="fieldset ">
+
+	<form id="purchaseDataForm" name="purchaseDataForm"  method="post" enctype="multipart/form-data" action="<?php echo $this->getImportUrl('save'); ?>">
+		<input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" /> 
+		<ul>
+            <li><span>Purchase Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="file" name="purchasedata" accept="text/csv" id="purchasedata"></li>
+
+            <li><span>Out of Stock Data &nbsp;&nbsp;</span><input type="file" name="outofstock" accept="text/csv" id="outofstock"></li>
+
+            <li><span> Vegetable Data &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="file" name="vegetable" accept="text/csv" id="vegetable"></li>
+            <li><button type="submit" class="scalable save" onClick="onSubmit();return false;"><span>Upload Store Data Files</span></button> </li>
+        </ul>
+	</form>
+    
+</div>  
+</div> 
+    <script type="text/javascript">
+
+function onSubmit(){
+      var purchase = document.getElementById('purchasedata');
+      var outofstock = document.getElementById('outofstock');
+      var vegetable = document.getElementById('vegetable');
+
+        if ((purchase.value==null || purchase.value=="") && (outofstock.value==null || outofstock.value=="" ) &&(vegetable.value==null || vegetable.value==""))  {
+            alert("Please Upload file");
+            return false;
+        } 
+        else {
+
+        //var fup = document.getElementById('filename');
+         purchaseExtFlag =  true;
+            if(purchase.value){
+                var purchaseFileName = purchase.value;
+                var purchaseExt = purchaseFileName.substring(purchaseFileName.lastIndexOf('.') + 1);
+                var purchaseExtlow = purchaseExt.toLowerCase();
+
+                if(purchaseExtlow =="csv" || purchaseExtlow=="xls" || purchaseExtlow=="xlsx") {
+                    purchaseExtFlag =  true;
+                }
+                else {
+                    purchaseExtFlag = false;
+                }
+            }
+             outofstockExtFlag =  true;
+
+            if(outofstock.value){
+                var outofstockFileName = outofstock.value;
+                var outofstockExt = outofstockFileName.substring(outofstockFileName.lastIndexOf('.') + 1);
+                var outofstockExtlow = outofstockExt.toLowerCase();
+
+                if(outofstockExtlow =="csv" || outofstockExtlow=="xls" || outofstockExtlow=="xlsx") {
+                    outofstockExtFlag =  true;
+                }
+                else {
+                    outofstockExtFlag = false;
+                }
+            }
+            vegetableExtFlag =  true;
+
+            if(vegetable.value){
+                var vegetableFileName = vegetable.value;
+                var vegetableExt = vegetableFileName.substring(vegetableFileName.lastIndexOf('.') + 1);
+                var vegetableExtlow = vegetableExt.toLowerCase();
+
+                if(vegetableExtlow =="csv" || vegetableExtlow=="xls" || vegetableExtlow=="xlsx") {
+                    vegetableExtFlag =  true;
+                }
+                else {
+                    vegetableExtFlag = false;
+                }
+            }
+
+
+    	    if( purchaseExtFlag ==  true && outofstockExtFlag==true && vegetableExtFlag==true)
+    	    {
+    			document.forms["purchaseDataForm"].submit();
+    		return true;
+    	    }
+    	    else
+    	    {
+    			alert("Upload Csv File only");
+    			return false;
+    	    }
+        }
+}
+</script>

@@ -1,0 +1,53 @@
+
+<script type="text/javascript">
+  function getListItem(groupid){      
+    var ajaxurl = "<?php echo $this->getUrl('shoppinglist/adminhtml_customer/getlistitem')?>"+"?groupid="+groupid;
+    new Ajax.Request(ajaxurl, {
+      method: 'post',
+      onSuccess: function(html_success_give) {
+        $('grid_list_item').innerHTML= html_success_give.responseText;
+        $('group_shoppinglist').innerHTML= groupid;
+        $('group_list_item').show();          
+        url = "<?php echo $this->getUrl('shoppinglist/adminhtml_customer/getlistitem')?>"+"?groupid="+groupid;
+        customer_shoppinglist_itemJsObject = new varienGrid('customer_shoppinglist_item', url, 'page', 'sort', 'dir', 'filter');
+        customer_shoppinglist_itemJsObject.useAjax = '1';
+        customer_shoppinglist_itemJsObject.rowClickCallback = openGridRow;
+      }
+    });
+  } 
+</script>
+<script type="text/javascript">
+  //<!--
+  <?php
+
+    $custoemr =  Mage::registry('current_customer');
+
+  ?>
+  shoppinglistControl = {
+    reload: function (urlParams) {      
+      if (!urlParams) {
+        urlParams = '';
+      }
+      var url ="<?php echo $this->getUrl('shoppinglist/adminhtml_customer/delete')?>" + '?ajax=true' + urlParams+'&customer_id='+'<?php echo $custoemr->getId()?>';
+      new Ajax.Updater(
+      shoppinglistGridJsObject.containerId,
+      url,
+      {
+        parameters: {form_key: FORM_KEY},
+        onComplete: shoppinglistGridJsObject.initGrid.bind(shoppinglistGridJsObject),
+        evalScripts:true,                
+      }            
+      );
+      $$('group_list_item').hide()          
+    },
+
+    removeItem: function (itemId) {
+      if(!confirm('<?php echo Mage::helper('customer')->__('Are you sure that you want to remove this item?') ?>')) {
+        return false;
+      }
+      this.reload('&list_id=' + itemId);
+      return false;
+    }
+  }
+  //-->
+</script>

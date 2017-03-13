@@ -1,0 +1,76 @@
+/********Css For shoppinglist************/
+.form-add{text-align:left; padding:10px;}
+.form-add h2.legend{
+	border-bottom: 1px solid #CCCCCC;
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0 5px;
+    text-transform: uppercase;
+}
+.form-add .product_name{color:#FF0000; font-size:14px; font-weight:bold;}
+.form-add .product_name a{color:#FF0000; font-size:14px; font-weight:bold; text-decoration:none}
+.form-add .qty {
+    margin-left: 5px;
+}
+.form-add ul.options-list li {
+    line-height: 1.5;
+    padding: 2px 0;
+}
+.form-add ul.options-list input.radio {
+  float: left;
+  margin-top: 3px;
+}
+.form-add ul.options-list .label {
+	display: block;
+	margin-left: 18px;
+}
+.form-add .buttons-set{margin:20px 0 0;}
+.btn-add-shoppinglist span span span{background:url(images/add-to-list.png) left center no-repeat; padding-left:20px;}
+.link-shoppinglist{font-weight: 400; color: #000; font-size: 11px; margin-top: 6px; display: block; text-transform: uppercase;}
+#addShoppingList{text-align:left;}
+#addShoppingList .box-title{float:left; width:100%; margin:0 0 10px; padding-bottom:5px; border-bottom:1px solid #ccc;}
+#addShoppingList .box-title h2{color:#333333; font-size:16p; font-weight:bold; margin:0;}
+
+/* Frontend: Customer Dashboard */
+.my-shoppinglist{}
+.my-shoppinglist .box-view{margin:0 0 10px;}
+
+.customer-group-view .title-buttons button.button {margin-bottom:5px;}
+.change-group-name {padding-bottom:10px;}
+
+/* login form */       
+
+
+/* Social login button on Customer Login page */
+#form-login{}
+#form-login #registered-user-login{float:left; margin-right:20px; width:420px;}
+#form-login #registered-user-login .form-list label{margin-right:10px; min-width:90px;}
+#form-login #registered-user-login .form-list input.input-text{width:180px;}
+#form-login #registered-user-login .link-create-account{
+  border-top: 1px dotted #CCCCCC;
+  float: left;
+  padding: 10px 0 0;
+  margin:10px 0 0;
+  text-align: right;
+  width: 100%;
+}
+#form-login #registered-user-login .link-create-account p{float:left;}
+#form-login #registered-user-login .link-create-account button.button{float:right;}
+#form-register .link-login{
+  border-top: 1px dotted #CCCCCC;
+  float: left;
+  padding: 10px 0 0;
+  margin:10px 0 0;
+  text-align: right;
+  width: 100%;
+}
+#form-register .link-login p{float:left;}
+#form-register .link-login button.button{float:right;}
+#form-login #login-with-social-network{float:right; width:162px;}
+#form-login #sendlogin{margin-left:15px;}
+#form-forgot{}
+#form-forgot .page-title{margin:0!important;}
+.customer-login-with-social{}
+.customer-login-with-social .content ul{width:100%; margin:0 0 10px; text-align:right;}
+.customer-login-with-social .content ul li{display:inline;}

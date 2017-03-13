@@ -1,0 +1,73 @@
+<?php 
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+  $_customer = Mage::getSingleton('customer/session')->getCustomer();?>
+<?php $_product=$this->getProduct() ?>
+<?php $groupModel = Mage::getModel('shoppinglist/group');?>
+<div class="my-shoppinglist add-new">
+  <div class="page-title title-buttons">
+    <h1><?php echo $this->__('Add item to quick list') ?></h1>
+  </div>
+  <form action="<?php echo Mage::getUrl('shoppinglist/item/new'); ?>" method="post" id="form-add-item">
+    <div class="form-add-item fieldset">
+      <h2 class="legend"><?php echo $this->__('Item Information')?></h2>
+      <ul class="form-list">
+        <li class="fields">
+          <div class="field">
+            <label><?php echo $this->__('Product Name') ?></label>
+            <div class="input-box">
+              <input id="product_name" class="input-text required-entry" type="text"  title="<?php echo $_product->getName() ?>" name="product_name" value="<?php echo $_product->getName() ?>">
+            </div>
+            <?php if ($_product->isSaleable()):?>
+              <?php echo $this->_getOptionSelect(Mage::getModel('catalog/product')->load($_product->getId()));?>
+              <?php endif;?>
+          </div>
+          <?php $gCollection = $groupModel->getGroupByCustomer($_customer->getId());?>
+          <?php if(count($gCollection) > 0): ?>
+            <div class="field">
+              <label class="required"><em>*</em><?php echo $this->__('Choose a group add to quick list')?></label>	
+              <select title="Select Group" id="select-group" name="select-group" class="select-group validate-select">
+                <option value=""><?php echo $this->__('Select group')?></option>
+                <?php foreach($gCollection as $_group):?>
+                  <option value="<?php echo $_group->getListId()?>"><?php echo $_group->getListName();?></option>
+                  <?php endforeach;?>
+              </select>
+            </div>	
+            <?php endif; ?>
+        </li>
+        <li class="control">
+          <input type="checkbox" name="create_group" id="create_group" value="1" onclick="setCreateGroup(this.checked)" title="<?php echo $this->__('Create New Group') ?>" class="checkbox <?php if(!count($gCollection)):?> required-entry<?php endif;?>" /><label for="create_group"><?php echo $this->__('Create New Group') ?></label>
+        </li>
+        <li>
+          <div id="form-create-group" style='display:none'>
+            <label for="group-name" class="required"><em>*</em><?php echo Mage::helper('shoppinglist')->__('Group Name') ?></label>
+            <div class="input-box">
+              <input name="group-name" id="group-name" title="<?php echo Mage::helper('shoppinglist')->__('Group Name') ?>" value="" class="input-text required-entry" type="text" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="field">
+            <input name="customer_id" id="customer_id" type="hidden" value="<?php echo $_customer->getId()?>">
+            <input name="product_id" id="product_id" type="hidden" value="<?php echo $_product->getId() ?>">
+            <input name="qty" id="qty" type="hidden" value="<?php echo Mage::app()->getRequest()->getParam('qty'); ?>">
+          </div>
+        </li>
+      </ul>
+      <div class="buttons-set">
+        <p class="required"><?php echo $this->__('* Required Fields'); ?></p>
+        <button class="button btn-submit right" title="<?php echo $this->__('Submit')?>" type="submit">
+          <span><span><?php echo $this->__('Submit')?></span></span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <script type="text/javascript">
+    //<![CDATA[
+    var formAdd = new VarienForm('form-add-item', false);
+    function resetFields() {
+      Form.reset('form-add-item');
+    }
+  </script>
+</div>

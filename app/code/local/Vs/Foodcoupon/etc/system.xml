@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<foodcoupon translate="label" module="foodcoupon">
+            <label>Food Coupon</label>
+            <sort_order>800</sort_order>
+        </foodcoupon>
+	  </tabs>
+	  <sections>
+		<foodcoupon  translate="label" module="foodcoupon">                    
+		<label>Food Coupon configuration</label>
+		<tab>foodcoupon</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>200</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <foodcoupon_config translate="label"> 
+					  <label>Configurations for category</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                       <select_category translate="label">
+                            <label>enter Category id in comma separated way</label>
+                            <frontend_type>text</frontend_type>
+                           
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </select_category> 
+					   </fields>
+					   </foodcoupon_config>
+					</groups>
+		</foodcoupon>
+	  </sections>
+</config>

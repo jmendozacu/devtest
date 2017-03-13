@@ -1,0 +1,10 @@
+<?php 
+/*
+* Copyright (c) 2013 www.magebuzz.com
+*/
+?>
+<div id="messages_shoppinglist"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="button-container">
+	<button type="button" onclick="closePopup()" class="button close-button" id="continue-shopping"><span><span><?php echo $this->__('Continue shopping');?></span></span></button>
+	<button type="button" id="view-list" class="button view-list" onclick="setLocation('<?php echo $this->getUrl('shoppinglist');?>')"><span><span><?php echo $this->__('View shopping list');?></span></span></a>
+</div>

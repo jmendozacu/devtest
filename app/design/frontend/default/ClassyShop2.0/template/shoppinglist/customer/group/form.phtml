@@ -1,0 +1,47 @@
+<?php
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+
+  $group_id = $this->getRequest()->getParam('id'); ?>
+<?php $group = Mage::getModel('shoppinglist/group')->load($group_id);?>
+<div id="messages_shoppinglist"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<div class="page-title title-buttons">
+  <h1>Add New Quick List<?php //echo $this->getTitle()?></h1>
+</div>
+<div class="my-shoppinglist">
+  <form id="shoppinglist-edit-group" action="<?php echo $this->getUrl('*/*/save') ?>" method="post">
+    <div class="edit-group fieldset">
+      <h2 class="legend"><?php echo $this->__('Quick List Information') ?></h2>
+      <ul class="form-list">
+        <li class="fields">
+          <div class="field">
+            <input name="group_id" id="group_id" type="hidden" value="<?php echo $group_id?>">
+          </div>
+          <div class="field">
+            <label for="group-name" class="required"><em>*</em><?php echo Mage::helper('shoppinglist')->__('Quick List Name') ?></label>
+            <div class="input-box" style="display:inline">
+              <input name="group-name" id="group-name" title="<?php echo Mage::helper('shoppinglist')->__('Quick List Name') ?>" value="<?php echo $group->getListName()?>" class="input-text required-entry" type="text" style="150px" /><p></p>
+			         <button type="submit" title="<?php echo $this->__('Save List') ?>" class="button"><span><span><?php echo $this->__('Save List') ?></span></span></button>
+
+            </div>
+          </div>
+         <!-- <div class="field">
+            <label for="email-reminder" class="required"><em>*</em><?php echo Mage::helper('shoppinglist')->__('Email reminder will be sent after') ?></label>
+            <?php echo Mage::helper('shoppinglist')->getSelectEmailReminderHtml();?>
+          </div>-->
+        </li>
+      </ul>	
+    </div>
+    <div class="buttons-set">
+      <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+      <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+       <!--<button type="submit" title="<?php echo $this->__('Save List') ?>" class="button"><span><span><?php echo $this->__('Save List') ?></span></span></button>-->
+    </div>	
+  </form>
+</div>
+<script type="text/javascript">
+  //<![CDATA[
+  var editGroupForm = new VarienForm('shoppinglist-edit-group', true);
+  //]]>
+</script>	

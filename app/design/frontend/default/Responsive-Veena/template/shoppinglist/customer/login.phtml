@@ -1,0 +1,76 @@
+<?php
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+  $dataParams = $this->getRequest()->getParams();?>
+<?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
+  <div id='form-login' style=" float: left; clear: both; height: 180px;">   
+    <div id="cboxLoadingGraphic" style="float: left; display: none;"></div>   
+    <div id="registered-user-login">
+      <div class="page-title">
+        <h1><?php echo $this->__('Sign in') ?></h1>
+      </div>
+      <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+      <div class="content">    
+        <form action="javascript:loginFormAcion();" method="post" id="login-form-validate">
+          <ul class="form-list">      
+            <li>                       
+              <div style="color: red;font-size: 11px;margin-left: 43px;" id="login_error" ></div>
+            </li>
+            <li>
+              <label for="emaillogin" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>        
+              <input type="text" name="emaillogin" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" id="emaillogin" class="input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" />          
+            </li>
+            <li>
+              <label for="passlogin" class="required"><em>*</em><?php echo $this->__('Password') ?></label>  
+              <input type="password" name="passlogin" class="input-text required-entry validate-password" id="passlogin" title="<?php echo $this->__('Password') ?>" />          
+            </li>
+            <li>
+              <button type="submit" class="button" title="<?php echo $this->__('Login') ?>" name="sendlogin" id="sendlogin"><span><span><?php echo $this->__('Login') ?></span></span></button>
+            </li>     
+          </ul>      
+        </form>
+      </div>  
+    </div>
+  </div>
+  <?php else:?>
+  <script type="text/javascript">
+    //<![CDATA[
+    jQ.colorbox({
+      href:"<?php echo Mage::getUrl('shoppinglist/index/add',array('id'=> $dataParams['id'], 'type' => $dataParams['type']));?>"
+    });
+    //]]>
+  </script>
+  <?php endif?>    
+<script type="text/javascript">
+  //<![CDATA[
+
+  var dataForm = new VarienForm('login-form-validate', true);
+  function loginFormAcion(){  
+    jQ('#cboxLoadingGraphic').show(); 
+    var username = document.getElementById("emaillogin").value;
+    var password = document.getElementById("passlogin").value;     
+    var ajaxurl = "<?php echo Mage::getBaseUrl() . 'shoppinglist/index/loginpost?'?>"+'username='+username+'&password='+password;
+    new Ajax.Request(ajaxurl, {
+      method: 'Post',
+      onSuccess: function(login_success_give) {               
+        var responseValue = login_success_give.responseText;
+        if(responseValue == 'loginsuccess')
+          {
+          jQ('#cboxLoadingGraphic').hide(); 
+          jQ.colorbox({
+            href:"<?php echo Mage::getUrl('shoppinglist/index/add',array('id'=> $dataParams['id'], 'type' => $dataParams['type']));?>",
+            onClosed:function(){ location.reload(true);}          
+          });
+        }
+        else{
+          jQ('#cboxLoadingGraphic').hide(); 
+          document.getElementById('login_error').innerHTML=login_success_give.responseText;
+          document.getElementById('passlogin').innerHTML="";         
+        }     
+      }
+    });
+  }
+
+  //]]>
+    </script>

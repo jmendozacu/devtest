@@ -1,0 +1,101 @@
+<?php
+/*
+* Copyright (c) 2013 www.magebuzz.com
+*/
+?>
+<!-- Include jQuery library if not exist -->
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/magebuzz/shoppinglist/colorbox.css')?>" media="screen" />
+<script type="text/javascript" src="<?php echo $this->getJsUrl('magebuzz/shoppinglist/jquery/1.7.1/jquery.min.js')?>"></script>
+<script type="text/javascript" src="<?php echo $this->getJsUrl('magebuzz/shoppinglist/jquery.colorbox.js')?>"></script>
+<script type="text/javascript">
+  var jQ = jQuery.noConflict();
+  jQ(document).ready(function() {
+    /* Open add popup form */
+    jQ(".link-shoppinglist").colorbox();
+    /* Form submit */
+    jQ('#btn-add-item').click(function() {
+      alert('test');
+    });	
+  });
+
+  /* Function close popup */	
+  function closePopup() {
+    jQ.colorbox.close();
+  }
+  /* Function check create new group or not */
+  function setCreateGroup(arg){
+    if(arg){
+      jQ('#form-create-group').show();
+      jQ('select[name=select-group]').removeClass('validate-select');
+      jQ('select[name=select-group]').attr('disabled', 'disabled');
+    }else{
+      jQ('#form-create-group').hide();
+      jQ('select[name=select-group]').addClass('validate-select');
+      jQ('select[name=select-group]').removeAttr('disabled', 'disabled');
+    }
+    jQ.colorbox.resize();
+  }
+  function setSendEmail(arg){
+    if(arg){
+      jQ('#form-settings').show();
+      jQ('select[name=email-reminder]').addClass('validate-select');
+    }else{
+      jQ('#form-settings').hide();
+      jQ('select[name=email-reminder]').removeClass('validate-select');
+    }
+    jQ.colorbox.resize();
+  }
+
+  /* Function add a new group shopping list */	
+  function submitcreatGroup(){
+    var list_name  = escape(jQ('input[name=group-name]').val());
+    var customer_id  = escape(jQ('input[name=customer_id]').val());
+    var status  = 1;
+    jQ.colorbox({
+      href:"<?php echo Mage::getUrl('shoppinglist/index/createGroup/'); ?>"+"?list_name="+list_name+"&customer_id="+customer_id+"&status="+status
+    });
+  }
+  /* Function submit add form */
+  function submitAddItem() {
+    <?php $timeConfig = Mage::getStoreConfig('shoppinglist/general/time_auto_close');?>
+    //validate option for grouped product
+    var productType = escape(jQ('input[name=product_type_id]').val());
+    if (productType == 'grouped') {
+      var selected_subProduct = false;
+      var subProducts = jQ('input.grouped-items').each(function() {
+        if (this.value > 0) {
+          selected_subProduct = true;
+        }
+      });
+      if (!selected_subProduct) {
+        jQ('table#super-product-table').addClass('validation-failed');
+        jQ('<div style="" id="advice-validate-select-select-group" class="validation-advice">Please specify the quantity of product(s).</div>').insertAfter('table#super-product-table');
+        return;
+      }
+    }
+    var qty = 0;
+    var data = jQ('form#form-add-item').serialize();
+    var input_qty = escape(jQ('input[name=qty]').val());
+    if(input_qty == 'undefined'){qty = 1;}
+    else{
+      if(jQ('input[name=qty]').val().length == 0){
+        qty = 1;
+      }
+      else{
+        qty  = escape(jQ('input[name=qty]').val());
+      }
+    }
+    jQ.colorbox({
+      href:"<?php echo Mage::getUrl('shoppinglist/index/additem/'); ?>"+'?'+data+"&qty="+qty , 
+      <?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
+        onClosed:function(){ location.reload(true);},
+        <?php endif?>     
+    });
+    <?php if(Mage::getStoreConfig('shoppinglist/general/auto_close')==1):?>
+    window.setTimeout(function() {
+      closePopup();
+    },<?php if($timeConfig >0 && $timeConfig != null){echo $timeConfig*1000 ;}else{ echo 5000;}?>);
+    <?php endif?>
+  }
+
+</script>

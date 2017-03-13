@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <mofluid translate="title" module="mofluid_ganalyticsm">
+            <title>Mofluid</title>
+            <sort_order>90</sort_order>
+            <children>
+                <mofluid_analyticsm translate="title" module="mofluid_ganalyticsm">
+                    <title>Analytics</title>
+                    <sort_order>5555</sort_order>
+                    <children>
+                        <mofluid_ganalyticsm_form translate="title" module="mofluid_ganalyticsm">
+                            <title>Google</title>
+                            <sort_order>23</sort_order>
+                            <action>adminhtml/ganalyticsm</action>
+                        </mofluid_ganalyticsm_form>
+                    </children>
+                </mofluid_analyticsm>
+            </children>
+        </mofluid>
+    </menu>
+    <!--Access Control Settings-->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <mofluid translate="title" module="mofluid_ganalyticsm">
+                        <title>Mofluid</title>
+                        <sort_order>90</sort_order>
+                        <children>
+                            <mofluid_analyticsm translate="title" module="mofluid_ganalyticsm">
+                                <title>Analytics</title>
+                                <sort_order>55555</sort_order>
+                                <children>
+                                    <mofluid_ganalyticsm_form translate="title" module="mofluid_ganalyticsm">
+                                        <title>Google</title>
+                                        <sort_order>23</sort_order>
+                                    </mofluid_ganalyticsm_form>
+                                </children>
+                            </mofluid_analyticsm>
+                        </children>
+                    </mofluid>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

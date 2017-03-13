@@ -1,0 +1,51 @@
+<?php
+
+class MW_Ddate_Helper_Data extends Mage_Core_Helper_Abstract
+{
+    public function getDtime(){
+    	$dtimes = Mage::getModel('ddate/dtime')->getCollection();
+    	$dtimes->getSelect()
+    		   ->join('mwdtime_store',
+    			'mwdtime_store.dtime_id = main_table.dtime_id ',
+    			array('main_table.dtime_id')
+    			)
+			   ->where('mwdtime_store.store_id in (?)',array('0',Mage::app()->getStore()->getId()))
+			   ->where('main_table.status = 1');
+    	return $dtimes;
+    }
+    
+	public function getSpecialDay(){
+		$list = (Mage::getStoreConfig('ddate/info/special_days')) ? Mage::getStoreConfig('ddate/info/special_days'):"";
+		if($list){
+			$list = trim($list);
+			$list = explode(';',$list);
+			foreach($list as $key=>$date){
+				if(!$date){ unset($list[$key]); }
+			}
+			return $list;
+		}
+		return array();
+	}
+	
+	public function getSaturday(){
+		return (Mage::getStoreConfig('ddate/info/deliver_saturdays')) ? Mage::getStoreConfig('ddate/info/deliver_saturdays'):"0";
+	}
+	
+	public function getSunday(){
+		return (Mage::getStoreConfig('ddate/info/deliver_sundays')) ? Mage::getStoreConfig('ddate/info/deliver_sundays'):"0";
+	}
+	
+	public function getSpecialDayByList(){
+		return (Mage::getStoreConfig('ddate/info/special_days')) ? Mage::getStoreConfig('ddate/info/special_days'):"";
+	}
+	
+	public function getDayoff(){
+		return (Mage::getStoreConfig('ddate/info/dayoff')) ? Mage::getStoreConfig('ddate/info/dayoff'):"0";
+	}
+	
+	public function getMaxBooking(){
+		return (Mage::getStoreConfig("ddate/info/maximum_bookings")) ? Mage::getStoreConfig("ddate/info/maximum_bookings"):10000000 ; 
+	}
+        
+        
+}

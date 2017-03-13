@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout>
+    <sales_order_view>        
+    <reference name="order_items">
+            <action method="setTemplate"><template>foodcoupon/sales/order/items.phtml</template></action>
+        </reference>
+    </sales_order_view>
+  <sales_order_print>        
+    <reference name="sales.order.print">
+            <action method="setTemplate"><template>foodcoupon/sales/order/print.phtml</template></action>
+        </reference>
+    </sales_order_print>
+
+</layout>

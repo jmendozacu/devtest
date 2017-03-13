@@ -1,0 +1,135 @@
+<?php
+
+	$customerData = Mage::getSingleton('customer/session')->getCustomer();
+    //$customerData->getEmail();
+	$collection = Mage::getModel('vs_reward/program')->getCollection()
+			->addFieldToFilter('online_login',$customerData->getEmail());
+	$reward_collection=$collection->getData();
+	
+	$customeremail = $customerData->getEmail();
+	//echo '<pre/>';print_r($reward_collection);
+?>
+
+<?php if(empty($reward_collection)){ ?>
+	<h3 style="display:block;border-left:1px solid #D1D1CF; border-right:1px solid #D1D1CF;margin:0;padding:5px;">Loyalty Program</h3>
+	<form name="reward_form" method="post" id="reward_form" style="display:block;border-left:1px solid #D1D1CF; border-right:1px solid #D1D1CF;padding:5px;">
+	<p><label>If you already have a AB Loyalty Card, please enter the contact number associated with it. If not, please enter your 10 digit mobile number, we will create one for you</label></p>
+	<input type="text" name="mobile_number" id="mobile_number" />
+	<input type="button" class="reward_verify" value="Continue"/>
+	</form>
+	<script type="text/javascript">
+		jQuery( ".btn-checkout" ).attr('disabled','disabled');
+	</script>
+<?php } else { ?>
+
+		<?php 
+
+			if((isset($reward_collection[0]['customer_id']) && $reward_collection[0]['customer_id'] == 0) && ($customeremail == $reward_collection[0]['online_login'])){
+		?>
+			<script type="text/javascript">		
+				jQuery("<input type='hidden' value='<?php echo $reward_collection[0]['contact_number']; ?>' name='mobile_num' ><input type='hidden' value='Add this transaction to above contact number.' name='instruction' >").appendTo("#co-payment-form");
+			</script>
+			
+		<?php
+		
+		}elseif((isset($reward_collection[0]['customer_id']) && $reward_collection[0]['customer_id'] == 0) && ($customeremail != $reward_collection[0]['online_login'])){
+			
+			?>
+				<script type="text/javascript">		
+					jQuery("<input type='hidden' value='<?php echo $reward_collection[0]['contact_number']; ?>' name='mobile_num' ><input type='hidden' value='Customer tried to create Loyalty Card account for existing contact number which is not associated with Loyalty Card yet.' name='instruction' >").appendTo("#co-payment-form");
+				</script>
+						
+			<?php
+					
+			
+		}else{
+				
+				?>
+					<script type="text/javascript">		
+						jQuery("<input type='hidden' value='<?php echo $reward_collection[0]['contact_number']; ?>' name='mobile_num' ><input type='hidden' value='Add this transaction to above Loyalty Card ID / Contact Number.' name='instruction' >").appendTo("#co-payment-form");
+					</script>
+							
+				<?php
+		}
+?>
+		
+<?php
+
+        $bill_amount=$reward_collection[0]['bill_amount']; 
+
+		if($bill_amount>0 && $reward_collection[0]['redemption_flag']==0){ 
+			$x= Mage::getStoreConfig('reward_section/reward_group/point_field');
+			$y=Mage::getStoreConfig('reward_section/reward_group/value_field');
+			$z=Mage::getStoreConfig('reward_section/reward_group/minimum_field');
+	
+			$amount_redeem= ($bill_amount/100)* $y * $z;
+		
+		if($amount_redeem >= $x)
+		{?>
+			<h3 style="display:block;border-left:1px solid #D1D1CF; border-right:1px solid #D1D1CF;margin:0;padding:5px;">Loyalty Program</h3>
+			<form name="reward_form" id="reward_form_redeem" method="post" style="display:block;border-left:1px solid #D1D1CF; border-right:1px solid #D1D1CF;padding:5px;">
+			<p><label>You are eligible to REDEEM <?php echo $amount_redeem ?> POINTS</label></p>
+			<p><label>Would you like to redeem now? </label><input type="checkbox" name="check_redeem" id="check_redeem" /></p>
+			
+			<input type='hidden' value='<?php echo $reward_collection[0]['contact_number']; ?>' name='mobilenumber' />
+			
+			</form>
+
+		<?php }?>
+	<?php } ?>
+
+<?php } ?>
+
+<script>
+
+jQuery( ".reward_verify" ).click(function(e) {
+
+	if(jQuery.trim(jQuery("#mobile_number").val())==""){
+		alert("Please enter your contact number.");
+	}else{	
+		  
+	          
+		  jQuery.ajax({
+		    url: "<?php echo $this->getUrl('reward/index') ?>",
+		    type: "POST",
+		    dataType:"json",
+		    data: jQuery("#reward_form").serialize(),
+		    success: function(data) {
+		    	alert(data['msg']);	
+		    	if(data['msg'] != "This contact number has been already associated with loyalty card. Please enter a different number."){
+					jQuery("<input type='hidden' value='"+data['mobile_number']+"' name='mobile_num' ><input type='hidden' value='"+data['instruction']+"' name='instruction' >").appendTo("#co-payment-form");	
+		    		jQuery('.btn-checkout').prop("disabled", false);
+		    	}
+		    }
+		  });
+	}
+  
+});
+jQuery( "#check_redeem" ).change(function(e) {
+
+	//$("#co-payment-form").appendTo("<input type='text' value='test' name='test'");
+	
+	jQuery('<input>').attr({
+	    type: 'hidden',
+	    id: 'check_redeem_reward',
+	    name: 'check_redeem_reward',
+	    value: $(this).value
+	}).appendTo('#co-payment-form');
+	
+	  jQuery.ajax({
+	    url: "<?php echo $this->getUrl('reward/index') ?>",
+	    type: "POST",
+	    dataType:"json",
+	    data: jQuery("#reward_form_redeem").serialize(),
+	    success: function(data) {
+	        if(data != ""){
+
+	        	alert(data['msg']);
+				jQuery("<input type='hidden' value='"+data['mobile_number']+"' name='mobile_num' ><input type='hidden' value='"+data['instruction']+"' name='instruction' >").appendTo("#co-payment-form");
+	    		
+	        }
+	    }
+	  });
+  
+});
+</script>

@@ -1,0 +1,78 @@
+<?php
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+  $customer = $this->getCustomer();
+  $groups = Mage::getModel('shoppinglist/group')->getCollection()
+  ->addFieldToFilter('customer_id', $customer->getId())
+  ->addFieldToFilter('status', 1);
+?>
+<?php if (count($groups)): ?>
+  <?php foreach ($groups as $group):?>
+    <?php $items = Mage::getModel('shoppinglist/items')->getItemsByGroup($group->getId()); ?>
+    <?php if (count($items)):?>
+      <strong><?php echo $group->getListName()?></strong>
+      <table cellspacing="0" cellpadding="10" border="0" style="width:100%; border:1px solid #e1e1e1; background: #ffffff;">
+        <colgroup>
+          <col width="1"/>
+          <col />
+          <col width="1"/>
+          <col width="1"/>
+          <col/>
+          <col width="1"/>
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="a-center" style="background:#F0F0F0; text-align: center; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"><?php echo $this->__('Product Image')?></span></th>
+            <th class="a-left" style="background:#F0F0F0; text-align: left; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"><?php echo $this->__('Description')?></span></th>
+            <th class="a-center" style="background:#F0F0F0; text-align: center; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"><?php echo $this->__('Qty')?></span></th>
+            <th class="a-center" style="background:#F0F0F0; text-align: center; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"><?php echo $this->__('Price')?></span></th>
+            <th class="a-center" style="background:#F0F0F0; text-align: center; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"><?php echo $this->__('Add to Cart')?></span></th>
+            <th class="a-center" style="background:#F0F0F0; text-align: center; font-weight:normal; border-right:1px solid #e1e1e1; padding:7px 11px; font-size: 14px;color:#615B5B; white-space:nowrap; vertical-align:middle; "><span class="nobr"></span></th>
+          </tr>	
+        </thead>
+        <tbody>
+          <?php foreach($items as $_item):?>
+            <?php 
+              $product_id = $_item->getProductId();
+              $product = Mage::getModel('catalog/product')->load($product_id);
+              $isVisibleProduct = $product->isVisibleInSiteVisibility();
+            ?>
+            <tr>
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: center !important; vertical-align: middle;" class="a-center"><span><a href="<?php echo $product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($product->getName()) ?>" class="product-image"><img src="<?php echo Mage::helper('catalog/image')->init($product, 'small_image')->resize(75, 75); ?>" width="75" height="75" alt="<?php echo $this->escapeHtml($product->getName()) ?>" /></a></span></td>
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: left !important; vertical-align: middle;"  class="a-left">
+                <h3 class="product-name"><a href="<?php echo $product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($product->getName()) ?>"><?php echo $this->htmlEscape($product->getName()) ?></a></h3>
+                <!-- PRINT OPTIONS OF PRODUCT HERE -->
+              </td>
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: center !important; vertical-align: middle;" class="a-center">
+                <input name="item[<?php echo $_item->getItemId() ?>][qty]" value="<?php echo $_item->getQty()*1 ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />
+              </td>
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: center !important; vertical-align: middle;" class="a-left">
+                <?php if ($product->isSaleable()): ?>
+                  <?php if ($isVisibleProduct): ?>
+                    <?php
+                      $product_block = new Mage_Catalog_Block_Product;
+                      echo $product_block->getPriceHtml($product);
+                      unset($product_block);
+                    ?>
+                    <?php endif; ?>
+                  <?php endif; ?>	
+              </td>
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: center !important; vertical-align: middle;" class="a-center">
+                <input type="hidden" name="url_cart" id="url_cart" value="<?php echo $this->getRemoveItemUrl($group_id, $_item->getItemId())?>"/>
+                <?php if ($product->isSaleable()): ?>
+                  <?php if ($isVisibleProduct): ?>
+                    <a href="<?php echo $this->getUrl('checkout/cart/add', array('product'=>$product_id,'qty'=>$_item->getQty()*1)) ?>" title="<?php echo $this->__('Add to Cart') ?>"><?php echo $this->__('Add to Cart') ?></a>
+                    <?php endif; ?>
+                  <?php else: ?>
+                  <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>	
+                  <?php endif; ?>	
+              </td>	
+              <td style="border-bottom:1px solid #e1e1e1; border-right:1px solid #e1e1e1;text-align: center !important; vertical-align: middle;" class="a-center"><a href="<?php echo $this->getUrl('shoppinglist/group/removeItem', array('group_id'=>$_item->getListId(),'id'=>$_item->getItemId())) ?>" title="<?php echo $this->__('Remove item')?>" class="btn-remove btn-remove2"><?php echo $this->__('Remove item')?></a></td>	
+            </tr>	
+            <?php endforeach;?>
+        </tbody>
+      </table>
+      <?php endif;?>
+    <?php endforeach;?>
+  <?php endif;?>

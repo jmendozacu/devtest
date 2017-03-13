@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vs_Reward>
+            <version>1.0.0</version>
+        </Vs_Reward>
+    </modules>
+     
+    <global>
+        <helpers>
+            <vs_reward>
+                <!-- This is where we define our helper directory -->
+                <class>Vs_Reward_Helper</class>
+            </vs_reward>
+        </helpers>
+                    
+        <blocks>
+            <vs_reward>
+                <!-- Set a block definition and lookup directory -->
+                <class>Vs_Reward_Block</class>
+            </vs_reward>
+			  <reward>
+                
+				<reward>Vs_Reward_Block_Reward</reward>
+       
+            </reward>
+        </blocks>
+         
+        <models>
+            <vs_reward>
+                <!-- This is where we define our model directory -->
+                <class>Vs_Reward_Model</class>
+                <!-- Define a resource to create a custom table -->
+                <resourceModel>vs_reward_mysql4</resourceModel>
+            </vs_reward>
+             
+            <!-- Here's our resource model we'll use to create a database table -->
+            <vs_reward_mysql4>
+                <class>Vs_Reward_Model_Mysql4</class>
+                <entities>
+                    <!-- Let's define our table, we'll call it with the program name, but the real table is vs_reward_program -->
+                    <!-- After we define our entity, we can call it with our model by calling vs_reward/program -->
+                    <program>
+                        <table>vs_reward_program</table>
+                    </program>
+                </entities>
+            </vs_reward_mysql4>
+        </models>
+        <events>
+            <sales_order_place_after>
+                <observers>
+                    <reward_program>
+                        <type>singleton</type>
+                        <class>Vs_Reward_Model_Observer</class>
+                        <method>addReward</method>
+                    </reward_program>
+                </observers>
+            </sales_order_place_after>
+        </events> 
+        <!-- And finally we define our resource setup script -->
+        <resources>
+            <vs_reward_setup>
+                <setup>
+                    <module>Vs_Reward</module>
+                </setup>
+            </vs_reward_setup>
+        </resources>
+    </global>
+     
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <Vs_Reward before="Mage_Adminhtml">Vs_Reward_Adminhtml</Vs_Reward>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <adminhtml>
+        <layout>
+            <updates>
+                <vs_reward>
+                    <!--
+                    We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+                    - Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+                    -->
+                    <file>vs/reward.xml</file>
+                </vs_reward>
+            </updates>
+        </layout>
+	<acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <reward_section translate="title">
+                                        <title>Reward Section </title>
+                                        <sort_order>100</sort_order>
+                                    </reward_section>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                 </children>
+            </admin>
+        </resources>
+    </acl>
+    </adminhtml>
+	<frontend>
+                <routers>
+                        <reward>
+                                <use>standard</use>
+                                <args>
+                                      <module>Vs_Reward</module>
+                                      <frontName>reward</frontName>
+                                </args>
+                        </reward>
+                </routers>
+        <layout>
+            <updates>
+                <reward>
+                      <file>reward.xml</file>
+                </reward>
+            </updates>
+            </layout>
+        </frontend>
+</config>

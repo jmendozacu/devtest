@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mofluid_Ganalyticsm>
+            <version>1.16.0</version>
+        </Mofluid_Ganalyticsm>
+    </modules>
+
+    <global>
+        <blocks>
+            <mofluid_ganalyticsm>
+                <class>Mofluid_Ganalyticsm_Block</class>
+            </mofluid_ganalyticsm>
+        </blocks>
+
+        <helpers>
+            <mofluid_ganalyticsm>
+                <class>Mofluid_Ganalyticsm_Helper</class>
+            </mofluid_ganalyticsm>
+        </helpers>
+
+        <models>
+            <mofluid_ganalyticsm>
+                <class>Mofluid_Ganalyticsm_Model</class>
+                <resourceModel>mofluid_ganalyticsm_mysql4</resourceModel>
+            </mofluid_ganalyticsm>
+            <mofluid_ganalyticsm_mysql4>
+                <class>Mofluid_Ganalyticsm_Model_Mysql4</class>
+                <entities>
+                    <ganalyticsm>
+                        <table>mofluid_ganalyticsm</table>
+                    </ganalyticsm>
+
+
+
+                </entities>
+            </mofluid_ganalyticsm_mysql4>
+        </models>
+
+        <resources>
+            <mofluid_ganalyticsm_setup>
+                <setup>
+                    <module>Mofluid_Ganalyticsm</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </mofluid_ganalyticsm_setup>
+            <mofluid_ganalyticsm_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </mofluid_ganalyticsm_write>
+            <mofluid_ganalyticsm_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </mofluid_ganalyticsm_read>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mofluid_ganalyticsm after="Mage_Adminhtml">Mofluid_Ganalyticsm_Adminhtml</mofluid_ganalyticsm>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <mofluid_ganalyticsm>
+                    <file>mofluid_ganalyticsm.xml</file>
+                </mofluid_ganalyticsm>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Mofluid_Ganalyticsm>
+                    <files>
+                        <default>Mofluid_Ganalyticsm.csv</default>
+                    </files>
+                </Mofluid_Ganalyticsm>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    
+</config>

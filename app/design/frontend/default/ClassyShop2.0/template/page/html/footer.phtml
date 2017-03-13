@@ -1,0 +1,112 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<footer class="footer-container">
+	<div class="container">	 
+	<div class="footer">	 
+		<div class="footer_CMSBlock">
+		<ul>
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_cmsblock')->toHtml() ?> 
+		</ul>
+		</div>
+						
+		<div class="footer_top" id="footer">		
+			<div id="block_1" class="footer-area">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_link1')->toHtml() ?> 
+			</div>
+			<div id="block_2" class="footer-area">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_link2')->toHtml() ?> 
+			</div>
+			<div id="block_3" class="footer-area">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_link3')->toHtml() ?> 
+			</div>		
+			<div id="block_4" class="footer-area">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_link4')->toHtml() ?>
+				<!--
+				<style>
+				.block-check-delivery .block-title strong {background-image:none; font-size: 11px;}
+				.block-check-delivery .block-content {padding:0 10px;  }
+				.block-check-delivery .button {float: right;}
+				.block-check-delivery input{width: 107px;}
+				</style>
+				<div class="shipping">
+				<div class="">    
+					<?php //$blockLabel = Mage::getStoreConfig('checkdelivery/general/block_title');?>
+					<strong><span><?php// echo $this->__($blockLabel) ?></span></strong>
+				    
+				    <div class="block-content" style="padding-top: 15px;">
+							<input name="zipcode" size="17" type="text" id="zipcode" maxlength="10" class="input-text" placeholder="<?php echo $this->__('Enter ZIP Code'); ?>"/>
+							<button type="button" name="zip-check" title="Check" class="button" id="zip-check-footer" ><span><?php echo $this->__('Check'); ?></span></button>
+							<div id="delivery-message"></div>
+							<?php //$defaultHtml = Mage::getStoreConfig('checkdelivery/general/default_html'); ?>
+							<div id="delivery-html">
+								<?php //echo $defaultHtml ?>
+							</div>
+							
+						<br>		
+				    </div>
+				</div>
+				</div>
+				<script>
+					Event.observe('zip-check-footer', 'click', function(event){
+						new Ajax.Request("<?php echo $this->getUrl('checkdelivery/index/index') ?>", {
+							method: "get",
+							parameters: {zipcode : $('zipcode').value },
+							onSuccess: function(transport) {								
+								 var json = transport.responseText.evalJSON();
+								 $('delivery-message').update(json.message);				 
+								 $('delivery-message').setStyle({ color: json.color});
+								 $('delivery-html').update(json.html);	
+							}
+						});
+					});
+				</script-->
+			</div>	
+			<div id="block_5" class="footer-area">				
+					<div class="content">
+						<?php echo $this->getChildHtml('footer.newsletter'); ?>
+					</div>
+			 </div>		
+		</div> 
+		<div class="footer_bottom"> 
+			
+			<?php //echo $this->getChildHtml('footer_links') ?>
+			<?php //echo $this->getChildHtml('cms_footer_links') ?>
+			
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml() ?> 
+        	<address><?php echo $this->getCopyright() ?></address> 
+			
+			<div class="footer-bottom-paypal">
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('tm_footer_paypal')->toHtml() ?> 
+			</div>
+				
+			
+		</div>
+    </div>
+	 </div>
+</footer>
+ 
+ 

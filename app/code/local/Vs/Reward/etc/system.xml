@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <reward_tab translate="label">
+            <label>Loyalty Program</label>
+            <sort_order>100</sort_order>
+        </reward_tab>
+    </tabs>
+    <sections>
+        <reward_section translate="label">
+            <label>Loyalty Program</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>reward_tab</tab>
+            <groups>
+                <reward_group translate="label">
+                    <label>Config</label>
+                    <comment>Loyalty Program Configuration</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        
+			<minimum_field translate="label comment">
+                            <label>No of points for every 100 rupees</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </minimum_field>
+			<value_field translate="label comment">
+                            <label>Value of one point in Rs.</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </value_field>
+			<point_field translate="label comment">
+                            <label>Minimum number of points that can be redeemed</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </point_field>
+
+                    </fields>
+                </reward_group>
+            </groups>
+        </reward_section>
+    </sections>
+</config>

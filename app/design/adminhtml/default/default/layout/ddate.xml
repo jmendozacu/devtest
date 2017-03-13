@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <ddate_admin_adminhtml_ddate_index>
+        <reference name="content">
+            <block type="ddate/adminhtml_ddate" name="ddate" />
+        </reference>
+    </ddate_admin_adminhtml_ddate_index>
+
+    <ddate_admin_adminhtml_dtime_index>
+        <reference name="content">
+            <block type="ddate/adminhtml_dtime" name="dtime" />
+        </reference>
+    </ddate_admin_adminhtml_dtime_index>
+    <ddate_admin_adminhtml_dtime_edit>
+        <reference name="head">
+            <action method="addJs"><script>mw_ddate/mw_ddate_validate.js</script></action>
+        </reference>
+    </ddate_admin_adminhtml_dtime_edit>
+
+    <adminhtml_sales_order_view>
+        <reference name="order_info">
+            <action method="setTemplate"><template>ddate/sales/order/view/info.phtml</template></action>
+        </reference>
+    </adminhtml_sales_order_view>
+	
+	<adminhtml_sales_order_invoice_new>
+		<reference name="order_info">
+            <action method="setTemplate"><template>ddate/sales/order/view/info.phtml</template></action>
+        </reference>
+	</adminhtml_sales_order_invoice_new>
+	
+	<adminhtml_sales_order_invoice_view>
+		<reference name="order_info">
+            <action method="setTemplate"><template>ddate/sales/order/view/info.phtml</template></action>
+        </reference>
+	</adminhtml_sales_order_invoice_view>
+</layout>

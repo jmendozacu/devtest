@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <purchasedata_adminhtml_purchasedata_index>
+	<reference name="content">
+	  <block type="purchasedata/adminhtml_purchasedata" name="purchasedata" template="purchasedata/purchasedata.phtml"/>
+	</reference>
+  </purchasedata_adminhtml_purchasedata_index>
+</layout>

@@ -1,0 +1,7 @@
+<!--<layout>
+    <default>
+        <reference name="after_body_start">
+            <block type="core/template" name="top.messages" template="core/messages/top.phtml" before="-" />
+        </reference>
+    </default>
+</layout>-->

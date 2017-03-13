@@ -1,0 +1,40 @@
+<?php 
+  /*
+  * Copyright (c) 2013 www.magebuzz.com
+  */
+  $_customer = Mage::getSingleton('customer/session')->getCustomer();?>
+<?php $group_id = $this->getRequest()->getParam('id'); ?>
+<div class="box-view">
+  <div class="page-title title-buttons">
+    <h2><?php echo $this->__('Setting')?></h2>
+  </div>
+  <div class="box-content">
+    <div class="fieldset">
+      <h2 class="legend"><?php echo $this->__('Email setting')?></h2>
+      <ul class="form-list">
+        <li class="control">
+          <input type="checkbox" name="send_email_setting" id="send_email_setting" value="1" onclick="setSendEmail(this.checked)" title="<?php echo $this->__('Setting Email Reminder') ?>" class="checkbox" /><label for="send_email_setting"><?php echo $this->__('Setting Email Reminder') ?></label>
+        </li>
+        <li>
+          <div id="form-settings" style='display:none'>
+            <form id="email-setting-form" action="<?php echo $this->getSettingEmailReminderUrl()?>" method="post">
+              <label for="email-reminder" class="required"><em>*</em><?php echo Mage::helper('shoppinglist')->__('Email reminder will be sent after') ?></label><br/>
+              <?php echo Mage::helper('shoppinglist')->getSelectEmailReminderHtml();?>
+              <input name="group_id" id="group_id" type="hidden" value="<?php echo $group_id ?>">
+              <div class="buttons-set">
+                <p class="required"><?php echo $this->__('* Required Fields'); ?></p>
+                <button class="button btn-submit right" title="<?php echo $this->__('Submit')?>" type="submit">
+                  <span><span><?php echo $this->__('Submit')?></span></span>
+                </button>
+              </div>	
+            </form>
+            <script type="text/javascript">
+              //<![CDATA[
+              var formSetting = new VarienForm('email-setting-form', false);
+            </script>
+          </div>
+        </li>
+      </ul>
+    </div>	
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <adminhtml_ganalyticsm_index>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="mofluid_ganalyticsm/adminhtml_form_edit" name="ganalyticsm"/>
+        </reference>
+        <reference name="left">
+            <block type="mofluid_ganalyticsm/adminhtml_form_edit_tabs" name="ganalyticsm_tabs"/>
+        </reference>
+    </adminhtml_ganalyticsm_index>
+</layout>

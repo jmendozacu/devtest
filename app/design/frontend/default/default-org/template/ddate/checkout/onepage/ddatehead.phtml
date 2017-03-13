@@ -1,0 +1,46 @@
+<?php if (!Mage::getStoreConfig("ddate/info/calender_display")) { ?>                                  
+    <?php
+    $slots = $this->getSlots();
+    $currentTime = Mage::getSingleton('core/date')->timestamp();
+    $weeks = $this->getNumberWeek();
+    $deliveryslot = array();//[];
+    for ($w = 0; $w < $weeks; $w++){		    
+		    foreach($slots as $slot) {
+				for ($i = 2 * $w; $i < 2 * $w + 2; $i++) {							    
+				    $strDate = date('Y-m-d', strtotime('+' . $i . ' day', $currentTime));
+				    //echo $strDate;
+				    if($this->isEnabled($slot->getId(), $strDate)){
+						$deliveryslot[] = date('Y-m-d', strtotime('+' . $i . ' day', $currentTime))." ".$slot->getDtime();							    
+				    }else{
+						$deliveryslot[] = "unavailable";
+				    }
+				}
+		    }
+    }
+    //print_r($deliveryslot);
+    //$deliveryorder = array(0, 2, 4, 6, 8, 10, 12, 1, 3, 5, 7, 9, 11, 13, 14, 16, 18, 20, 22, 24, 26, 15, 17, 19, 21, 23, 25, 27);
+    $deliveryorder = array(0, 2, 4, 6, 1, 3, 5, 7, 8, 10, 12, 14, 9, 11, 13, 15);
+    $neworder = array();//[];
+    $x = 0;
+    /*foreach($deliveryslot as $ds){
+	 $neworder[$deliveryorder[$x]] = $ds;
+	 $x++;
+    }*/    
+    foreach($deliveryorder as $ds){
+    	$neworder[$x] = $deliveryslot[$ds];
+    	$x++;
+    }
+    
+    //ksort($neworder);
+    //print_r($neworder);
+    foreach($neworder as $key=>$value){
+		if($value != "unavailable"){
+		    $earlisttimeslot = $value;
+		    break;
+		}
+    }
+}
+?>
+<div class="earlist-time-slot" style="display: none;">
+<?php echo "<li>Next delivery slot:</li> <li class='deliver-slot'>".$earlisttimeslot."</li>"; ?>
+</div>

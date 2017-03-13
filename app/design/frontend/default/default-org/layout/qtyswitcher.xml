@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+   
+	<catalog_product_view>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>qtyswitcher/js/qtyswitcher.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>qtyswitcher/css/qtyswitcher.css</name></action>
+		</reference>
+		
+		<reference name="content">
+			<reference name="product.info">
+				<block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="qtyswitcher/qtyswitcher.phtml"/>
+				<reference name="product.info.options.wrapper.bottom">
+					<action method="append"><block>product.info.addtocart</block></action>
+				</reference>
+			</reference>
+		</reference>
+		
+	</catalog_product_view>
+</layout> 

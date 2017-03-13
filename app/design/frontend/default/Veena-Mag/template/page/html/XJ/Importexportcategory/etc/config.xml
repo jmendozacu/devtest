@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <XJ_Importexportcategory>
+            <version>0.1.0</version>
+        </XJ_Importexportcategory>
+    </modules>
+    <admin>
+        <routers>
+			<importexportcategory>
+				<use>admin</use>
+				<args>
+					<module>XJ_Importexportcategory</module>
+					<frontName>importexportcategory</frontName>
+				</args>
+			</importexportcategory>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<importexportcategory module="importexportcategory">
+				<title>Category Imp/Exp</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="importexportcategory">
+						<title>import/export - category</title>
+						<sort_order>0</sort_order>
+						<action>importexportcategory/adminhtml_importexportcategory</action>
+					</items>
+				</children>
+			</importexportcategory>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<XJ_Importexportcategory>
+							<title>Importexportcategory Module</title>
+							<sort_order>10</sort_order>
+						</XJ_Importexportcategory>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<importexportcategory>
+					<file>importexportcategory.xml</file>
+				</importexportcategory>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <blocks>
+            <importexportcategory>
+                <class>XJ_Importexportcategory_Block</class>
+            </importexportcategory>
+        </blocks>
+        <helpers>
+            <importexportcategory>
+                <class>XJ_Importexportcategory_Helper</class>
+            </importexportcategory>
+        </helpers>
+    </global>
+</config>

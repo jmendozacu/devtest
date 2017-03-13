@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <shoppinglist_adminhtml_shoppinglist_edit>
+    <update handle="editor"/>
+  </shoppinglist_adminhtml_shoppinglist_edit>
+  <shoppinglist_adminhtml_shoppinglist_index>
+    <update handle="editor"/>
+    <reference name="content">
+      <block type="shoppinglist/adminhtml_shoppinglist" name="shoppinglist" />
+    </reference>
+  </shoppinglist_adminhtml_shoppinglist_index>
+  <adminhtml_customer_edit>
+    <reference name="js">
+      <block type="adminhtml/template" template="shoppinglist/customer/edit/tab/group/js.phtml" name="customer.edit.tab.groupshoppinglist.js" as="customer_edit_groupshoppinglist_js"></block>
+    </reference>
+  </adminhtml_customer_edit>
+  <shoppinglist_adminhtml_customer_index>
+    <block type="core/text_list" name="root" output="toHtml"> 
+      <block type="shoppinglist/adminhtml_customer_group_grid" name="shoppinglist.customer.group.grid" />
+      <!--<block type="shoppinglist/adminhtml_customer" name="shoppinglist.customer" template="shoppinglist/customer/edit/tab/group/info.phtml"/> -->        
+    </block>
+  </shoppinglist_adminhtml_customer_index>
+  <adminhtml_sales_order_create_index>
+    <reference name="sidebar">
+      <block type="shoppinglist/adminhtml_order_create_sidebar_shoppinglist" template="sales/order/create/sidebar/items.phtml" name="shoppinglist" />	
+    </reference>    
+  </adminhtml_sales_order_create_index>
+  <adminhtml_sales_order_create_load_block_data>
+    <reference name="sidebar">
+      <block type="shoppinglist/adminhtml_order_create_sidebar_shoppinglist" template="sales/order/create/sidebar/items.phtml" name="shoppinglist" />  
+    </reference>
+  </adminhtml_sales_order_create_load_block_data>
+  <adminhtml_sales_order_create_load_block_sidebar>
+    <reference name="sidebar">
+      <block type="shoppinglist/adminhtml_order_create_sidebar_shoppinglist" template="sales/order/create/sidebar/items.phtml" name="shoppinglist" />  
+    </reference>
+  </adminhtml_sales_order_create_load_block_sidebar>  
+</layout>

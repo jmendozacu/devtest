@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Vs_Purchasedata>
+      <version>0.1.0</version>
+    </Vs_Purchasedata>
+  </modules>
+  <global>
+    <helpers>
+      <purchasedata>
+        <class>Vs_Purchasedata_Helper</class>
+      </purchasedata>
+    </helpers>
+	<blocks>
+	  <purchasedata>
+		<class>Vs_Purchasedata_Block</class>
+	  </purchasedata>
+	</blocks>
+  </global>
+  <admin>
+	<routers>
+	  <purchasedata>
+	    <use>admin</use>
+		<args>
+		  <module>Vs_Purchasedata</module>
+		  <frontName>admin_purchasedata</frontName>
+		</args>
+	  </purchasedata>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <purchasedata module="purchasedata">
+		<title>Store Updates</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <purchasedataback module="purchasedata">
+			<title>Files Upload</title>
+			<sort_order>0</sort_order>
+			<action>admin_purchasedata/adminhtml_purchasedata</action>
+		  </purchasedataback>
+		</children>
+	  </purchasedata>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<purchasedata translate="title" module="purchasedata">
+			  <title>Store Updates</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <purchasedataback translate="title">
+			<title>Store Updates Upload</title>
+		  </purchasedataback>
+			  </children>
+			</purchasedata>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<purchasedata>
+		  <file>purchasedata.xml</file>
+		</purchasedata>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

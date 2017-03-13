@@ -1,0 +1,174 @@
+.shadow:hover{
+/*box-shadow:1px 1px 5px 1px #666666; */
+}
+.myquicklist{
+border-left: 1px solid white;
+}
+
+#advancedmenu {
+    position:relative;        
+	margin:0 auto;
+ 	z-index:9;
+}
+div.menu {
+    float: left;
+}
+div.menu.active {
+	background-color: #d6d6d6;
+	color: #000 ;
+}
+div.menu:hover{
+	background-color: #d6d6d6;
+}
+div.megnor-advanced-menu-popup { 
+	
+	background-color: #d6d6d6;
+	border: 1px solid #ccc;
+	border-top:none;
+	border-radius: 0 0 5px 5px;
+	display: none;
+	padding: 5px;
+	position: absolute;
+	text-align: left;
+	top: 50px;
+	left:0px !important;
+	width: 100%;
+}
+
+div.megnor-advanced-menu-popup a		
+{ 
+	padding: 10px;
+	text-transform:none;
+	
+}
+div.megnor-advanced-menu-popup a:hover{}
+div.megnor-advanced-menu-popup a.actParent {
+    color: #fff;
+}
+div.megnor-advanced-menu-popup a.act {
+    color: #fff;
+}
+div.column {
+    float: left;
+   /* min-height: 80px;*/
+    padding:0 5px;
+}
+div.megnor-advanced-menu-popup .column{
+	width: 23%;
+}
+/*div.column:hover{
+background-color:#bfffc1;
+}*/
+div.megnor-advanced-menu-popup .block2 p { margin:0;}
+div.first	{ border:none;}
+div.itemSubMenu {
+    /*margin-left:20px;*/
+	clear:both;
+}
+.itemMenu .itemMenuName:hover{
+background-color:#d6d6d6;
+}
+.megnor-advanced-menu-popup_inner .clearBoth {
+    clear:both;
+    /* border-left: 1px solid #D0D0D0;
+    height: 30px;
+	float: left; */
+}
+.megnor-advanced-menu-popup_inner .clearBoth:last-child{
+	border: none;
+}
+#advancedmenu .itemSubMenu a	{ width:90%;}
+div.megnor-advanced-menu-popup .block1		{ margin:5px 0; }
+div.megnor-advanced-menu-popup .block2		{ padding:5px;}
+#advancedmenu .megnor-advanced-menu-popup .itemMenu  a	{ font-weight:normal; padding:10px !important; }
+
+#advancedmenu .megnor-advanced-menu-popup .itemMenu a.itemMenuName.level1, #advancedmenu .megnor-advanced-menu-popup .itemMenu a.itemMenuName.level1{
+	/*background-color: #ff8409 !important; */
+	margin-top:10px;
+	width:90%;
+	color:#ff8409;
+	font-size: 15px;
+}
+
+/* added code */
+#advancedmenu .megnor-advanced-menu-popup .itemMenu a.itemMenuName.level1:hover{
+       background: none !important;             
+color: #fff !important;
+}
+
+.itemMenu .itemMenuName { color:#ff8409 !important;}
+.itemSubMenu .itemMenu 
+{
+	margin-left:15px;
+}
+.block1 .level1 a.level1 { padding:0 10px 5px 10px;}
+
+.itemSubMenu .itemMenu a.itemMenuName
+{
+	/*background: url("../../images/megnor/subcat_arrow.png") no-repeat scroll 0px center transparent; */
+    color: #000 !important;
+    font-weight: normal !important;
+	font-size:13px;
+    padding: 2px 0 2px 14px; 
+
+}
+
+
+
+.itemSubMenu .itemMenu a.itemMenuName:hover	
+{ 
+	/* background:url("../../images/megnor/subcat_arrow_hover.png") no-repeat scroll 2px center transparent;  color: #49a94d  !important; */
+	background: none !important;
+	color: #ff8409 !important;
+}
+#advancedmenu .megnor-advanced-menu-popup .itemMenu a.itemMenuName{
+	padding: 3px 0px !important;
+}
+.itemMenuName.level2 > span {
+	margin-left: -5px;
+	line-height: 140%;
+}
+#advancedmenu .megnor-advanced-menu-popup .itemMenu a.itemMenuName.level1{
+	padding: 10px !important;	
+	line-height:110%;
+}
+.custom_menu:hover a	
+{ 
+	cursor:pointer;
+}
+
+.customblock_inner		
+{ 
+	background: url("../../images/dropdown_bg.jpg") repeat scroll right center transparent;
+	border: 3px solid #49a94d;
+	border-radius: 0 0 5px 5px;
+	display: none;
+	padding: 5px;
+	position: absolute;
+	text-align: left;
+	top: 42px;
+	left:2px;
+	width:98%;
+}
+.customblock_inner h2	{ font-size:14px; color:#ff414a; font-weight:bold; margin:0 0 10px 0; text-transform:uppercase;}
+.customblock_inner .custom_text	{ font-size:12px; padding:5px 10px;}
+.customblock_inner p	{ margin-top:2px;}
+.custom_menu:hover 	.customblock_inner	{ display:block; top:44px !important} 
+.customblock_inner .megnor-advanced-menu-popup_inner	{ padding:10px; overflow:hidden;}
+.cms_menu_block { width:19%; margin:0 10px 0 0; float:left; cursor:pointer;}
+.cms_menu_block_inner	{border:1px solid #ccc;border-radius:3px; padding:10px; background:#FFF;transition:border-color 200ms ease-in-out 0s;}
+.cms_menu_block_inner:hover	
+{ border:1px solid #973C3E;}
+#menu_block5	{ margin:0;}
+.custom_image	
+{ 
+	background: url("../../images/dropdown_bg.jpg") repeat scroll right center transparent;
+	border: 1px solid #DDDDDD;
+    margin: 0 0 10px;
+    height:80px;
+	border-radius:3px;
+    text-align: center;transition:border-color 200ms ease-in-out 0s;
+}
+.custom_image img	{ margin:25px 0 0 0;}
+.cms_menu_block_inner:hover h2	{ color:#ff8409;}
+.custom_menu .menu	{ background:none;}

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vs_ShipmentSupervisor>
+            <version>1.0.0</version>
+        </Vs_ShipmentSupervisor>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Vs_ShipmentSupervisor before="Mage_Adminhtml">Vs_ShipmentSupervisor_Adminhtml</Vs_ShipmentSupervisor>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+     
+    <global>
+                    
+        <blocks>
+            <vs_shipmentsupervisor>
+                <!-- Set a block definition and lookup directory -->
+                <class>Vs_ShipmentSupervisor_Block</class>
+            </vs_shipmentsupervisor>
+			  <shipmentsupervisor>
+                
+				<shipmentsupervisor>Vs_ShipmentSupervisor_Block_ShipmentSupervisor</shipmentsupervisor>
+       
+            </shipmentsupervisor>
+        </blocks>
+         
+        <!-- And finally we define our resource setup script -->
+        <resources>
+            <vs_shipmentsupervisor_setup>
+                <setup>
+                    <module>Vs_ShipmentSupervisor</module>
+                </setup>
+            </vs_shipmentsupervisor_setup>
+        </resources>
+        <routers>
+            <adminhtml>
+                <rewrite>
+                    <vs_shipmentSupervisor_sales_order_shipment>
+                        <actions>
+                            <save>
+                                <from><![CDATA[#^/sales_order/shipment/#]]></from>
+                                <to>shipmentsupervisor/adminhtml_sales_order/shipment</to>
+                            </save>
+                        </actions>
+                    </vs_shipmentSupervisor_sales_order_shipment>
+                </rewrite>
+            </adminhtml>
+        </routers>
+    </global>
+    <adminhtml>
+       <layout>
+         <updates>
+           <vs_shipmentSupervisor>
+                <file>shipmentsupervisor.xml</file>
+           </vs_shipmentSupervisor>  
+         </updates>
+       </layout>
+    </adminhtml>
+</config>

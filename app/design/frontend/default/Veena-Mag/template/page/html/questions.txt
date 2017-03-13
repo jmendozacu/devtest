@@ -1,0 +1,23 @@
+Doubts
+
+Bootstrap being used in header.html - done
+How it causes responsive.css and custom.css to be made simple
+
+1. What are quick lists
+2. Delivery code - how does it get fetched
+3. All this commenting of nav-responsiv - was it originally there in MAG091071
+4. Do you think gettting a login for Loyalcity might work
+5. What is megnor and why are custom.css and responsive.css in that subdirectory
+6. How do I understand what table is getting read when displaying a particular field. As of now I do a find in files using notepad
+
+The menu being responsive :-
+
+The menupopup and all that is very well managed when the screen size is big. What exactly was supposed to happen in mag091017
+The menupopup and all that is very well managed when the screen size is big. What exactly was supposed to happen in mag091017
+1. Based on #nav, #nav-mobile and class advanced-nav in top.html what exactly is supposed to be displayed when the menu is contracted
+ and how are the styles managed. 
+
+ Compare menu_displayed.txt and inspect element output for $_menu and the difference.
+2. How does nav_mobile get attached instead of the #nav
+3. When I uncoment the responsive-menu lines the menu is displayed twice . Also $_menu is displayed without any styling when sandwich logo is clicked
+ 

@@ -1,0 +1,169 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?> 
+<header class="header-container">  
+
+<div class="header">
+	<div class="header_left">
+		<div class="shop">
+			<div class="logo">
+				<h1><strong>Default Magento</strong>
+				<a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/" title="Default Magento" class="logo"><img src="http://localhost/devtest/skin/frontend/default/ClassyShop/images/abonline.png" alt="A B Online Bazaar"></a></h1>
+			</div>
+			<div class="mail">
+				<!--img width="28" height="20" class="mail" alt="Mail" src="<?php// echo $this->getSkinUrl('images/mail.png'); ?>"--> 
+				<a href="mailto:<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>">
+				<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>
+				</a>
+			</div>
+			<div class="phone">
+				<!--img width="23" height="23" alt="Phone" src="<?php //echo $this->getSkinUrl('images/phone.png'); ?>"-->
+				<?php echo "(".Mage::getStoreConfig('general/store_information/phone').")"; ?>
+			</div>
+		</div>	
+		
+		<div class="area-code">
+			<input class="input-text pincode" id="zipcodetop" type="text" name="zipcodetop" "  size="17"  maxlength="10"  placeholder="<?php echo $this->__('Enter Pincode'); ?>"/>
+			<button class="button delivery-check"  id="zip-check-top" type="button" name="zip-check-top" title="Check"  ><?php echo $this->__('Check Delivery Availability'); ?></button>																					
+			<div id="top-delivery-message"></div>	
+		</div>
+	</div> <!-- header_left-->
+	<div class="header_mid">
+		<div class="delivery">
+			<h4>Next Delivery Slot&nbsp<span><button class="button delivery-slot"></button></span></h4>
+		</div>
+		
+		<?php echo $this->getChildHtml('topSearch') ?>
+		
+	</div> <!-- header_mid -->
+	<div class="header_right"> 
+		
+		<div class="tm_topbanner">
+			<div class="welcome-msg"><h4><?php echo $this->getChildHtml('welcome') ?><?php echo $this->getAdditionalHtml() ?></h4></div>
+			<div class="del_code">
+					<?php if(Mage::getSingleton('customer/session')->isLoggedIn()):
+							$customerAddressId = Mage::getSingleton("customer/session")->getCustomer()->getDefaultShipping();
+							$postcode	=	"";
+							if ($customerAddressId){
+								$address = Mage::getModel("customer/address")->load($customerAddressId);
+								$postcode = $address->getData("postcode");
+							}
+							?>
+							<p>Your delivery area code is - <span><?php echo $postcode; ?></span></p>
+					<?php endif; ?>
+			</div> <!-- del_code-->
+		</div> 
+				
+		<div class="header-cart">
+		<div class="block-cart btn-slide">
+		<div class="cart-label">
+		<div class="cart_mini_right">
+								(0 item) -             			<span class="price">Rs0.00</span>			<div class="right_arrow"></div>
+		</div>		
+		</div>
+		
+		<div class="block-content" id="panel">
+		<div class="top_arrow"></div>
+			<div class="cart_topbg">
+			<div class="main-cart">
+				<p class="empty">You have no items in your shopping cart.</p>
+			</div>
+		</div>	
+		</div>
+		</div>
+		</div>
+	<div class="header_topmenu">
+	<div class="tm_headerlinkmenu">
+			<div class="tm_headerlinks_inner"><div class="headertoggle_img">&nbsp;</div></div>
+			<?php //echo $this->getChildHtml('topLinks') ?>
+					
+			<ul class="links">
+			 <li class="first top_link1"><a href="http://localhost/devtest/index.php/customer/account/logout/" title="My Account">My Account</a><em style="display: none; top: -30px;">My Account</em></li>
+			 <li class="top_link2"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/wishlist/" title="My Wishlist">My Wishlist</a><em style="display: none; top: -30px;">My Wishlist</em></li>
+			 <li class=" top_link3"><a href="<?php echo $this->getUrl("quicklist"); ?>" title="My Cart" class="top-link-quicklist">My QuickList</a><em style="display: none; top: -30px;">My QuickList</em></li>
+			 <li class=" top_link4"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/" title="Checkout" class="top-link-checkout">Checkout</a><em>Checkout</em></li>
+			 <li class=" last top_link5"><a href="http://localhost/devtest/index.php/customer/account/login/" title="Log In">Log In</a><em style="display: none; top: -30px;">Log In</em></li>
+		</ul>
+
+		<ul class="mobile_link_menu">
+			<li class="first top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/customer/account/" title="My Account">My Account</a></li>
+			 <li class="top_link2"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/wishlist/" title="My Wishlist">My Wishlist</a><em>My Wishlist</em></li>
+			 <li class=" top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
+			 <li class=" top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
+			 <li class=" last top_link6"><a href="http://localhost/devtest/index.php/customer/account/login/" title="Log In">Log In</a></li>
+         </ul>
+		
+	</div>
+	</div>	
+	</div> <!-- header_right-->
+
+</div> <!-- header -->
+	
+</header>		
+		
+		
+<?php echo $this->getChildHtml('topMenu') ?>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		var earliesttimeslot = jQuery(".earlist-time-slot").html();		
+		earliesttimeslot = "2017-02-17 10:00 AM TO 12:00 PM"
+		jQuery(".delivery-slot").html(earliesttimeslot);
+		jQuery("#panel").hide()	;
+	});
+</script>
+<script>
+	Event.observe('zip-check-top', 'click', function(event){
+		new Ajax.Request("<?php echo $this->getUrl('checkdelivery/index/index') ?>", {
+			method: "get",
+			parameters: {zipcode : $('zipcodetop').value },
+			onSuccess: function(transport) {								
+				 var json = transport.responseText.evalJSON();
+				 $('top-delivery-message').update(json.message);				 
+				 //$('top-delivery-message').setStyle({ color: "#df1e1b"});
+				 //$('delivery-html').update(json.html);	
+			}
+		});
+	});
+</script>
+<script>
+function equalHeight(group) {
+   tallest = 0;
+   group.each(function() {
+      thisHeight = jQuery(this).height();
+      if(thisHeight > tallest) {
+         tallest = thisHeight;
+      }
+   });
+
+   group.height(tallest+20);
+}
+jQuery(document).ready(function() {
+   equalHeight(jQuery(".item"));
+});
+</script>

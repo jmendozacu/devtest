@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <M0_Newslettersend>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+				<Mage_Newsletter />
+       		</depends>
+        </M0_Newslettersend>
+    </modules>
+</config>
