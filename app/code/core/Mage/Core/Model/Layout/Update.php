@@ -444,10 +444,8 @@ class Mage_Core_Model_Layout_Update
 			
             $fileXml = simplexml_load_string($fileStr, $elementClass);
             if (!$fileXml instanceof SimpleXMLElement) {
-				Mage::log("veena".$filename);
-				Mage::log("veena".$fileStr);
-				Mage::log("veena".$fileXml);
-                continue;
+				//Mage::log("veena".$filename);
+				continue;
             }
             $layoutStr .= $fileXml->innerXml();
         }

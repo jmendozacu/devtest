@@ -28,16 +28,17 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
 
 * { margin:0; padding:0; }
-
+/* Start changes to body element veena - from ClassyShop */
 body{ 
-	/*background:url("../images/background.png") repeat scroll 0 0 transparent;*/
+	background:url("../images/background.png") repeat scroll 0 0 transparent;
     color: #717171;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    font-size: 10px;  /* veena font changed bcoz of not fitting on screen */
     font-weight: normal;
+    line-height: 20px;
 	text-align:left;
 }
-
+/* End changes to body element veena - from ClassyShop */
 img           { border:0; vertical-align:top; }
 
 a             { color:#717171; text-decoration:none;}
@@ -104,31 +105,42 @@ ul,ol         { list-style:none; }
 .wrapper {}
 .page {}
 
-
 .main-container { }
-.header-container,.nav-container,.main-container,.footer-container{}
+/* Start changes veena - container elements */
+.header-container,.nav-container,.main-container,.footer-container{
+	margin :2px 20px 2px 20px;
+} /* End  changes veena - container elements */
 
 .header,.nav-inner,.main,.footer {
-	width:1000px; 
+	max-width:100%; /* veena change 1300px; */
 	margin:0 auto; 
 	padding:0px; 
 }
 
 .header {  position:relative; z-index:10; }
-.main { margin-bottom: 20px !important;
-margin-top: 20px !important;
-clear: both;
-}
+/* Start changes veena to incorporate styling for the 5 header divisions */
+.header_1st	{margin:2px;float:left;width:20%;}
+.header_2nd	{margin:2px;float:left;	width:25%;}
+.header_3rd	{margin:2px;float:left;width:20%;text-align:center;}
+.header_4th {margin:2px;float:left;width:15%;}
+.header_5th{margin:2px;float:left;width:16%;}
+/* end changes veena to incorporate styling for the 5 header divisions */
+/* Start changes veena -remove element main 
+.main {	margin-bottom: 20px !important;
+		margin-top: 20px !important;
+		clear: both;
+	}  end changes veena */
 
 #cart-sidebar li.item {
    height: auto!important;
 }
 
 /* Base Columns */
-.col-left { float:left; width:208px; padding:0 0 0px;margin-right:15px;  margin-top: 20px;}
-.col-main { float:left; width:777px; padding:0 0 0px;margin-top: 20px;}
-.col-right { float:right; width:208px; padding:0 0 0px; margin-left: 0; margin-top: 32px;}
-
+/* Start changes veena for col-left,col-main and col-right elements */
+.col-left { margin-left:20px ;float:left; width:25%; padding:0 0 0px;  }
+.col-main { float:left; width:70%; padding:0 0 0px;}
+.col-right { float:right; width:25%; padding:0 0 0px; margin-left:15px; margin-right:20px;}
+/* End changes veena for col-left,col-main and col-right elements */
 /* 1 Column Layout */
 .col1-layout .col-main { float:none; width:auto; }
 
@@ -161,7 +173,7 @@ clear: both;
 { background:none; padding:0;}
 .col-main_inner
 {
-	/*background:url("../images/inner_bg.png") repeat scroll 0 top transparent;*/
+	background:url("../images/inner_bg.png") repeat scroll 0 top transparent; /* removed commenting - veena */
 	padding:10px;
 	min-height:400px;
 }
@@ -228,9 +240,9 @@ clear: both;
 /* ======================================================================================= */
 
 /*Custom style*/
-
+/* VEENA ALL THE LINES below relate to styling that may not be required */
 .container {
-  width: 1000px;
+  width: 100%; /* veena change */
   margin: 0 auto;
 }
 
@@ -238,6 +250,7 @@ clear: both;
   width: 100%; 
   background-color: #ececec;
 }
+
 
 .header .header-top {
   width: 100%;
@@ -375,12 +388,13 @@ clear: both;
   font-size: 16px;
 }
 
+/*veena */
 .header .header-top .header_topmenu ul.links li {
   list-style: none;
   color: #fff;
   /*margin: 8px 0 11px 5px;
   padding-top: 4px;*/
-  margin: 0;
+  margin: 0;	
   font-size: 14px;
   font-weight: 400;
   width: auto;
@@ -389,7 +403,7 @@ clear: both;
   margin-left: 0px;
   padding-left: 0px;
 }
-
+/*veena */
 .header .header-top .header_topmenu ul.links li:first-child {
   /*margin: 8px 0 11px 5px;*/
   margin: 0;
@@ -500,6 +514,17 @@ border-radius: 4px;
   margin-left: 5px;
   background: url(../images/shopping-cart.png) left top no-repeat;
 }
+/* Start changes veena - Styling of nav-container is not rquired 
+.nav-container .menu a{
+  color: #fff;
+  line-height: 15px;
+  text-align: center;
+  padding: 10px 4px;
+  display: block;
+  height: 30px;
+  font-size: 13px;
+}
+ End changes veena - Styling of nav-container is not rquired */
 
 .nav-container { 
   margin-bottom: 0px; 
@@ -513,21 +538,11 @@ nav {
   float: left;
 }
 
-
-.nav-container .menu a{
-  color: #fff;
-  line-height: 15px;
-  text-align: center;
-  padding: 10px 4px;
-  display: block;
-  height: 30px;
-  font-size: 13px;
-}
-
 .nav-container .menu a:hover{
   background-color: #d6d6d6 !important;
   color: #000;
 }
+/* VEENA ALL THE LINES ABOVE relate to styling that may not be required */
 
 .product-details .product-name a { font-size: 11px;}
 
@@ -951,7 +966,7 @@ footer .footer-bottom p {
 
 /* Global Styles ========================================================================= */
 /* Form Elements */
-input,select,textarea,button { vertical-align:middle;  }
+input,select,textarea,button { vertical-align:middle; font-family: 'Open Sans',Arial,Helvetica,sans-serif; } /* veena - added font family */
 input.input-text,select,textarea { background:#fff; border:1px solid #ddd;color:#717171; border-radius:3px;}
 input.input-text,textarea { padding:5px;   }
 input.input-tex:focus,textarea:focus {  -moz-box-shadow: #bbb 0 0 3px;
@@ -1000,23 +1015,34 @@ input.qty { background-color: #636363;
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
 .ie7 button.button { height:auto !important;   }
- 
-button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background-color: #ff8409; cursor:pointer; padding: 5px 7px; border-radius: 4px;  }
+
+/* veena change - padding changed to 0 */
+button.button { 
+	overflow:visible; 
+	width:auto; 
+	border:0; 
+	padding:0; 
+	margin:0; 
+	background-color: #ff8409; 
+	cursor:pointer; 
+	border-radius: 4px;  }
 
 .quantity { float: left; margin-right: 10px;}
-
+/* Start changes veena for button */
 button.button span , .back-link a 
 { 
 	display:inline;  
-	font-family:'Open Sans',Arial,Helvetica,sans-serif; 
+	font-family:'Open Sans',Arial,Helvetica,sans-serif;
+	/* background:#963B3D; */
  	border-radius:5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
- 	height: auto;
-        text-transform: capitalize;
-	font-weight:400;
-	padding:5px 2px;    
-    text-align:center; white-space:nowrap; color:#fff; text-decoration:none;}
+ 	height: 18px;
+    line-height: 16px;
+    padding: 6px 12px;
+	text-align:center; white-space:nowrap; color:#fff; text-decoration:none;}
+/* end changes veena */
+	
 button.button span span { border:0;padding: 0px;   }
 #checkoutSteps button.button span span {display: inline;font-weight: 600; padding: 5px;   }
 button.button:hover span , .back-link a:hover ,.cart .discount button:hover span {}
@@ -1047,21 +1073,21 @@ input.input-text:focus,select:focus,textarea:focus { box-shadow:0 0 3px #BBBBBB;
 /* Grouped fields */
 /*.form-list { width:535px; margin:0 auto; overflow:hidden; }*/
 .form-list li { margin:0 0 8px; }
-.form-list label { float:left;   font-weight:normal; font-size: 13px; position:relative; z-index:0; padding-bottom:5px; }
+.form-list label { float:left;   font-weight:normal; /*veena font-size: 13px; */position:relative; z-index:0; padding-bottom:5px; }
 .form-list label.required {}
 .form-list label.required em { float:right; font-style:normal; color:#DD4B39; position:absolute; top:0; right:-8px; }
-.form-list li.control label { float:none;  font-size: 12px;}
+.form-list li.control label { float:none;  /*veena font-size: 12px;*/}
 .form-list li.control input.radio,
 .form-list li.control input.checkbox { margin-right:6px; }
 .form-list li.control .input-box { clear:none; display:inline; width:auto; }
 /*.form-list li.fields { margin-right:-15px; }*/
 .form-list .input-box { display:block; clear:both; width:260px; }
 .form-list .field { float:left; width:275px; }
-.form-list input.input-text { width:250px; }
+.form-list input.input-text { width:215px; } /* veena from 250 px*/
 .form-list textarea { width:250px; height:10em; }
 .form-list select { width:260px; }
 .form-list li.wide .input-box { width:535px; }
-.form-list li.wide input.input-text { width:529px; }
+.form-list li.wide input.input-text { width:100%; } /*veena from 529 px */
 .form-list li.wide textarea { width:529px; }
 .form-list li.wide select { width:535px; }
 .form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
@@ -1174,10 +1200,8 @@ input.input-text:focus,select:focus,textarea:focus { box-shadow:0 0 3px #BBBBBB;
 .buttons-set-order { margin:10px 0 0; }
 .buttons-set-order .please-wait { padding:12px 7px 0 0; }
 
-.fieldset { margin: 0px;
-    padding: 0; }
+.fieldset { margin: 20px 0;   padding: 0; } /*veena */
  
-
 /* Form Validation */
 .validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:12px; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 0 no-repeat; color:#DD4B39; }
 .validation-failed { border:1px dashed #DD4B39 !important; background:#faebe7 !important; }
@@ -1204,10 +1228,12 @@ p.required { font-size:11px; text-align:right; color:#DD4B39; }
 .error-msg { border-color:#f16048; background-color:#faebe7; background-image:url(../images/i_msg-error.gif); color:#df280a; }
 .success-msg { border-color:#446423; background-color:#eff5ea; background-image:url(../images/i_msg-success.gif); color:#3d6611; }
 .note-msg,
-.notice-msg { border: 1px solid #ecedef; background-image:url(../images/i_msg-note.gif); color:#3d6611; font-size: 16px; padding: 5px 34px!important; margin-top: 20px; color: red;}
+/* start changes veena old one .notice-msg { border: 1px solid #ecedef; background-image:url(../images/i_msg-note.gif); color:#3d6611; font-size: 16px; padding: 5px 34px!important; margin-top: 20px; color: red;}*/
+.notice-msg { border-color:#fcd344; background-color:#fafaec; background-image:url(../images/i_msg-note.gif); color:#3d6611; } /* end changes veena for notice */
 
 /* BreadCrumbs */
-.breadcrumbs {   line-height:1.25; margin:10px; color:#93383A;display:inline-block;}
+/* start changes veena remove and replace .breadcrumbs {   line-height:1.25; margin:10px; color:#93383A;display:inline-block;}*/
+.breadcrumbs {   line-height:1.25; margin:0 0 13px; color:#93383A;} /* end changes veena for breadcrumbs */
 .breadcrumbs li { display:inline; }
 .breadcrumbs li strong { font-weight:normal; }
 
@@ -1252,9 +1278,10 @@ p.required { font-size:11px; text-align:right; color:#DD4B39; }
 .pager .pages strong{ display:none; }
 .pager .pages ol {float:left; padding:3px; }
 .pager .pages li { 
-    display: inline;
+    float:left; /* veena changes */
     margin: 0 2px 0 0px;
     padding:1px 6px;cursor:pointer; border:1px solid #EBEBEB;border-radius:3px; background:#DEDDDD; }
+	
 .pager .pages .current , .pager .pages li:hover {background: none repeat scroll 0 0 #ebebeb; border:1px solid #ebebeb; color:#FF8409;}
 .pager .pages .current, .pager .pages li:hover a{ color:#ff8409; }
 .pager .pages li  img ,.pager .pages li  a { text-decoration:none; }
@@ -1499,7 +1526,8 @@ tr.summary-details-excluded { font-style:italic; }
 .divider { clear:both; display:block; font-size:0; line-height:0; height:1px; margin:10px 0;   text-indent:-999em; overflow:hidden; }
 
 /* Global site notices */
-.global-site-notice { border:1px solid #cfcfcf; border-width:0 0 1px; background:#ffff90; font-size:12px; line-height:1.25; text-align:center;  }
+/* start changes veena remove old and replace with new .global-site-notice { border:1px solid #cfcfcf; border-width:0 0 1px; background:#ffff90; font-size:12px; line-height:1.25; text-align:center;  }*/
+.global-site-notice { border:1px solid #cfcfcf; border-width:0 0 1px; background:#ff9800; font-size:13px; line-height:1.25; text-align:center;  }
 .global-site-notice .notice-inner { width:860px; margin:0 auto; padding:12px 0 12px 80px; background:url(../images/i_notice.gif) 20px 25px no-repeat; text-align:left; }
 .global-site-notice .notice-inner p { margin:0; border:1px dotted #cccc73; padding:10px; }
 .global-site-notice .notice-inner .actions { padding-top:10px; }
@@ -1511,34 +1539,167 @@ tr.summary-details-excluded { font-style:italic; }
 .noscript {}
 
 /* Demo Notice */
-.demo-notice { margin:0; padding:6px 10px; background:#d75f07; font-size:12px; line-height:1.15; border:0; text-align:center; color:#fff; }
+/* start changes veena - replace with new .demo-notice { margin:0; padding:6px 10px; background:#d75f07; font-size:12px; line-height:1.15; border:0; text-align:center; color:#fff; }*/
+.demo-notice { margin:0; padding:0; background:#ff9800; font-size:13px; line-height:1.15; border:0; text-align:center; color:#fff; font-family: 'Open Sans',Arial,Helvetica,sans-serif;}
 .demo-notice .notice-inner { width:auto; padding:0; background:none; text-align:center; }
 .demo-notice .notice-inner p { padding:0; border:0; }
 
 /* ======================================================================================= */
-
+/* START CHANGES veena - Header Shop details */
 /* Header ================================================================================ */
-.logo { float:left;  }
-.header a.logo { margin:35px 0; margin-bottom:0; text-decoration:none !important; }
-.header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
-.header .quick-access 
-{ 
-	float:left; 
-	margin:62px 0 0 50px;
-	padding:0px 0px 0 0; 
+/* Shop Details ===========================================================================*/
+
+.shop { float:left; padding :2px ;clear:both;}
+.shop strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
+.logo { float:left;padding:0 0 5px 0; clear:both;}
+.mail {float:left;/*clear:both;*/}
+.phone {float:left; /*clear:both;*/}
+/* End of shop styling */
+
+/* Area Code Check ===*/
+.area-code {float:left;padding :2px; clear:both;}
+
+.area-code #top-delivery-message {
+  color: #ff9800;	/*#cc0000;*/
+  font-weight: 300;
+  clear:both;
 }
-.header .welcome-msg { margin: 0 0 0; display:inline-block; vertical-align:top;}
-.tm_headerlinkmenu	{ display:inline-block;}
-.mobile_link_menu	{ display:none;}
-.header .welcome-msg a { color:#ebbc58; }
-.header .form-search 
-{ 
+
+.area-code .delivery-check {
+	color: #000;
+	background-color: lightgrey;/*#cc0000;*/
+	
+	width: 155px;
+	height: 22px;
+    margin: 0;
+	
+	font-size: 10px; /* veena font changed bcoz of not fitting on screen */
+	font-weight: 400;	
+	white-space:pre-wrap;
+	text-align: center;
+    
+	border-radius:3px;
+		
+}
+/* this is for the pincode input field */
+.area-code .pincode {
+	color: #000;
+	background-color: #fff;
+	
+	width: 80px;
+	height: 14px;
+	
+	font-size: 10px; /* veena font changed bcoz of not fitting on screen */
+	font-weight: 400;	
+	
+	border-radius:3px;	
+	border:1px solid;
+
+}
+.area-code input.input-text {
+	padding:2px;
+	text-align:center;
+	white-space:pre-wrap;
+}
+/* End of area code styling */
+
+/* Here is the styling for the middle part ofthe header which contains the quick access form and the earliest delivery slot*/
+/* This applies to the text and the delivery slot button */
+.header_2nd .delivery  {
+    color: black;
+    text-align: center;
+    font-weight: 400;
+	/*margin: 5px 0 10px 0;*/
+}
+.header_2nd .delivery-slot {
+    color: #FFF;
+	background-color: #ff9800;
+	
+	height: 22px;
+    padding :2px;
+	margin: 0px 0 2px;   /* this causes the distance betwene the search form */
+	
+	font-size: 10px; /* veena change font */
+	font-weight: 400;	
+	white-space:pre-wrap;
+	text-align: center;
+    
+	border-radius:3px;
+	border:1px solid;
+	border-color: #ff9800;
+	
+    
+}
+/* The following is for the search form */
+.header_3rd #search_mini_form{
 	position:relative;
-	background:url("../images/search_bg.png") repeat scroll 0 0 transparent;
-	border-radius: 5px;
-    float: left;
-    padding: 5px;
 }
+.header_3rd input {
+    border: solid 1px #b7b7b7;
+    box-shadow: 1px 1px 2px #ccc inset;
+    color: #df1e1b;
+    text-align: left;
+    padding: 5px 10px;
+	width :90%;
+	font-size:10px;
+}
+.header_3rd  #search_mini_form label { 
+	/*float:left; */
+	width:24px; 
+	height:21px; 
+	text-align:left; 
+	text-indent:-999em; 
+	overflow:hidden; 
+	display: none;
+}
+.header_3rd  #search_mini_form  .button {
+    background: url("../images/button-search.png") 96% center no-repeat;
+    height: 16px;
+	width: 16px;
+    position: absolute;
+    right: 10px;
+    top: 0px;   /* veena changed from 6px to adjust how the icon is placed */
+}
+.header_3rd  #search_mini_form button.button span { border:0;  background:none; padding:0 0 0 3px;  }
+.header_3rd  #search_mini_form button.button span span {   font-size:0;}
+
+.header_3rd .welcome-msg { 
+	display:inline-block;
+}
+
+.tm_topbanner	{ 
+	width : auto;
+	height : 42px;
+	border : 0px solid black; 
+	margin :0;
+}
+.header_5th  .del_code p          { margin:0 ; text-align:right;}
+.header_5th .tm_headerlinkmenu	{ display:inline-block;}
+.header_5th .mobile_link_menu	{ display:none;}
+.header .header-top ul.contact {
+	width: 24%;
+	float: left;
+	margin-right: 25px;
+	border-right: 1px solid #fff;
+	padding-bottom: 7px;
+}
+
+.header a.promotion {
+  background-color: #006633;
+  border-radius: 5px;
+  color: #fff;
+  width: 160px;
+  text-align:center;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 11px;
+  margin: 3px 0 0;
+}
+
+/* END CHANGES veena - Header Shop details */
+
+/* Start changes veena commenting out the entire stuff below as I did in ClassyShop template
 .header .form-search label { float:left; width:24px; height:21px; text-align:left; text-indent:-999em; overflow:hidden; display: none;}
 .header .form-search input.input-text { float:left; border:none;width:180px;   padding:7px 26px 6px 6px; font-family:'Open Sans',Arial,Helvetica,sans-serif;}
 .header .form-search button.button 
@@ -1552,8 +1713,7 @@ tr.summary-details-excluded { font-style:italic; }
     top: 3px;
     width: 28px;
 }
-.header .form-search button.button span { border:0;  background:none;
- padding:0 0 0 3px;  }
+.header .form-search button.button span { border:0;  background:none; padding:0 0 0 3px;  }
 .header .form-search button.button span span {   font-size:0;}
 .header .form-search .search-autocomplete { z-index:999; left:40px !important; top:22px !important; }
 .header .form-search .search-autocomplete ul { border:1px solid #5c7989; background-color:#f9f5f0; }
@@ -1561,6 +1721,8 @@ tr.summary-details-excluded { font-style:italic; }
 .header .form-search .search-autocomplete li .amount { float:right; font-weight:bold; }
 .header .form-search .search-autocomplete li.odd { background-color:#fffefb; }
 .header .form-search .search-autocomplete li.selected { background-color:#f7e8dd; }
+End changes veena */
+
 .header .form-language{   margin-top:10px;  float:right;}
 .header .form-language label {   padding-right:5px;  }
 .header .form-language select.flags option { background-position:4px 50%; background-repeat:no-repeat; padding-left:25px; }
@@ -1582,87 +1744,115 @@ tr.summary-details-excluded { font-style:italic; }
 .ie7 .footer_CMSBlock li	{ margin:0 0 0 20px}
 .ie7 #footer .block-subscribe input.input-text	{ width:160px;}
 
+/* start changes veena - header */
+.header-cart{ 
+	float:right; 
+	margin:0px 0px 0px 0px; 
+	clear:right;
+	border-radius:3px;
+	background-color :lightgrey;
+}
+/* end changes veena - header */
+
 .header .header-cart  li{ clear:both; margin-bottom:5px; overflow:hidden; }
+
+/* start  changes veena - header-cart */
 .header .header-cart #panel{  
  	background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #CCCCCC;
-	border-top:none;
-    border-radius: 5px 0 5px 5px;
+    border-radius: 5px;
     display: none;
     min-width: 20px;
     padding: 10px;
     position: absolute;
-    right: 0;
+    /*right: 0;*/
     text-align: left;
-    top: 105px;
-    width: 250px;
+    /*top: 130px; /* veena change from 80px*/
+    width: 220px;
 	z-index:95;
-	box-shadow:
+	box-shadow:2px 3px 5px 1px #8d8c8c;
 	-webkit-box-shadow: 5px 8px 30px 3px rgba(0,0,0,0.59);
--moz-box-shadow: 5px 8px 30px 3px rgba(0,0,0,0.59);
-box-shadow: 2px 3px 5px 1px #8d8c8c;
+	-moz-box-shadow: 5px 8px 30px 3px rgba(0,0,0,0.59);
 }
-/*	.header-cart {
-min-width:260px;
-max-width:300px;
-}*/
+/* end changes veena - header-cart */
+
 .checkouticon{
-float:left; padding-top:6px; padding-right:6px;
+	float:left; padding-top:6px; padding-right:6px;
 }
+
+/* veena commented out .header-cart { float:right; margin-top:12px; clear:right;}*/
+
+.header .header-cart #panel .actions{ float:left; margin-top:7px; } /* changed from right to left veena */
+.header .header-cart #panel .actions .viewcart-btn{ margin-left:5px; }
+.header .header-cart #panel .product-name a{ font-size:13px; }
+
+.tm_headerlinks_inner{ display:none; }
+
+/* Start changes veena header links */
+.header .links li { float:left; padding:0 6px; border-left:1px solid #DDDDDD; position:relative;}
+.header .links li a{ text-decoration:none; font-size:0; color:#000; height: 20px;    width: 22px;}
+/*.header_5th .links li a{ text-decoration:none; font-size:13px; color:#000; height: 20px;    width: 22px;}*/
+/* End changes veena header links */
+
+.header-container .top-container { clear:both; padding:5px 10px 0 12px; text-align:right; }
+
+/* start changes veena -cart-mini-right */
+.cart_mini_right{ 
+	background:url("../images/shopping-cart.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+	padding: 0px 2px 2px 35px; /* veena changes font size  and padding t fit on 1 line */
+    margin: 2px 0px 0px 2px;
+	cursor:pointer; 
+} 
+
+/* veena cart-label,mini-right etc styling commented out as it clashes with my styling 
 .cart-label{
 padding:5px;
 background-color: #ff8409;
 border-radius: 4px;
-}
-.header .header-cart #panel .actions{ float:right; margin-top:7px; }
-.header .header-cart #panel .actions .viewcart-btn{ margin-left:5px; }
-.header .header-cart #panel .product-name a{ font-size:13px; }
-.tm_headerlinks_inner{ display:none; }
-.header .links li { float:left; padding:0 6px; position:relative;}
-.header .links li a{ text-decoration:none; color:#000; font-size: 13px;}
-.header-container .top-container { clear:both; padding:5px 10px 0 12px; text-align:right; }
-.header-cart{ float:right; margin-top:12px; clear:right;}
-.cart_mini_right{ background:url("../images/shopping-cart.png") no-repeat scroll left top rgba(0, 0, 0, 0);
-	padding:0 0 0 25px;color:#fff;
-	cursor:pointer; 
-}
-.cart-label .price{color:#fff;}
-/*.cart_mini_right:hover	{ background-position: -224px -74px;}*/
- 
+} 
+
+.cart_mini_right:hover	{ background-position: -224px -74px;} 
+.cart-label .price{color:#fff;} 
+
+ end changes veena -cart-label,mini-right etc */
+
 .header-cart .right_arrow{ 
-   background: url("../images/drop-down.png") no-repeat scroll center center transparent;
-    margin: 2px 0 0 6px;
-    
+	background: url("../images/arrow-down.png") no-repeat scroll center center transparent;
+	margin: -3px 0 0 6px;
 	vertical-align: middle;
- 	 display:inline-block;
-	 width:10px;
-	 height:15px;
+	display:inline-block;
+	width:10px;
+	height:15px;
 }
+
 .ie7 .header-cart .right_arrow{ display:inline}
 .header-cart  .active .right_arrow{ background: url("../images/drop-down.png") no-repeat scroll center center transparent;}
 
 .headertoggle_img{
-	background:/*url("../images/sprite.png") no-repeat scroll -116px -123px;*/
+	background:url("../images/sprite.png") no-repeat scroll -116px -123px; /*veena emoved commenting */
 	height: 20px;
 	margin: 0 auto;
 	text-align: center;
 	width: 40px;
 }
-.tm_topbanner	{ float:right; margin:16px 10px 0 0;}
-.header_topmenu	{ float:right; width:100%; text-align:right; margin:0px;}
-/*.header .links li#top_link1 a	{ background: url("../images/sprite.png") no-repeat scroll -7px -518px transparent; width:22px; height:20px; display:block;}
-.header .links li#top_link2 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -621px transparent; width:22px; height:20px; display:block;}
-.header .links li#top_link3 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -478px transparent; width:22px; height:20px; display:block;}
-.header .links li#top_link4 a	{ background: url("../images/sprite.png") no-repeat scroll -11px -556px transparent; width:16px; height:20px; display:block;}
-.header .links li#top_link5 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -590px transparent; width:24px; height:20px; display:block;}
+/* remove veena this styling .tm_topbanner	{ float:right; margin:16px 10px 0 0;} */
+/* Start changes veena - header links */
+.header_topmenu	{ float:right; width:100%; text-align:right; margin:5px 0;}
+.header .links li.top_link1 a	{ background: url("../images/sprite.png") no-repeat scroll -7px -518px transparent; width:22px; height:20px; display:block;}
+.header .links li.top_link2 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -621px transparent; width:22px; height:20px; display:block;}
+/*.header .links li.top_link3 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -478px transparent; width:22px; height:20px; display:block;}*/
+.header .links li.top_link3 a	{ background: url("../images/quicklist.png") no-repeat scroll transparent; width:25px; height:20px; display:block;}
+.header .links li.top_link4 a	{ background: url("../images/sprite.png") no-repeat scroll -11px -556px transparent; width:16px; height:20px; display:block;}
+.header .links li.top_link5 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -590px transparent; width:24px; height:20px; display:block;}
 
-.header .links li#top_link1 a:hover	{ background-position:-229px -518px;}
-.header .links li#top_link2 a:hover	{ background-position:-229px -621px;}
-.header .links li#top_link3 a:hover	{ background-position:-228px -481px;}	
-.header .links li#top_link4 a:hover	{ background-position:-232px -556px;}	
-.header .links li#top_link5 a:hover	{ background-position:-226px -590px;}	
+.header .links li.top_link1 a:hover	{ background-position:-229px -518px;}
+.header .links li.top_link2 a:hover	{ background-position:-229px -621px;}
+/*.header .links li.top_link3 a:hover	{ background-position:-228px -481px;}	*/
+.header .links li.top_link3 a:hover	{ background: url("../images/quicklist_hover.png") no-repeat scroll transparent; width:25px; height:20px; display:block;}
+.header .links li.top_link4 a:hover	{ background-position:-232px -556px;}	
+.header .links li.top_link5 a:hover	{ background-position:-226px -590px;}	
 
-.header .links li#top_link3 em	{ width:120px;} 
+.header .links li.top_link3 em	{ width:120px;} 
 .links li em {
      background: none repeat scroll 0 0 #939393;
     color: #FFFFFF;
@@ -1676,43 +1866,43 @@ border-radius: 4px;
     top: -30px;
     width: 88px;
     z-index: 2;
-}*/
-.header_topmenu .footer_link	{ display:none;}
-/********** < Navigation */
-.nav-inner
-{
-	/*background: url("../images/manu_line_bg.png") repeat-x scroll center center transparent;*/
-	clear: both;
-    height: 45px;
-
-    padding: 10px 0;
-		padding-top:0px;
 }
 
+/* End changes veena - header links */
+
+.header_topmenu .footer_link	{ display:none;}
+
+/********** < Navigation */
+/* Start changes veena - nav-inner padding changed  */
+.nav-inner
+{
+	background: url("../images/manu_line_bg.png") repeat-x scroll center center transparent;
+	clear: both;
+    height: 45px;
+    padding: 2px 0;
+}
 .advanced_nav{ display:none; }
-/*.nav-inner #nav , .nav-responsive , #advancedmenu
+.nav-inner #nav , .nav-responsive , #advancedmenu
 {  
 	clear: both;
-	background: #49a94d; /*url("../images/manu_bg.png") repeat scroll center center transparent;
+	background: url("../images/manu_bg.png") repeat scroll center center transparent;
 	border-radius:5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	height:45px;
 	padding:0 5px;
- }*/
+ }
+/* end changes veena - nav-inner */
+ 
 /* All Levels */ /* Style consistent throughout all nav levels */
+/* Start changes veena - nav li dev.menu */
 #nav li ,div.menu
 { 
-	max-width:100px;	
-	padding:0px;
-	padding-left:0px;
-	padding-top:0px;
-	padding-bottom:0px;
 	position:relative; 
-	text-align:center;
+	text-align:left;
 	float:left; 
-	/*background: url("../images/saprator.png") no-repeat scroll right center transparent;*/
-}
+	background: url("../images/saprator.png") no-repeat scroll right center transparent;
+}/* end changes veena - nav li dev.menu*/
 #nav li.last,#advancedmenu .menu:last-child	{ background:none;}
 #nav li.over { z-index:998; }
 #nav a,
@@ -1723,26 +1913,25 @@ border-radius: 4px;
 #nav ul li.parent li a { background-image:none; }
 
 /* 0 Level */
- 
-#nav a , .nav-responsive span ,
+/* Start changes veena for div menu */
+#nav a , .nav-responsive span  ,
 div.menu a, div.megnor-advanced-menu-popup a
 {   
-	 color: #FFFFFF;
+	color: #FFFFFF;
     float: left;
-    font-family: 'Open Sans', sans-serif; 
-    font-size: 13px;color: #fff;
-  line-height: 12px;
-  text-align: left;
-  padding: 10px;
-  
-  display: block;
-	
-    padding: 0px 3px;
-    /*text-transform: uppercase;*/
+    font-family: 'Ubuntu',Arial,Verdana;
+    font-size: 10px; /* veena font change */
+    padding: 12px 15px;
+    text-transform: uppercase;
 }
-div.menu a {
-padding:22px 10px 27px;
-}
+div.parentMenu.menu0 a,div#menu15.menu a{
+	border: 1px solid black;
+	border-radius:5px;
+	background-color:#ff9800;
+	color:#fff;
+	float:right;
+	 padding: 9px 15px;
+} /* End changes veena for div menu */
 /*#nav li.over a,
 #nav a:hover { color:#fff; }
 */
@@ -2089,16 +2278,21 @@ padding:22px 10px 27px;
 /*.products-grid { border-bottom:1px solid #d9ddd3; background:url(../images/bkg_grid.gif) 0 0 repeat; position:relative; }
 .products-grid.last { border-bottom:0; }*/
 .products-grid{ width:100%; }
+
+/* veena Changed the following according to ClassyShop */
+.products-grid li.item , .col-main .slider-item{ float:left; width:240px; padding:0; list-style:none; }
+
+/* Start change veena - removing this as I cannot see a similar style in ClassyShop 
+
 .products-grid li.item { float:left; width: 178px !important; padding:0 0 10px; border:1px solid #ecedef; list-style:none; margin: 0 8px 15px 0; }
 
 .product-carousel .col-main .slider-item {
   float:left; width: 189px !important; padding:0; list-style:none; margin-bottom: 15px; 
 }
-
 .products-grid li .product-block-inner img {
    width:125px!important;
    height: 125px!important;  
-}
+}*/
 
 .products-grid li.first_item_tm{ }
 .products-grid li.last_item_tm{ }
@@ -2126,10 +2320,12 @@ padding:22px 10px 27px;
     text-align: center;
     height: auto!important;
 }
-
+/* Veena changed to styling according to ClassyShop 
 a.product-image { padding-top: 5px;
   margin: 0 auto;
-  display: block; }
+  display: block; }*/
+  a.product-image { display:block;  margin:0 0 10px; }
+  
 .products-grid .product-name { margin:0 0 5px; font-weight:normal; font-size:14px; }
 .products-grid .product-name a { }
 
@@ -2143,14 +2339,14 @@ a.product-image { padding-top: 5px;
 	border:1px solid #D1D1CF;
     clear: both;
     margin: 0px;
-	padding:10px 7px;;
-    /*overflow: hidden;*/
+	padding:10px 7px;
+    overflow: hidden; /* veena removed  the commenting in keeping with CLassyShop changes */
 }
 
 .product-carousel .product-block-inner{
   padding:0;
     text-align: center;
-    position: relative;
+   /* position: relative; veena commented out  in keeping with CLassyShop changes */ 
 }
 
 #grid .product-block-inner .new-label	{ right:-7px; top:0;}
@@ -3463,7 +3659,8 @@ width: 97%;
   border-bottom: solid 3px #e3e2e2;
   margin: 0;
 }
-.footer_bottom  li{float:left; /*background:url(../images/pipe_icon.png) 100% 60% no-repeat;*/font-size:13px; }
+.footer_bottom address { float:left; margin:5px 0; text-align:center; width:100%;}
+.footer_bottom  li{float:none; /*background:url(../images/pipe_icon.png) 100% 60% no-repeat;*/font-size:13px; }
 .footer_bottom  li a{color: #444546;
     display: block;
     padding: 0 15px;}
@@ -3475,52 +3672,36 @@ width: 97%;
  
 .footer .mobile_togglemenu{ display:none; }  
 .footer_top{ width:100%; padding: 10px 0; overflow:hidden;}
-.footer-bottom ul li a{
-  color: #444546;
-  display: block;
-  padding: 0 15px;
-}
 
+/* Start changes veena footer_CMSblock*/
+footer .footer_CMSBlock ul li {
+  width: 30%;
+  text-align:center;
+} /* end  changes veena footer_CMSblock*/
+/* Start changes veena footer_bottom */
 .footer_bottom
 {
-   /* background: url("../images/foooter_doubleline.png") repeat-x scroll 0 top transparent;*/
+    background: url("../images/foooter_doubleline.png") repeat-x scroll 0 top transparent;
     clear: both;
-    overflow: hidden;width: 98%;
-  margin: 0 auto;	
+    overflow: hidden;
     padding: 20px 0 10px;
 }
-
-footer .footer-bottom {
-  width: 100%;
-  float: left;
-  padding: 15px 0 0 0;
-  width: 70%;
-  margin: 0 auto;	
-  display: block;
+#footer .footer-area{
+	float: left;    
+	margin-right: 15px;    
+	width: 23%;
+	text-align:center ;
 }
 
-.footer-bottom ul {
-  width: 70%;
-  margin: 0 auto;	
-  display: block;
-}
-
-footer .footer-bottom ul li {
-  float: left;
-  font-size: 14px;	
-}
-
-
-
-
-#footer .footer-area{float: left;    margin-right: 15px;    width: 172px;}
 #footer #block_5
 { 
 	margin-right:0; 
 	background: url("../images/footer_banner_border.png") repeat scroll 0 top transparent;
 	padding:10px 20px;
-	width:210px;
+	width:18%;
 }
+/* End changes veena footer_bottom */
+
 #footer .block-subscribe	{ margin:0 !important;}
 #footer  .form-subscribe-header { display:none;}
 #footer .block-subscribe strong span
@@ -3535,7 +3716,6 @@ footer .footer-bottom ul li {
 
 #footer h6 ,#footer .block .block-title strong{ font-size:16px; font-weight:normal; margin-bottom:10px; color: #3C3E3E;
 text-shadow:none; font-family:Ubuntu,Arial,Verdana;}
-
 
 .footer_CMSBlock .social_block li { margin:0 5px;}
 .footer_CMSBlock li.last img	{ float:left;}
@@ -3743,7 +3923,7 @@ text-shadow:none; font-family:Ubuntu,Arial,Verdana;}
 .tm_subbanner li.first	{ margin:0 0 8px 0;}
 
 .cms-home .slider_banner_content{
-        width: 1000px; !important;
+        width: 100% !important; /* veena change from 1000px */
         display: block !important;
         margin: auto !important;
 }
@@ -3792,13 +3972,19 @@ text-shadow:none; font-family:Ubuntu,Arial,Verdana;}
 { 
 	/*background: none repeat scroll 0 0 #E8E8E4;*/
     border-radius: 5px;
-
     margin:0 auto;
     padding: 2px 0;
     position: relative;
-
-    width: 155px;	
-	
+	text-align :center;
+    width: 200px; /* veena changes to make the product grid hover bloack look better*/	
+}
+/* veena - this change was added to get the button to look better on the product carousel */
+.hover_block  .btn-cart {
+	width:auto !important;
+	float :right !important;
+}
+.hover_block dd{
+	padding :0px !important;
 }
 .crosssell li:hover .hover_block,
 #featured-carousel li:hover .hover_block,
@@ -4177,7 +4363,7 @@ margin-left: 0px !important;
 #amconf-block{
 	height: auto;
 }
-
+/* Veena changes for featured products 
 .featured-products .product-block-inner img {
   width: 125px!important;
   height: 125px!important;
@@ -4187,15 +4373,17 @@ margin-left: 0px !important;
    width: 245px!important;
 }
 
+*/
+.featured-products .amconf-images-container {
+ /* margin: 10px 1% 20px -9% !important;  veena changes so that the product package size is shown */
+  width: 100%;
+}
 #filter_Category {
   display: none;
 }
 
 
-.featured-products .amconf-images-container {
-  margin: 10px 1% 20px -9% !important;
-  width: 100%;
-}
+
 
 .Growler-notice{
 	background-color: #ff8409 !important;
@@ -4307,10 +4495,13 @@ div.itemSubMenu.level2:hover {
     border: 1px solid black;
     border-radius: 50%;
 }
+/* Veena  Change so that the product package size is shown properly
 a.amconf-image {
   margin-left: 15px!important;
   float: left;
 }
+*/
+
 .catalog-product-view .product-shop .qty-indicater{
   float:left!important;
   margin-left:2px;

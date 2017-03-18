@@ -29,4 +29,7 @@
  * @see Mage_Page_Block_Template_Links_Block
  */
 ?>
-<li id="top_link2" <?php if($this->getIsFirst()||$this->getIsLast()): ?> class="<?php if($this->getIsFirst()): ?>first<?php endif; ?><?php if($this->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $this->getLiParams() ?>><?php echo $this->getBeforeText() ?><a href="<?php echo $this->getLinkUrl() ?>" title="<?php echo $this->getTitle() ?>" <?php echo $this->getAParams() ?>>&nbsp;<?php echo $this->getTitle() ?></a><?php echo $this->getAfterText() ?></li>
+<li id="top_link2" <?php if($this->getIsFirst()||$this->getIsLast()): ?> class="<?php if($this->getIsFirst()): ?>first<?php endif; ?><?php if($this->getIsLast()): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $this->getLiParams() ?>><?php echo $this->getBeforeText() ?>
+<a href="<?php echo $this->getLinkUrl() ?>" title="<?php echo $this->getTitle()?>" <?php echo $this->getAParams() ?>>&nbsp;<?php echo $this->getTitle() ?></a>
+<?php echo $this->getAfterText() ?>
+</li>

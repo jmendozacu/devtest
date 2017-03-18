@@ -437,7 +437,7 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
     public function renderCategoriesMenuHtml($level = 0, $outermostItemClass = '', $childrenWrapClass = '')
     {
         $activeCategories = array();
-		Mage::log("veena - active categroies count");
+		//Mage::log("veena - active categories count");
         foreach ($this->getStoreCategories() as $child ) {
             if ($child->getIsActive()) {
                 $activeCategories[] = $child;
@@ -445,13 +445,12 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
         }
         $activeCategoriesCount = count($activeCategories);
 		
+		$hasActiveCategoriesCount = ($activeCategoriesCount > 0);
 		
-        $hasActiveCategoriesCount = ($activeCategoriesCount > 0);
-		Mage::log("veena - active categroies count-2");
         if (!$hasActiveCategoriesCount) {
             return '';
         }
-		Mage::log("veena - active categroies count-3");
+		
         $html = '';
         $j = 0;
         foreach ($activeCategories as $category) {

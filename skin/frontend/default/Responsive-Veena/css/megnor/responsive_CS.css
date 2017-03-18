@@ -5,7 +5,7 @@
 	.header, .nav-inner, .main, .footer	{ width:980px;}
 	.header_left	{ width:260px;}
 	.col-main		{ width:725px;}
-	.tm-homeslider	{ width:100%;}
+	.tm-homeslider	{ width:100%;} /* changed from 720px %*/
 	.tm_subbanner img{max-width:98%;}
 	.slider_bottom_cmsblock .cmsblock_content li	{ margin:0 0 0 50px;}
 	.footer_CMSBlock li	{ margin:0 0 0 30px;}
@@ -16,14 +16,10 @@
 @media only screen and (min-width: 980px) and (max-width: 1020px) {
 	.header, .nav-inner, .main, .footer{ width:950px;  }
 	.header_left	{ width:260px;}
-	.tm-homeslider	{ width:100%;}
+	.tm-homeslider	{ width:690px;}
 	.tm_subbanner img{max-width:93%;}
 	.slider_bottom_cmsblock .cmsblock_content li	{ margin:0 0 0 38px;}
 	.footer_CMSBlock li	{ margin:0 0 0 18px;}
-	
-	.crosssell .hover_block, #upsell-carousel .hover_block, #featured-carousel .hover_block, #grid .product-block .hover_block
-	{left:95px;}
-	
 	.col-main { float:left; width:750px;}
 	.col-left { float:left; width:180px;}
 	.col-right { float:right; width:180px; margin-left:0;}
@@ -50,7 +46,7 @@
 	.header_right	{ width:450px;}
 	.header .quick-access	{ float:right; margin:15px 0 0; clear:both;}
 	.header-cart	{ margin-top:8px;}	
-	.tm-homeslider	{  width:100%;}
+	.tm-homeslider	{  width:100%;} /* changed from 73%*/
 	.tm_subbanner	{ width:25%;}
 	.tm_subbanner img	{ width:100%;}
 	.slider_bottom_cmsblock .cmsblock_content li	{ width:32%; margin:0 0 0 14px;}
@@ -96,14 +92,13 @@
 	.block-banner img , .category-image img{ max-width:100%;}
 	.toolbar .pager .pager_right{ float:left; margin-top:8px; clear:both; }
 	.footer address{ float:none;text-align:center; clear:both; }
-	.product-collateral .padder{ padding-left:0; padding-right:0; }
 	.padder ol{ display:none; margin-bottom: 15px; padding:8px;}
 	.padder > div{ display:block !important;  }
 	#footer .block-subscribe input.input-text{ width:98%; }
 	.block-subscribe .block-title strong {    display: inline;}
 	.multiple-checkout .gift-messages-form .item .details .form-list li.wide .input-box{ width:90%; }
 	#grid .item .product-block img	{ width:100%; height:auto;}
-	#grid .product-block .hover_block { left: 0 !important; }
+
 	/* Product */
 	.product-name h1	{ width:50%;}
 	.col1-layout .product-view .product-shop	{ width:365px;}
@@ -114,28 +109,18 @@
 	.checkout-progress li span	{ font-size:12px; font-weight:normal;}
 	.box-account ,.sales-order-history .my-account
 	{ overflow:auto;}
-	.crosssell .hover_block { left: 36px !important; }	
 	.compare_content	{ overflow:auto;}
 	.customblock_inner	{ width:97.5%;}
 	.cms_menu_block		{ width:216px; margin:0 12px 10px 0}
 	#advancedmenu{ display:none; }
 	.advanced_nav{ display:block; }
-	/* veena Added some styling ClassyShop elements */
 	.products-list li .list-center{width:100%;}
 	#product_tabs_cms_contents h6{display:none;}
 	#product_tabs_tags_tabbed_contents h6{margin-bottom:0;}
 	.product-collateral { margin: 0 0 30px; }
 	#footer .block-subscribe .actions {padding-left: 8px;}
 	#footer .block-subscribe input.input-text{ border-bottom: 1px solid #ddd;  border-left: 1px solid #ddd;}
-	/* veena Removing nav-container and checkouticon - as that is not there in ClassyShop 
-	.nav-container {
-		margin-top:27px;
-		padding-top:25px;
-		padding-bottom:10px;
-	}
-	.checkouticon{
-		display:none;
-	}*/
+	/*.header .header-cart #panel{top:130px;}*/
 }
  
 /* Landscape phone to portrait tablet */
@@ -145,9 +130,7 @@
 	.col-main{ margin-bottom:10px; }
 	.col-left .block-content ,.col-right .block-content{ display:none; }
 	.col3-layout .col-wrapper , .col-main , .col3-layout .col-main{  width:100%;}
-	.toggle .mobile_togglecolumn {
-		display: block;
-	}
+	
 	 
 	#advancedmenu{ display:none; }
 	.advanced_nav{ display:block; }
@@ -325,7 +308,6 @@
 	.form-list li.wide textarea{ width:100%; }
 	.form-list li.fields .name-firstname{ margin-bottom:10px; }
 	.slider_bottom_cmsblock .maintext	{ font-size:25px;}	
-	/* Start changes veena - to add elements from ClassyShop */
 	/*.crosssell .hover_block, #upsell-carousel .hover_block, #featured-carousel .hover_block, #grid .product-block .hover_block, #featured-grid .product-block .hover_block, .products-grid .product-block .hover_block{display:block;}*/
 	.toggle .mobile_togglecolumn{display: block;}
 	.header .top_link2 > em {	display: none;	}
@@ -340,14 +322,7 @@
 		padding: 0;
 		margin-top:0;
 		}
-	/* End changes veena - to add elements from ClassyShop */
-	/* Start changes veena - remove nav-container element 
-			.nav-container {
-		
-		padding-top:5px;
-		padding-bottom:5px;
-	}
-	End  changes veena - remove nav-container element*/
+
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -364,17 +339,17 @@
 	.form-list li.wide input.input-text{ width: 250px;}
 	.footer_CMSBlock	{ display:none;}
 	.footer	{ padding:10px 0 0 0;}
+	.pager .pages {float: left;margin: 0;}
 	.pager .limiter	{ margin:0 0 5px 0; float:left;}
-	.pager .pager_right .sort-by	{ float:left; width:100%; margin:5px 0 0 0;}
+	.pager .pager_right .sort-by {clear: both;	float: left;margin: 5px 0 0;}
 	.shopping_CMS_main1 img	{ width:100%;}
 	.checkout-progress li	{ width:97%;}
 	.checkout-progress li.first,.checkout-progress li.last	{border-radius:0;}
 	.registered-users, .new-users	{ width:96% !important; margin:0 0 5px 0;}
-	/*Start changes veena - remove this styling 	.header-cart, .tm_headerlinkmenu	{ top:80px;} End changes */
+	/*.header-cart, .tm_headerlinkmenu	{ top:80px;}*/
 	.slider_bottom_cmsblock .maintext	{ font-size:25px;}
-
 }
-/* Start changes veena to add styling as shown below for media max-width : 640 */
+
 @media only screen and (max-width: 640px){
 	#shopping-cart-table thead  , #checkout-review-table thead   , #my-orders-table thead , #multiship-addresses-table thead{
 		display: none;
@@ -400,7 +375,7 @@
 	.order-info-box , .order-items h2{text-align:center !important;}
 	#my-orders-table colgroup {display: block; width: 100%;}
 }
-/* End changes veena to add styling as shown below for media max-width : 640 */
+
 /* Landscape phones and down */
 @media only screen and (max-width: 479px) {
 	.header-cart, .tm_headerlinkmenu	{ top:80px;}
@@ -418,14 +393,12 @@
 	.form-list input.input-text , .form-list li.wide textarea, .form-list select , .tm_responsive_row select , 
 	.product-view .box-tags .form-add input.input-text{width:90% !important; }
 	.cart_mini_right{ display:none; }
-	.cart-label{ background: url("../../images/sprite.png") no-repeat scroll -7px -349px rgba(0, 0, 0, 0);
+	.cart-label{ background: url("http://magento.templatemela.com/MAG171/skin/frontend/default/MAG090171/images/megnor/cart_mob.png") no-repeat scroll center 7px transparent;
 		height: 23px;
 		margin: 0 auto;
-		padding: 0;
+		padding:9.5px 0;
 		text-align: center;
-		width: 24px; cursor:pointer; }
-	.header-cart	{ padding:10px 0 9px !important;}
-	.crosssell .hover_block, #upsell-carousel .hover_block, #featured-carousel .hover_block, #grid .product-block .hover_block	{ left:35px;}
+		 cursor:pointer; }
 	.checkout-progress{ padding:0 50px; }
 	.checkout-progress li{width:100% ;margin:0 0px 5px 0;}
 	.cart_mini_right .price{ display:none; }
@@ -445,20 +418,34 @@
 	#product-review-table td , .data-table thead th{  padding: 5px 3px; }
 	#product-review-table{ margin:10px 0; }
 	.buttons-set .back-link{ margin-bottom:10px; margin-right:10px; }
-	.buttons-set button.button{ float:left; margin-left:0; }
-	.pager .limiter{ margin-bottom:10px; }
-	.pager .pager_right .sort-by{ float:none; }
+	.buttons-set button.button{ float:left; margin-left:0;  clear:both;}
+	.pager .pages {float: left;margin: 0;}
+	.pager .limiter	{ margin:0 0 5px 0; float:left;}
+	.pager .pager_right .sort-by {clear: both;	float: left;margin: 5px 0 0;}
 	.products-list li .list-right{ width:100%; padding:5px 0 0 0; border-top:1px solid #ddd;}
-	#grid .product-block .hover_block {   left: 18px !important;}
+
 	.shopping_CMS_main1 img	{ width:100%;}
 	.registered-users, .new-users	{ width:96% !important; margin:0 0 5px 0;}
 	.slider_bottom_cmsblock .cmsblock_content li	{ width:100%; margin:0 0 10px 0 !important; text-align:center;}
 	.slider_bottom_cmsblock .cmsblock_content li img	{ width:auto;}
 	.crosssell .product-block img,
 	.related-products .product-block img,
-	#upsell-product-table .product-block img
-	{ max-width:100%; height:auto;}
-
+	#upsell-product-table .product-block img{ max-width:100%; height:auto;}
+	.tm_top_currency .sbToggle, .form-language .sbToggle, .header-cart .right_arrow{background:none !important;}
+	.form-language .sbHolder, .tm_top_currency .sbHolder{padding:0;}	
+	.cart .title-buttons .checkout-types {clear: both;float: left;margin: 5px 0;}
+	.cart-table .btn-continue,.cart-table .btn-update{float:left; clear:both; margin:5px 0;}
+	.flex-direction-nav li a.flex-next, .flex-direction-nav li a.flex-prev{display:none;}
+	.multiple-checkout ,#review-order-form .col-2.col-wide{
+	width:100%;
+	display:inline;
+	overflow:auto;
+	float:left;
+	}
+	
+.cart .discount input.input-text {
+    width: 200px;
+}
 }
 
 /* Mobile Landscape Size to Mobile Portrait (devices and browsers) */
@@ -476,22 +463,26 @@
 	.product-view .product-shop .availability{ float:none; text-align:left; }
 	.my-wishlist .buttons-set button.button{ margin:5px 0; text-align:left;}
 	#product-review-table thead{ display:none; }
-	.form-language .sbHolder, .tm_top_currency .sbHolder{flat:none; text-align:center; padding:0; }
+	.form-language .sbHolder, .tm_top_currency .sbHolder{float:none; text-align:center; padding:0; }
 	.form-language .sbHolder .sbToggle , .tm_top_currency .sbHolder .sbToggle { display:none; }
-	.crosssell .hover_block, #upsell-carousel .hover_block, #featured-carousel .hover_block, #grid .product-block .hover_block	{ left:60px;}
-	#grid .product-block .hover_block { left: 54px !important; }
 	.product-view .product-img-box	{ width:92%;}
 	.product-view .product-img-box .product-image img	{ width:100%;}
 	.cart .page-title h1	{ margin:10px 0;}
 	.crosssell .hover_block { left: 50px !important; }
 	.header-cart, .tm_headerlinkmenu	{ top:90px;}
 	.slider_bottom_cmsblock .cmsblock_content li img	{ width:200px;}
+	.header .form-search {width: 180px;}
+	.header .form-search input.input-text {width: 82%;}
+	.custom_block img {width: 100%;}
+	.header .header-cart #panel{  width: 188px;}
+	.multiple-checkout .place-order .grand-total big{ margin: 0 0 0 12px;}
+	.form-language .sbHolder .sbOptions, .tm_top_currency .sbHolder .sbOptions, .header .mobile_link_menu{width:154px;}
+	
 }
 
 @media only screen and (max-width:240px) 
 {
-	.crosssell .hover_block, #upsell-carousel .hover_block, #featured-carousel .hover_block, #grid .product-block .hover_block	{ left:17px;}
-	#grid .product-block .hover_block { left: 0 !important; }
+
 	.custom_block img	{ width:100%;}
 	.add-to-cart .qty	{ margin:0 0 5px 0;}
 	button.btn-checkout span	{ padding:0 15px;}

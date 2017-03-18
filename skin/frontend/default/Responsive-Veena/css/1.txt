@@ -1,0 +1,185 @@
+/* Footer ================================================================================ */
+.footer .store-switcher { display:inline; margin:0 5px 0 0;}
+.footer .store-switcher label { font-weight:bold; vertical-align:middle; }
+.footer .store-switcher select { padding:0; vertical-align:middle; }
+.footer a { text-decoration:none; }
+.footer .bugs { margin:13px 0 0; color:#777; }
+.footer .bugs a { color:#777; text-decoration:underline; }
+.footer .bugs a:hover { text-decoration:none; }
+.footer address { float:left; margin:5px 0; text-align:center; width:100%;}
+.footer address a { color:#777; text-decoration:underline; }
+.footer address a:hover { text-decoration:none; }
+.footer ul {  }
+.footer_bottom ul.links { float:left; width:100%; text-align:center;}
+.footer  li {  padding:0 0 4px 0;   }
+.copyright{
+  text-align: center;
+  padding: 15px 0;
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  border-bottom: solid 3px #e3e2e2;
+  margin: 0;
+}
+.footer_bottom  li{float:left; /*background:url(../images/pipe_icon.png) 100% 60% no-repeat;*/font-size:13px; }
+.footer_bottom  li a{color: #444546;
+    display: block;
+    padding: 0 15px;}
+.footer ul.links li.last { background:none;  }
+.footer-container .bottom-container { margin:0 0 5px; }
+.footer_bottom .links	{ display:none;}
+.footer_bottom .footer_link .links	{ display:block;} 
+.footer_bottom .footer_link #top_link2	{ display:none;}
+ 
+.footer .mobile_togglemenu{ display:none; }  
+.footer_top{ width:100%; padding: 10px 0; overflow:hidden;}
+.footer-bottom ul li a{
+  color: #444546;
+  display: block;
+  padding: 0 15px;
+}
+
+.footer_bottom
+{
+   /* background: url("../images/foooter_doubleline.png") repeat-x scroll 0 top transparent;*/
+    clear: both;
+    overflow: hidden;width: 98%;
+  margin: 0 auto;	
+    padding: 20px 0 10px;
+}
+
+footer .footer-bottom {
+  width: 100%;
+  float: left;
+  padding: 15px 0 0 0;
+  width: 70%;
+  margin: 0 auto;	
+  display: block;
+}
+
+.footer-bottom ul {
+  width: 70%;
+  margin: 0 auto;	
+  display: block;
+}
+
+footer .footer-bottom ul li {
+  float: left;
+  font-size: 14px;	
+}
+
+
+
+
+#footer .footer-area{float: left;    margin-right: 15px;    width: 172px;}
+#footer #block_5
+{ 
+	margin-right:0; 
+	background: url("../images/footer_banner_border.png") repeat scroll 0 top transparent;
+	padding:10px 20px;
+	width:210px;
+}
+#footer .block-subscribe	{ margin:0 !important;}
+#footer  .form-subscribe-header { display:none;}
+#footer .block-subscribe strong span
+{ 
+	color:#963F40;
+	font-family:Oswald,Arial,Verdana;
+	font-size:22px;
+	
+}
+.footer-bottom-paypal	{ float:left; width:100%; text-align:center; margin:5px 0 10px 0;}
+.footer-bottom-paypal li	{ background:none; display:inline-block; padding:0; margin:0 2px;}
+
+#footer h6 ,#footer .block .block-title strong{ font-size:16px; font-weight:normal; margin-bottom:10px; color: #3C3E3E;
+text-shadow:none; font-family:Ubuntu,Arial,Verdana;}
+
+
+.footer_CMSBlock .social_block li { margin:0 5px;}
+.footer_CMSBlock li.last img	{ float:left;}
+.footer_CMSBlock li.last .social_block	{ float:left; margin:20px 0 0 10px;}
+.social_block li.facebook a{ background:url("../images/sprite.png") no-repeat scroll -2px -304px transparent; width:32px; height:32px; display:block;}
+.social_block li.twitter a{ background:url("../images/sprite.png") no-repeat scroll -42px -304px transparent;width:32px; height:32px; display:block;}
+.social_block li.rss a{ background:url("../images/sprite.png") no-repeat scroll -82px -304px transparent; width:32px; height:32px; display:block;}
+
+.social_block li.facebook a:hover{ background-position: -2px -269px; text-decoration:none;transition-duration:600ms; }
+.social_block li.twitter a:hover{ background-position: -42px -269px;text-decoration:none;transition-duration:600ms }
+.social_block li.rss a:hover{ background-position: -82px -269px;text-decoration:none;transition-duration:600ms }
+
+#footer .block { border:none; margin-bottom:10px; }
+#footer .block .block-title{ background:none; padding:0; line-height:20px; }
+#footer .block-subscribe .block-content{ background:none; border:none; padding:0;}
+#footer .block-subscribe input.input-text
+{  
+	 background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-radius: 5px !important;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.21) inset;
+    color: #848484;
+    font-size: 14px;
+    position: relative;
+    width: 150px;
+}
+#footer .block-subscribe .input-box { float:left; margin:0 5px 0 0;} 
+#footer .block-subscribe .actions { float:left; } 
+#footer .mobile_togglemenu {
+    background: url("../images/megnor/toggle-arrow.png") no-repeat scroll right 4px transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    margin-right: 0;
+    margin-top: -25px;
+    overflow: hidden;
+    padding: 0 0 4px 4px;
+    text-decoration: none;
+    width: 99%;
+}
+.padder h5.mobile_togglemenu {
+    background: url("../images/megnor/toggle-arrow.png") no-repeat scroll right 4px transparent;
+      cursor: pointer;
+    display: block;
+    font-size: 15px;
+    margin-right: 0;
+    margin-top: -24px;
+    overflow: hidden;
+    padding: 0 0 4px 4px;
+    text-decoration: none;
+    width: 99%;
+}
+
+#footer  .active .mobile_togglemenu , .padder  .active .mobile_togglemenu {
+    background-position: right -48px;
+}
+.toggle .mobile_togglecolumn {
+    background: url("../images/megnor/toggle-arrow.png") no-repeat scroll right 1px transparent;
+    cursor: pointer;
+    display: none;
+    margin-top: -21px;
+    overflow: hidden;
+    padding: 0 0 4px;
+    width: 100%;
+}
+.active .mobile_togglecolumn {
+    background-position: right -51px;
+}
+
+#topcontrol{ font-size:0; height:38px; width:38px;
+ background:url("../images/top_icon.png") no-repeat scroll 0 0 transparent;transition-duration:500ms;}
+#topcontrol:hover	{ background:url("../images/top_icon_hover.png") no-repeat scroll 0 0 transparent;transition-duration:500ms; }
+.footer
+{
+	 background:url("../images/footer_banner_border.png") repeat-x scroll 0 top transparent;
+	 padding:20px 0 0 0;
+}
+.footer_CMSBlock
+{
+	background:url("../images/footer_banner_border.png") repeat-x scroll 0 bottom transparent;
+	float:left;
+	width:100%;
+	padding:0 0 15px;
+	margin:0 0 15px 0;
+}
+.footer_CMSBlock li	{ float:left; margin:0 0 0 35px; padding:0;}
+.footer_CMSBlock li.first	{ margin:0;}
+/* ======================================================================================= */

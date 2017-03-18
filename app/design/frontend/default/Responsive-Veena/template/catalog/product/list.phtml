@@ -188,7 +188,7 @@ height:15px;
 		   <div class="sale-label" style="left: 5px"><?php echo $this->__('Out of stock') ?></div>
         <?php endif; ?>
     <?php endif; ?>
-    <!--<p class="feature-in-cart"><?php echo $incart; $incart = ""; ?></p>-->
+    <!--<p class="feature-in-cart"><?php //echo $incart; $incart = ""; ?></p>-->
         <ul class="add-to-links">
 		 <?php if (Mage::getSingleton('customer/session')->isLoggedIn()):?>
           <?php if (Mage::helper('shoppinglist')->isActive() && $_product->isSaleable()) : ?>

@@ -38,7 +38,8 @@
 			</div>
 			<div class="mail">
 				<!--img width="28" height="20" class="mail" alt="Mail" src="<?php// echo $this->getSkinUrl('images/mail.png'); ?>"--> 
-				<a href="mailto:<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>"></a>
+				<a href="mailto:<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>">
+				</a>
 			</div>
 			<div class="phone">
 				<!--img width="23" height="23" alt="Phone" src="<?php //echo $this->getSkinUrl('images/phone.png'); ?>"-->
@@ -48,7 +49,7 @@
 	</div> <!-- header_1st-->
 	<div class="header_2nd">
 		<div class="delivery">
-			<h4>Next Delivery Slot&nbsp&<button class="button delivery-slot"></button></h4>
+			<h4>Next Delivery Slot<button class="button delivery-slot"></button></h4>
 		</div>
 		<div class="area-code">
 			<input class="input-text pincode" id="zipcodetop" type="text" name="zipcodetop" "  size="17"  maxlength="10"  placeholder="<?php echo $this->__('Enter Pincode'); ?>"/>
