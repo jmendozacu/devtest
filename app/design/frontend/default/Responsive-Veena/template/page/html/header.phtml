@@ -111,9 +111,9 @@
 					 <li class="first top_link1">
 					 <a href="http://localhost/devtest/index.php/customer/account/logout/" title="My Account">My Account</a><em style="display: none; top: -30px;">My Account</em></li>
 					 <li class="top_link2"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/wishlist/" title="My Wishlist">My Wishlist</a><em style="display: none; top: -30px;">My Wishlist</em></li>
-	 				 <?php if(Mage::getSingleton('customer/session')->isLoggedIn()): ?>
-						 <li class=" top_link3"><a href="<?php echo $this->getUrl("quicklist"); ?>" title="My QuickList" class="top-link-quicklist">My QuickList</a><em style="display: none; top: -30px;">My QuickList</em></li>
-					<?php endif; ?>
+	 				 <?php //if(Mage::getSingleton('customer/session')->isLoggedIn()): ?> <!-- show the quicklist all the time as of now -->
+					<li class=" top_link3"><a href="<?php echo $this->getUrl("quicklist"); ?>" title="My QuickList" class="top-link-quicklist">My QuickList</a><em style="display: none; top: -30px;">My QuickList</em></li>
+					<?php //endif; ?>
 									 
 					 <li class=" top_link4"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/" title="Checkout" class="top-link-checkout">Checkout</a><em>Checkout</em></li>
 					 <li class=" last top_link5"><a href="http://localhost/devtest/index.php/customer/account/login/" title="Log In">Log In</a><em style="display: none; top: -30px;">Log In</em></li>

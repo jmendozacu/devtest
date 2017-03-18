@@ -240,146 +240,14 @@ ul,ol         { list-style:none; }
 /* ======================================================================================= */
 
 /*Custom style*/
-/* VEENA ALL THE LINES below relate to styling that may not be required */
+
 .container {
   width: 100%; /* veena change */
   margin: 0 auto;
 }
-
 .header-container { 
   width: 100%; 
   background-color: #ececec;
-}
-
-
-.header .header-top {
-  width: 100%;
-  float: left;
-}
-
-.header .header-top ul.topdelivery {
-  width: 22%;
-  float: left;
-  margin-right: 12px;
-	border-right: 1px solid #fff;
-	padding-right: 12px;
-}
-
-.header .header-top ul.topdelivery li {
-  list-style: none;
-  color: #000;
-  margin: 5px 0 10px 0;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.header .header-top ul.topdelivery li.deliver-slot {
-  background-color: #ff8409;
-  color: #fff;
-  padding:5px 0;
-  font-size: 12px;
-  font-weight: 400;	
-  margin: 10px 0 5px;
-}
-
-.header .header-top ul.delivery-code {
-  width: 28%;
-  float: left;
-  margin-right: 25px;
-	border-right: 1px solid #fff;
-	padding-bottom: 5px;
-}
-
-.header .header-top ul.delivery-code li {
-  list-style: none;
-  color: #000;
-  margin: 5px 0 0 0;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.header .header-top ul.delivery-code li.area-code {
-  text-align: left;
-  width: 96px;
-  float: left;
-  margin-bottom: 0;
-}
-
-.header .header-top ul.delivery-code li span {
-  color: #ff8409;
-  font-weight: 600;
-}
-
-.header .header-top ul.delivery-code li input.pincode {
-  color: #000;
-  border: none;
-  background-color: #fff;
-  font-size: 11px;
-  font-weight: 400;	
-  text-align: center;
-  width: 90px;
-  vertical-align: top;
-  line-height: 30px;
-  padding: 0 3px;
-  height: 27px;
-  margin: 5px 0 0px;
-}
-
-.header .header-top ul.delivery-code li.deliver-slot {
-  background-color: #ff8409;
-  padding:0;
-  font-size: 12px;
-  font-weight: 400;	
-  float: left;
-  width: 162px;
-  margin: 10px 0 0 10px;
-}
-.header .header-top ul.delivery-code li.deliver-slot button{color:#fff;vertical-align:top;font-size:12px; padding: 0px !important; height: 27px; }
-.header .header-top ul.contact {
-  width: 24%;
-  float: left;
-  margin-right: 25px;
-	border-right: 1px solid #fff;
-	padding-bottom: 7px;
-}
-
-.header .header-top ul.contact li {
-  list-style: none;
-  color: #2b2c2c;
-  margin: 4px 0 5px 0;
-  font-size: 13px;
-  font-weight: 400;
-  padding-top: 4px;
-}
-
-.header .header-top ul.delivery li.deliver-slot {
-  background-color: #ff8409;
-  padding:5px 0;
-  font-size: 12px;
-  font-weight: 700;	
-}
-
-.header .header-top ul.contact li a{
-  color: #2b2c2c;	
-}
-
-.header .header-top ul.contact li img {
-  display: block;
-  padding-right: 15px;
-  float: left;
-}
-
-.header .header-top ul.contact li img.mail {
-  display: block;
-  padding-right: 10px;
-  float: left;
-}
-
-.header .header-top .header_topmenu {
-  width: 18%;
-  float: left;
 }
 
 #review-buttons-container p:first-child { 
@@ -388,64 +256,6 @@ ul,ol         { list-style:none; }
   font-size: 16px;
 }
 
-/*veena */
-.header .header-top .header_topmenu ul.links li {
-  list-style: none;
-  color: #fff;
-  /*margin: 8px 0 11px 5px;
-  padding-top: 4px;*/
-  margin: 0;	
-  font-size: 14px;
-  font-weight: 400;
-  width: auto;
-  padding-top: 0;
-  float: left;
-  margin-left: 0px;
-  padding-left: 0px;
-}
-/*veena */
-.header .header-top .header_topmenu ul.links li:first-child {
-  /*margin: 8px 0 11px 5px;*/
-  margin: 0;
-}
-
-.header .header-top .header_topmenu .welcome-msg {
-  padding:5px 0;
-  font-size: 13px;
-  font-weight: 700;
-  color: #ff8409;
-  float: right;
-}
-
-.header-bottom {
-  padding: 18px 0 15px;
-  float: left;
-  width: 100%;	
-}
-
-.header-bottom .logo {
-  width: auto;
-  float: left;	
-}
-
-.header-bottom ul {
-  margin: 25px 0 0 10px;
-}
-
-.header-bottom ul li{
-  float: left;
-  padding-right: 10px;
-}
-
-.header-bottom ul li input {
-  border: solid 1px #b7b7b7;
-  box-shadow: 1px 1px 2px #ccc inset;
-  color: #595959;
-  text-align: left;
-  padding: 5px 10px;
-  width: 225px;
-  
-}
 .form-search .button{background: url(../images/search.png) 96% center no-repeat;height: 16px;
     position: absolute;
     right: 10px;
@@ -453,66 +263,6 @@ ul,ol         { list-style:none; }
     width: 16px;}
 .form-search {
     position: relative;
-}
-.header-bottom ul li a.promotion {
-  background-color: #006633;
-  border-radius: 5px;
-  color: #fff;
-  width: 160px;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 600px;
-  padding: 5px 12px;
-  margin: 3px 0 0;
-}
-.header-bottom ul li.quick-list {
-padding-right: 0;
-
-float: left;
-}
-
-.header-bottom ul li a.quick-list {
-color: #fff;
-width: 120px;
-background-color: #ff8409;
-border: none;
-padding: 5px 8px 5px 8px;
-font-size: 12px;
-font-weight: 600;
-border-radius: 4px;
-}
-
-.header-bottom ul li select.quick-list {
-  border-radius: 4px 4px 0 0;
-  color: #fff;	
-  width: 116px;
-  background-color: #ff8409;
-  border: none;
-  padding: 5px 0 5px 5px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.header-bottom ul li:first-child{
-	margin-left: 10px;
-}
-
-.header-bottom ul li.items-list {
-  padding-right: 0;
-  margin-top: -3px;
-  float:right;
-}
-
-.header-bottom ul li select.items-list {
-  border-radius: 4px 4px 0 0;
-  color: #fff;	
-  width: 161px;
-  border: none;
-  padding: 5px 0 5px 15px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-left: 5px;
-  background: url(../images/shopping-cart.png) left top no-repeat;
 }
 /* Start changes veena - Styling of nav-container is not rquired 
 .nav-container .menu a{
@@ -532,7 +282,6 @@ border-radius: 4px;
   width: 100%;
   float: left;
 }
-
 nav {
   width: 100%;
   float: left;
@@ -542,14 +291,10 @@ nav {
   background-color: #d6d6d6 !important;
   color: #000;
 }
-/* VEENA ALL THE LINES ABOVE relate to styling that may not be required */
 
 .product-details .product-name a { font-size: 11px;}
-
 .product-details strong, .product-details .price { font-size: 11px;}
-
 .viewcart-btn { margin-left: 5px!important;}
-
 
 .featured-products-wrapper {
   width: 100%;
@@ -562,7 +307,6 @@ nav {
   text-align: center;
   margin: 20px 0; 
 }
-
 
 .featured-products-wrapper .product-2 {
   width: 27%;
@@ -1487,10 +1231,6 @@ tr.summary-details-excluded { font-style:italic; }
 .std i,
 .std em { font-style:italic; }
 
-/* Misc */
-.header .links li { display:inline; }
-.header .links li.last { background:none; padding-right:0; }
-
 .related-products .link-wishlist
 {
 	background:url(../images/compare_wishlist.png) no-repeat left 2px;
@@ -1498,7 +1238,6 @@ tr.summary-details-excluded { font-style:italic; }
 }
 
 .related-products .link-wishlist:hover	{ background-position:left -18px; text-decoration:underline;}
-
 
 .link-cart,.block-related a.addto-cart
 { font-weight:normal; text-decoration:underline !important; color:#903537;}
@@ -1788,12 +1527,6 @@ End changes veena */
 
 .tm_headerlinks_inner{ display:none; }
 
-/* Start changes veena header links */
-.header .links li { float:left; padding:0 6px; border-left:1px solid #DDDDDD; position:relative;}
-.header .links li a{ text-decoration:none; font-size:0; color:#000; height: 20px;    width: 22px;}
-/*.header_5th .links li a{ text-decoration:none; font-size:13px; color:#000; height: 20px;    width: 22px;}*/
-/* End changes veena header links */
-
 .header-container .top-container { clear:both; padding:5px 10px 0 12px; text-align:right; }
 
 /* start changes veena -cart-mini-right */
@@ -1838,9 +1571,17 @@ border-radius: 4px;
 /* remove veena this styling .tm_topbanner	{ float:right; margin:16px 10px 0 0;} */
 /* Start changes veena - header links */
 .header_topmenu	{ float:right; width:100%; text-align:right; margin:5px 0;}
+.header_topmenu .footer_link	{ display:none;}
+
+.header .links li { display:inline; }
+.header .links li.last { background:none; padding-right:0; }
+
+.header .links li { float:left; padding:0 6px; border-left:1px solid #DDDDDD; position:relative;}
+.header .links li a{ text-decoration:none; font-size:0; color:#000; height: 20px;    width: 22px;}
+
 .header .links li.top_link1 a	{ background: url("../images/sprite.png") no-repeat scroll -7px -518px transparent; width:22px; height:20px; display:block;}
 .header .links li.top_link2 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -621px transparent; width:22px; height:20px; display:block;}
-/*.header .links li.top_link3 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -478px transparent; width:22px; height:20px; display:block;}*/
+/* veena commented this line because the sprite for quicklist is as specified below *//*.header .links li.top_link3 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -478px transparent; width:22px; height:20px; display:block;}*/
 .header .links li.top_link3 a	{ background: url("../images/quicklist.png") no-repeat scroll transparent; width:25px; height:20px; display:block;}
 .header .links li.top_link4 a	{ background: url("../images/sprite.png") no-repeat scroll -11px -556px transparent; width:16px; height:20px; display:block;}
 .header .links li.top_link5 a	{ background: url("../images/sprite.png") no-repeat scroll -8px -590px transparent; width:24px; height:20px; display:block;}
@@ -1869,8 +1610,6 @@ border-radius: 4px;
 }
 
 /* End changes veena - header links */
-
-.header_topmenu .footer_link	{ display:none;}
 
 /********** < Navigation */
 /* Start changes veena - nav-inner padding changed  */
@@ -3673,11 +3412,30 @@ width: 97%;
 .footer .mobile_togglemenu{ display:none; }  
 .footer_top{ width:100%; padding: 10px 0; overflow:hidden;}
 
+.footer
+{
+	 background:url("../images/footer_banner_border.png") repeat-x scroll 0 top transparent;
+	 padding:20px 0 0 0;
+}
+
 /* Start changes veena footer_CMSblock*/
+
+.footer_CMSBlock
+{
+	background:url("../images/footer_banner_border.png") repeat-x scroll 0 bottom transparent;
+	float:left;
+	width:100%;
+	padding:0 0 15px;
+	margin:0 0 15px 0;
+}
+.footer_CMSBlock li	{ float:left; margin:0 0 0 35px; padding:0;}
+.footer_CMSBlock li.first	{ margin:0;}
+
 footer .footer_CMSBlock ul li {
   width: 30%;
   text-align:center;
 } /* end  changes veena footer_CMSblock*/
+.footer_CMSBlock img { height :150px; width :150px}
 /* Start changes veena footer_bottom */
 .footer_bottom
 {
@@ -3789,21 +3547,7 @@ text-shadow:none; font-family:Ubuntu,Arial,Verdana;}
 #topcontrol{ font-size:0; height:38px; width:38px;
  background:url("../images/top_icon.png") no-repeat scroll 0 0 transparent;transition-duration:500ms;}
 #topcontrol:hover	{ background:url("../images/top_icon_hover.png") no-repeat scroll 0 0 transparent;transition-duration:500ms; }
-.footer
-{
-	 background:url("../images/footer_banner_border.png") repeat-x scroll 0 top transparent;
-	 padding:20px 0 0 0;
-}
-.footer_CMSBlock
-{
-	background:url("../images/footer_banner_border.png") repeat-x scroll 0 bottom transparent;
-	float:left;
-	width:100%;
-	padding:0 0 15px;
-	margin:0 0 15px 0;
-}
-.footer_CMSBlock li	{ float:left; margin:0 0 0 35px; padding:0;}
-.footer_CMSBlock li.first	{ margin:0;}
+
 /* ======================================================================================= */
 
 /* Sample Data============================================================================ */
@@ -4529,3 +4273,248 @@ a.amconf-image {
 .catalogsearch-result-index .product-block .add-to-links li a.link-shoppinglist{
   margin-bottom: 20px;
 }
+
+/* VEENA ALL THE LINES below relate to styling that may not be required 
+.header .header-top {
+  width: 100%;
+  float: left;
+}
+
+.header .header-top ul.topdelivery {
+  width: 22%;
+  float: left;
+  margin-right: 12px;
+	border-right: 1px solid #fff;
+	padding-right: 12px;
+}
+
+.header .header-top ul.topdelivery li {
+  list-style: none;
+  color: #000;
+  margin: 5px 0 10px 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.header .header-top ul.topdelivery li.deliver-slot {
+  background-color: #ff8409;
+  color: #fff;
+  padding:5px 0;
+  font-size: 12px;
+  font-weight: 400;	
+  margin: 10px 0 5px;
+}
+
+.header .header-top ul.delivery-code {
+  width: 28%;
+  float: left;
+  margin-right: 25px;
+	border-right: 1px solid #fff;
+	padding-bottom: 5px;
+}
+
+.header .header-top ul.delivery-code li {
+  list-style: none;
+  color: #000;
+  margin: 5px 0 0 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.header .header-top ul.delivery-code li.area-code {
+  text-align: left;
+  width: 96px;
+  float: left;
+  margin-bottom: 0;
+}
+
+.header .header-top ul.delivery-code li span {
+  color: #ff8409;
+  font-weight: 600;
+}
+
+.header .header-top ul.delivery-code li input.pincode {
+  color: #000;
+  border: none;
+  background-color: #fff;
+  font-size: 11px;
+  font-weight: 400;	
+  text-align: center;
+  width: 90px;
+  vertical-align: top;
+  line-height: 30px;
+  padding: 0 3px;
+  height: 27px;
+  margin: 5px 0 0px;
+}
+
+.header .header-top ul.delivery-code li.deliver-slot {
+  background-color: #ff8409;
+  padding:0;
+  font-size: 12px;
+  font-weight: 400;	
+  float: left;
+  width: 162px;
+  margin: 10px 0 0 10px;
+}
+.header .header-top ul.delivery-code li.deliver-slot button{color:#fff;vertical-align:top;font-size:12px; padding: 0px !important; height: 27px; }
+.header .header-top ul.contact {
+  width: 24%;
+  float: left;
+  margin-right: 25px;
+	border-right: 1px solid #fff;
+	padding-bottom: 7px;
+}
+
+.header .header-top ul.contact li {
+  list-style: none;
+  color: #2b2c2c;
+  margin: 4px 0 5px 0;
+  font-size: 13px;
+  font-weight: 400;
+  padding-top: 4px;
+}
+
+.header .header-top ul.delivery li.deliver-slot {
+  background-color: #ff8409;
+  padding:5px 0;
+  font-size: 12px;
+  font-weight: 700;	
+}
+
+.header .header-top ul.contact li a{
+  color: #2b2c2c;	
+}
+
+.header .header-top ul.contact li img {
+  display: block;
+  padding-right: 15px;
+  float: left;
+}
+
+.header .header-top ul.contact li img.mail {
+  display: block;
+  padding-right: 10px;
+  float: left;
+}
+
+.header .header-top .header_topmenu {
+  width: 18%;
+  float: left;
+}
+.header .header-top .header_topmenu ul.links li {
+  list-style: none;
+  color: #fff;
+  margin: 0;	
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  padding-top: 0;
+  float: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.header .header-top .header_topmenu ul.links li:first-child {
+  margin: 0;
+}
+
+.header .header-top .header_topmenu .welcome-msg {
+  padding:5px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff8409;
+  float: right;
+}
+
+.header-bottom {
+  padding: 18px 0 15px;
+  float: left;
+  width: 100%;	
+}
+
+.header-bottom .logo {
+  width: auto;
+  float: left;	
+}
+
+.header-bottom ul {
+  margin: 25px 0 0 10px;
+}
+
+.header-bottom ul li{
+  float: left;
+  padding-right: 10px;
+}
+
+.header-bottom ul li input {
+  border: solid 1px #b7b7b7;
+  box-shadow: 1px 1px 2px #ccc inset;
+  color: #595959;
+  text-align: left;
+  padding: 5px 10px;
+  width: 225px;
+  
+}
+.header-bottom ul li a.promotion {
+  background-color: #006633;
+  border-radius: 5px;
+  color: #fff;
+  width: 160px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600px;
+  padding: 5px 12px;
+  margin: 3px 0 0;
+}
+.header-bottom ul li.quick-list {
+padding-right: 0;
+
+float: left;
+}
+
+.header-bottom ul li a.quick-list {
+color: #fff;
+width: 120px;
+background-color: #ff8409;
+border: none;
+padding: 5px 8px 5px 8px;
+font-size: 12px;
+font-weight: 600;
+border-radius: 4px;
+}
+
+.header-bottom ul li select.quick-list {
+  border-radius: 4px 4px 0 0;
+  color: #fff;	
+  width: 116px;
+  background-color: #ff8409;
+  border: none;
+  padding: 5px 0 5px 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.header-bottom ul li:first-child{
+	margin-left: 10px;
+}
+
+.header-bottom ul li.items-list {
+  padding-right: 0;
+  margin-top: -3px;
+  float:right;
+}
+
+.header-bottom ul li select.items-list {
+  border-radius: 4px 4px 0 0;
+  color: #fff;	
+  width: 161px;
+  border: none;
+  padding: 5px 0 5px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5px;
+  background: url(../images/shopping-cart.png) left top no-repeat;
+}
+ VEENA ALL THE LINES ABOVE relate to styling that may not be required */
