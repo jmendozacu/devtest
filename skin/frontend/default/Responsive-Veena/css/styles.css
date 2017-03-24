@@ -119,11 +119,11 @@ ul,ol         { list-style:none; }
 
 .header {  position:relative; z-index:10; }
 /* Start changes veena to incorporate styling for the 5 header divisions */
-.header_1st	{margin:2px;float:left;width:20%;}
-.header_2nd	{margin:2px;float:left;	width:25%;}
-.header_3rd	{margin:2px;float:left;width:20%;text-align:center;}
+.header_1st	{margin:2px;float:left;width:23%;}
+.header_2nd	{margin:2px;float:left;width:15%;}
+.header_3rd	{margin:2px;float:left;width:25%;text-align:center;}
 .header_4th {margin:2px;float:left;width:15%;}
-.header_5th{margin:2px;float:left;width:16%;}
+.header_5th{margin:2px;float:left;width:12%;text-align:right;}
 /* end changes veena to incorporate styling for the 5 header divisions */
 /* Start changes veena -remove element main 
 .main {	margin-bottom: 20px !important;
@@ -247,7 +247,7 @@ ul,ol         { list-style:none; }
 }
 .header-container { 
   width: 100%; 
-  background-color: #ececec;
+  background-color: #fff;
 }
 
 #review-buttons-container p:first-child { 
@@ -1290,9 +1290,9 @@ tr.summary-details-excluded { font-style:italic; }
 
 .shop { float:left; padding :2px ;clear:both;}
 .shop strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; }
-.logo { float:left;padding:0 0 5px 0; clear:both;}
-.mail {float:left;/*clear:both;*/}
-.phone {float:left; /*clear:both;*/}
+.logo { float:left;padding:0 0 5px 0; clear:both; width: 100%;}
+.header_2nd .mail {float:left;font-size:11px;/*clear:both;*/}
+.header_2nd .phone {float:left;font-size:11px; clear:left;}
 /* End of shop styling */
 
 /* Area Code Check ===*/
@@ -1300,7 +1300,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 .area-code #top-delivery-message {
   color: #ff9800;	/*#cc0000;*/
-  font-weight: 300;
+  font-weight: 600;
   clear:both;
 }
 
@@ -1312,7 +1312,7 @@ tr.summary-details-excluded { font-style:italic; }
 	height: 22px;
     margin: 0;
 	
-	font-size: 10px; /* veena font changed bcoz of not fitting on screen */
+	font-size: 11px; /* veena font changed bcoz of not fitting on screen */
 	font-weight: 400;	
 	white-space:pre-wrap;
 	text-align: center;
@@ -1328,7 +1328,7 @@ tr.summary-details-excluded { font-style:italic; }
 	width: 80px;
 	height: 14px;
 	
-	font-size: 10px; /* veena font changed bcoz of not fitting on screen */
+	font-size: 11px; /* veena font changed bcoz of not fitting on screen */
 	font-weight: 400;	
 	
 	border-radius:3px;	
@@ -1412,9 +1412,9 @@ tr.summary-details-excluded { font-style:italic; }
 	border : 0px solid black; 
 	margin :0;
 }
-.header_5th  .del_code p          { margin:0 ; text-align:right;}
+.header_5th  .del_code p          { margin:0 ; text-align:right; font-size: 11px; font-weight: 600;}
 .header_5th .tm_headerlinkmenu	{ display:inline-block;}
-.header_5th .mobile_link_menu	{ display:none;}
+.mobile_link_menu	{ display:none;}
 .header .header-top ul.contact {
 	width: 24%;
 	float: left;
@@ -1484,19 +1484,20 @@ End changes veena */
 .ie7 #footer .block-subscribe input.input-text	{ width:160px;}
 
 /* start changes veena - header */
-.header-cart{ 
+.header_4th .header-cart{ 
 	float:right; 
-	margin:0px 0px 0px 0px; 
+	margin:5px 0px 0px 0px; 
 	clear:right;
 	border-radius:3px;
-	background-color :lightgrey;
+	background-color :#ff8409;
+	font-size: 12px;
 }
 /* end changes veena - header */
 
 .header .header-cart  li{ clear:both; margin-bottom:5px; overflow:hidden; }
 
 /* start  changes veena - header-cart */
-.header .header-cart #panel{  
+.header_4th .header-cart #panel{  
  	background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 5px;
@@ -1504,7 +1505,7 @@ End changes veena */
     min-width: 20px;
     padding: 10px;
     position: absolute;
-    /*right: 0;*/
+    right: 13%;
     text-align: left;
     /*top: 130px; /* veena change from 80px*/
     width: 220px;
@@ -1521,9 +1522,9 @@ End changes veena */
 
 /* veena commented out .header-cart { float:right; margin-top:12px; clear:right;}*/
 
-.header .header-cart #panel .actions{ float:left; margin-top:7px; } /* changed from right to left veena */
-.header .header-cart #panel .actions .viewcart-btn{ margin-left:5px; }
-.header .header-cart #panel .product-name a{ font-size:13px; }
+.header_4th .header-cart #panel .actions{ float:left; margin-top:7px; } /* changed from right to left veena */
+.header_4th .header-cart #panel .actions .viewcart-btn{ margin-left:5px; }
+.header_4th .header-cart #panel .product-name a{ font-size:13px; }
 
 .tm_headerlinks_inner{ display:none; }
 
@@ -1549,7 +1550,7 @@ border-radius: 4px;
 
  end changes veena -cart-label,mini-right etc */
 
-.header-cart .right_arrow{ 
+.header_4th .header-cart .right_arrow{ 
 	background: url("../images/arrow-down.png") no-repeat scroll center center transparent;
 	margin: -3px 0 0 6px;
 	vertical-align: middle;
@@ -1559,7 +1560,7 @@ border-radius: 4px;
 }
 
 .ie7 .header-cart .right_arrow{ display:inline}
-.header-cart  .active .right_arrow{ background: url("../images/drop-down.png") no-repeat scroll center center transparent;}
+.header_4th .header-cart  .active .right_arrow{ background: url("../images/drop-down.png") no-repeat scroll center center transparent;}
 
 .headertoggle_img{
 	background:url("../images/sprite.png") no-repeat scroll -116px -123px; /*veena emoved commenting */
@@ -4273,13 +4274,7 @@ a.amconf-image {
 .catalogsearch-result-index .product-block .add-to-links li a.link-shoppinglist{
   margin-bottom: 20px;
 }
-
-/* VEENA ALL THE LINES below relate to styling that may not be required 
-.header .header-top {
-  width: 100%;
-  float: left;
-}
-
+/*
 .header .header-top ul.topdelivery {
   width: 22%;
   float: left;
@@ -4287,25 +4282,46 @@ a.amconf-image {
 	border-right: 1px solid #fff;
 	padding-right: 12px;
 }
-
-.header .header-top ul.topdelivery li {
+*/
+.header .header_4th .delivery ul.topdelivery li {
   list-style: none;
   color: #000;
-  margin: 5px 0 10px 0;
   text-align: center;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-.header .header-top ul.topdelivery li.deliver-slot {
-  background-color: #ff8409;
-  color: #fff;
-  padding:5px 0;
+.header .header_4th .delivery ul.topdelivery li.deliver-slot {
+  border-color: #ff8409;
+  background-color: lightgrey;
+  color: #000;
+  padding:2x 0;
   font-size: 12px;
   font-weight: 400;	
-  margin: 10px 0 5px;
+}
+/*
+.header .header_5th .header_topmenu {
+  width: 18%;
+  float: left;
+}*/
+
+.header .header_5th .header_topmenu ul.links li {
+  list-style: none;
+  color: #000;
+  margin: 0;	
+  font-size: 14px;
+  font-weight: 400;
+  width: auto;
+  padding-top: 0;
+  float: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.header .header_5th .header_topmenu ul.links li:first-child {
+  margin: 0;
 }
 
+/* VEENA ALL THE LINES below relate to styling that may not be required 
 .header .header-top ul.delivery-code {
   width: 28%;
   float: left;
@@ -4400,27 +4416,7 @@ a.amconf-image {
   float: left;
 }
 
-.header .header-top .header_topmenu {
-  width: 18%;
-  float: left;
-}
-.header .header-top .header_topmenu ul.links li {
-  list-style: none;
-  color: #fff;
-  margin: 0;	
-  font-size: 14px;
-  font-weight: 400;
-  width: auto;
-  padding-top: 0;
-  float: left;
-  margin-left: 0px;
-  padding-left: 0px;
-}
-.header .header-top .header_topmenu ul.links li:first-child {
-  margin: 0;
-}
-
-.header .header-top .header_topmenu .welcome-msg {
+.header .header_5th .header_topmenu .welcome-msg {
   padding:5px 0;
   font-size: 13px;
   font-weight: 700;

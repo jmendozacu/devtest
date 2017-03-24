@@ -31,30 +31,22 @@
 <header class="header-container">  
 	<div class="header">
 	<div class="header_1st">
-		<div class="shop">
 			<div class="logo">
-				<h1><strong>NOT SURE WHY REQUIRED</strong>
 					<?php if ($this->getIsHomePage()):?>
-						<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"  class="logo"> <img width="200" height="35" src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+						<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"  class="logo"> <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
 					<?php else:?>
 						<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php //echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
 					<?php endif?>
-				</h1><!-- I am sure this header element can be removed -->
 			</div>
-	
-			<div class="mail">
-				<a href="mailto:<?php echo "(".Mage::getStoreConfig('trans_email/ident_support/email').")"; ?>"></a>
-			</div>
-			<div class="phone">
-				<?php echo "(".Mage::getStoreConfig('general/store_information/phone').")"; ?>
-			</div>
-									
-		</div>			
 	</div> <!-- header_1st-->
 	<div class="header_2nd">
-		<div class="delivery">
-			<h5>Next Delivery Slot</h5><button class="button delivery-slot"></button>
-		</div>
+			<div class="mail">
+				<img width="28" height="20" class="mailto" alt="Mail" src="<?php echo $this->getSkinUrl('images/mail.png'); ?>"> <a href="mailto:<?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?>"><?php echo $from_email = Mage::getStoreConfig('trans_email/ident_support/email'); ?></a>
+			</div>
+			<div class="phone">
+				<img width="23" height="23" alt="callPhone" src="<?php echo $this->getSkinUrl('images/phone.png'); ?>"> <?php echo $storePhone = Mage::getStoreConfig('general/store_information/phone'); ?>
+			</div>
+									
 		
 		<div class="area-code">
 			<input class="input-text pincode" id="zipcodetop" type="text" name="zipcodetop" "  size="17"  maxlength="10"  placeholder="<?php echo $this->__('Enter Pincode'); ?>"/>
@@ -69,22 +61,13 @@
 		<?php echo $this->getChildHtml('topSearch') ?>
 	</div> <!--3rd-->
 	<div class="header_4th">
-		<div class="tm_topbanner"> </div><!-- dummy -->	
+		<div class="delivery">
+			<ul class="topdelivery"></ul>
+		
+		</div>
 				
-		<div class="header-cart">
-			<div class="block-cart btn-slide">
-				<div class="cart-label">
-					<div class="cart_mini_right">(0 item) -&nbsp;<span class="price">Rs0.00</span><div class="right_arrow"></div></div>
-				</div>
-				<div class="block-content" id="panel">
-				<div class="top_arrow"></div>
-					<div class="cart_topbg">
-					<div class="main-cart">
-						<p class="empty">You have no items in your shopping cart.</p>
-					</div>
-				</div>	
-				</div>
-			</div>
+		 <div class="header-cart items-list">
+				<?php echo $this->getChildHtml('cart_header') ?>
 		</div>
 	</div><!-- header_4th-->
 	<div class="header_5th"> 
@@ -104,29 +87,8 @@
 		</div> <!-- just to lower the header_links -->
 		<div class="header_topmenu">
 			<div class="tm_headerlinkmenu">
-					<div class="tm_headerlinks_inner"><div class="headertoggle_img">&nbsp;</div></div>
-					<?php //echo $this->getChildHtml('topLinks') ?>
-							
-					<ul class="links">
-					 <li class="first top_link1">
-					 <a href="http://localhost/devtest/index.php/customer/account/logout/" title="My Account">My Account</a><em style="display: none; top: -30px;">My Account</em></li>
-					 <li class="top_link2"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/wishlist/" title="My Wishlist">My Wishlist</a><em style="display: none; top: -30px;">My Wishlist</em></li>
-	 				 <?php //if(Mage::getSingleton('customer/session')->isLoggedIn()): ?> <!-- show the quicklist all the time as of now -->
-					<li class=" top_link3"><a href="<?php echo $this->getUrl("quicklist"); ?>" title="My QuickList" class="top-link-quicklist">My QuickList</a><em style="display: none; top: -30px;">My QuickList</em></li>
-					<?php //endif; ?>
-									 
-					 <li class=" top_link4"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/" title="Checkout" class="top-link-checkout">Checkout</a><em>Checkout</em></li>
-					 <li class=" last top_link5"><a href="http://localhost/devtest/index.php/customer/account/login/" title="Log In">Log In</a><em style="display: none; top: -30px;">Log In</em></li>
-				</ul>
-
-				<ul class="mobile_link_menu">
-					<li class="first top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/customer/account/" title="My Account">My Account</a></li>
-					 <li class="top_link2"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/wishlist/" title="My Wishlist">My Wishlist</a><em>My Wishlist</em></li>
-					 <li class=" top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
-					 <li class=" top_link6"><a href="http://magento.templatemela.com/MAG171/MAG090171/index.php/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
-					 <li class=" last top_link6"><a href="http://localhost/devtest/index.php/customer/account/login/" title="Log In">Log In</a></li>
-				 </ul>
-				
+					<?php echo 'top links' ?>
+					<?php echo $this->getChildHtml('topLinks') ?>
 			</div>
 		</div>	<!-- header_topmenu-->
 	</div> <!-- header_5th-->
@@ -162,8 +124,7 @@
 <script type="text/javascript">
 	jQuery(document).ready(function(){
 		var earliesttimeslot = jQuery(".earlist-time-slot").html();		
-		earliesttimeslot = "2017-02-17 10:00 AM TO 12:00 PM" //- hardcoded since I needed to test this feature 
-		jQuery(".delivery-slot").html(earliesttimeslot);
+		jQuery(".topdelivery").html(earliesttimeslot);
 		jQuery("#panel").hide()	;
 	});
 </script>

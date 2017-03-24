@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
   <default>
-		<!--<reference name="top.links">
+    <customer_logged_in>
+      		<reference name="top.links">
 			<action method="addLink" translate="label title" module="shoppinglist" ifconfig="shoppinglist/general/active">
 				<label>My Quick List</label>
 				<url>quicklist</url>
@@ -10,8 +11,9 @@
 				<urlParams/>
 				<position>0</position>
 			</action>
-		</reference>-->
-		<!--<reference name="head">
+		</reference>
+    <customer_logged_in>
+      				<!--<reference name="head">
 			<action method="addJs"><script>varien/product.js</script></action>
 			<action method="addJs"><script>varien/configurable.js</script></action>
 			<action method="addItem"><type>skin_js</type><name>js/bundle.js</name></action>	
